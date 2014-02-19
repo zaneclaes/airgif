@@ -40,6 +40,8 @@ void *kContextActivePanel = &kContextActivePanel;
 {
   // Install icon into the menu bar
   self.menubarController = [[MenubarController alloc] init];
+  [self.window setHidesOnDeactivate:YES];
+  [self.window orderOut:nil];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender

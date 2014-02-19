@@ -18,6 +18,16 @@
 		2F4F490F18B51C0E00BCA590 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */; };
 		2F4F491718B51C0E00BCA590 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F491518B51C0E00BCA590 /* InfoPlist.strings */; };
 		2F4F491918B51C0E00BCA590 /* AirGifTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F491818B51C0E00BCA590 /* AirGifTests.m */; };
+		2F4F495618B5223800BCA590 /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F494C18B5223800BCA590 /* BackgroundView.m */; };
+		2F4F495718B5223800BCA590 /* MenubarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F494E18B5223800BCA590 /* MenubarController.m */; };
+		2F4F495818B5223800BCA590 /* Panel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F495018B5223800BCA590 /* Panel.m */; };
+		2F4F495918B5223800BCA590 /* Panel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F495118B5223800BCA590 /* Panel.xib */; };
+		2F4F495A18B5223800BCA590 /* PanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F495318B5223800BCA590 /* PanelController.m */; };
+		2F4F495B18B5223800BCA590 /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F495518B5223800BCA590 /* StatusItemView.m */; };
+		2F4F496118B522A300BCA590 /* Status.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F495D18B522A300BCA590 /* Status.png */; };
+		2F4F496218B522A300BCA590 /* Status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F495E18B522A300BCA590 /* Status@2x.png */; };
+		2F4F496318B522A300BCA590 /* StatusHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F495F18B522A300BCA590 /* StatusHighlighted.png */; };
+		2F4F496418B522A300BCA590 /* StatusHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F496018B522A300BCA590 /* StatusHighlighted@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +60,21 @@
 		2F4F491418B51C0E00BCA590 /* AirGifTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AirGifTests-Info.plist"; sourceTree = "<group>"; };
 		2F4F491618B51C0E00BCA590 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2F4F491818B51C0E00BCA590 /* AirGifTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirGifTests.m; sourceTree = "<group>"; };
+		2F4F494B18B5223800BCA590 /* BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
+		2F4F494C18B5223800BCA590 /* BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundView.m; sourceTree = "<group>"; };
+		2F4F494D18B5223800BCA590 /* MenubarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenubarController.h; sourceTree = "<group>"; };
+		2F4F494E18B5223800BCA590 /* MenubarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenubarController.m; sourceTree = "<group>"; };
+		2F4F494F18B5223800BCA590 /* Panel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Panel.h; sourceTree = "<group>"; };
+		2F4F495018B5223800BCA590 /* Panel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Panel.m; sourceTree = "<group>"; };
+		2F4F495118B5223800BCA590 /* Panel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Panel.xib; sourceTree = "<group>"; };
+		2F4F495218B5223800BCA590 /* PanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelController.h; sourceTree = "<group>"; };
+		2F4F495318B5223800BCA590 /* PanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelController.m; sourceTree = "<group>"; };
+		2F4F495418B5223800BCA590 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
+		2F4F495518B5223800BCA590 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
+		2F4F495D18B522A300BCA590 /* Status.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Status.png; sourceTree = "<group>"; };
+		2F4F495E18B522A300BCA590 /* Status@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Status@2x.png"; sourceTree = "<group>"; };
+		2F4F495F18B522A300BCA590 /* StatusHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusHighlighted.png; sourceTree = "<group>"; };
+		2F4F496018B522A300BCA590 /* StatusHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StatusHighlighted@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +140,8 @@
 		2F4F48F418B51C0E00BCA590 /* AirGif */ = {
 			isa = PBXGroup;
 			children = (
+				2F4F495C18B522A300BCA590 /* Resources */,
+				2F4F494A18B5223800BCA590 /* Popup */,
 				2F4F490018B51C0E00BCA590 /* AGAppDelegate.h */,
 				2F4F490118B51C0E00BCA590 /* AGAppDelegate.m */,
 				2F4F490318B51C0E00BCA590 /* MainMenu.xib */,
@@ -152,6 +179,35 @@
 				2F4F491518B51C0E00BCA590 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2F4F494A18B5223800BCA590 /* Popup */ = {
+			isa = PBXGroup;
+			children = (
+				2F4F494B18B5223800BCA590 /* BackgroundView.h */,
+				2F4F494C18B5223800BCA590 /* BackgroundView.m */,
+				2F4F494D18B5223800BCA590 /* MenubarController.h */,
+				2F4F494E18B5223800BCA590 /* MenubarController.m */,
+				2F4F494F18B5223800BCA590 /* Panel.h */,
+				2F4F495018B5223800BCA590 /* Panel.m */,
+				2F4F495118B5223800BCA590 /* Panel.xib */,
+				2F4F495218B5223800BCA590 /* PanelController.h */,
+				2F4F495318B5223800BCA590 /* PanelController.m */,
+				2F4F495418B5223800BCA590 /* StatusItemView.h */,
+				2F4F495518B5223800BCA590 /* StatusItemView.m */,
+			);
+			path = Popup;
+			sourceTree = "<group>";
+		};
+		2F4F495C18B522A300BCA590 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2F4F495D18B522A300BCA590 /* Status.png */,
+				2F4F495E18B522A300BCA590 /* Status@2x.png */,
+				2F4F495F18B522A300BCA590 /* StatusHighlighted.png */,
+				2F4F496018B522A300BCA590 /* StatusHighlighted@2x.png */,
+			);
+			path = Resources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -232,7 +288,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				2F4F48F918B51C0E00BCA590 /* InfoPlist.strings in Resources */,
+				2F4F495918B5223800BCA590 /* Panel.xib in Resources */,
 				2F4F490718B51C0E00BCA590 /* Images.xcassets in Resources */,
+				2F4F496418B522A300BCA590 /* StatusHighlighted@2x.png in Resources */,
+				2F4F496118B522A300BCA590 /* Status.png in Resources */,
+				2F4F496218B522A300BCA590 /* Status@2x.png in Resources */,
+				2F4F496318B522A300BCA590 /* StatusHighlighted.png in Resources */,
 				2F4F48FF18B51C0E00BCA590 /* Credits.rtf in Resources */,
 				2F4F490518B51C0E00BCA590 /* MainMenu.xib in Resources */,
 			);
@@ -253,8 +314,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F4F495818B5223800BCA590 /* Panel.m in Sources */,
+				2F4F495718B5223800BCA590 /* MenubarController.m in Sources */,
+				2F4F495A18B5223800BCA590 /* PanelController.m in Sources */,
+				2F4F495B18B5223800BCA590 /* StatusItemView.m in Sources */,
 				2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */,
 				2F4F48FB18B51C0E00BCA590 /* main.m in Sources */,
+				2F4F495618B5223800BCA590 /* BackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -388,6 +454,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirGif/AirGif-Prefix.pch";
 				INFOPLIST_FILE = "AirGif/AirGif-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -401,6 +468,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirGif/AirGif-Prefix.pch";
 				INFOPLIST_FILE = "AirGif/AirGif-Info.plist";
+				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -465,6 +533,7 @@
 				2F4F491E18B51C0E00BCA590 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		2F4F491F18B51C0E00BCA590 /* Build configuration list for PBXNativeTarget "AirGifTests" */ = {
 			isa = XCConfigurationList;
@@ -473,6 +542,7 @@
 				2F4F492118B51C0E00BCA590 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
