@@ -28,6 +28,10 @@
 		2F4F496218B522A300BCA590 /* Status@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F495E18B522A300BCA590 /* Status@2x.png */; };
 		2F4F496318B522A300BCA590 /* StatusHighlighted.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F495F18B522A300BCA590 /* StatusHighlighted.png */; };
 		2F4F496418B522A300BCA590 /* StatusHighlighted@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F496018B522A300BCA590 /* StatusHighlighted@2x.png */; };
+		2F6883EC1917EC4F00C36852 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6883EB1917EC4F00C36852 /* HTTPRequest.m */; };
+		2F6883EF1917EC5A00C36852 /* NSImage+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6883EE1917EC5A00C36852 /* NSImage+Hash.m */; };
+		2F6883F71917F17800C36852 /* NSImage+AnimatedGif.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6883F61917F17800C36852 /* NSImage+AnimatedGif.m */; };
+		2F6883FA1917F21800C36852 /* AGDirectoryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6883F91917F21800C36852 /* AGDirectoryScanner.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,6 +79,14 @@
 		2F4F495E18B522A300BCA590 /* Status@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Status@2x.png"; sourceTree = "<group>"; };
 		2F4F495F18B522A300BCA590 /* StatusHighlighted.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = StatusHighlighted.png; sourceTree = "<group>"; };
 		2F4F496018B522A300BCA590 /* StatusHighlighted@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "StatusHighlighted@2x.png"; sourceTree = "<group>"; };
+		2F6883EA1917EC4F00C36852 /* HTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = "<group>"; };
+		2F6883EB1917EC4F00C36852 /* HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequest.m; sourceTree = "<group>"; };
+		2F6883ED1917EC5A00C36852 /* NSImage+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Hash.h"; sourceTree = "<group>"; };
+		2F6883EE1917EC5A00C36852 /* NSImage+Hash.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Hash.m"; sourceTree = "<group>"; };
+		2F6883F51917F17800C36852 /* NSImage+AnimatedGif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+AnimatedGif.h"; sourceTree = "<group>"; };
+		2F6883F61917F17800C36852 /* NSImage+AnimatedGif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+AnimatedGif.m"; sourceTree = "<group>"; };
+		2F6883F81917F21800C36852 /* AGDirectoryScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGDirectoryScanner.h; sourceTree = "<group>"; };
+		2F6883F91917F21800C36852 /* AGDirectoryScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGDirectoryScanner.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,12 +152,14 @@
 		2F4F48F418B51C0E00BCA590 /* AirGif */ = {
 			isa = PBXGroup;
 			children = (
-				2F4F495C18B522A300BCA590 /* Resources */,
+				2F6883E81917EC4F00C36852 /* Categories */,
+				2F6883E91917EC4F00C36852 /* Utilities */,
 				2F4F494A18B5223800BCA590 /* Popup */,
 				2F4F490018B51C0E00BCA590 /* AGAppDelegate.h */,
 				2F4F490118B51C0E00BCA590 /* AGAppDelegate.m */,
 				2F4F490318B51C0E00BCA590 /* MainMenu.xib */,
 				2F4F490618B51C0E00BCA590 /* Images.xcassets */,
+				2F4F495C18B522A300BCA590 /* Resources */,
 				2F4F48F518B51C0E00BCA590 /* Supporting Files */,
 			);
 			path = AirGif;
@@ -208,6 +222,28 @@
 				2F4F496018B522A300BCA590 /* StatusHighlighted@2x.png */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		2F6883E81917EC4F00C36852 /* Categories */ = {
+			isa = PBXGroup;
+			children = (
+				2F6883F51917F17800C36852 /* NSImage+AnimatedGif.h */,
+				2F6883F61917F17800C36852 /* NSImage+AnimatedGif.m */,
+				2F6883ED1917EC5A00C36852 /* NSImage+Hash.h */,
+				2F6883EE1917EC5A00C36852 /* NSImage+Hash.m */,
+			);
+			path = Categories;
+			sourceTree = "<group>";
+		};
+		2F6883E91917EC4F00C36852 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				2F6883EA1917EC4F00C36852 /* HTTPRequest.h */,
+				2F6883EB1917EC4F00C36852 /* HTTPRequest.m */,
+				2F6883F81917F21800C36852 /* AGDirectoryScanner.h */,
+				2F6883F91917F21800C36852 /* AGDirectoryScanner.m */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -314,8 +350,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6883F71917F17800C36852 /* NSImage+AnimatedGif.m in Sources */,
+				2F6883FA1917F21800C36852 /* AGDirectoryScanner.m in Sources */,
 				2F4F495818B5223800BCA590 /* Panel.m in Sources */,
+				2F6883EC1917EC4F00C36852 /* HTTPRequest.m in Sources */,
 				2F4F495718B5223800BCA590 /* MenubarController.m in Sources */,
+				2F6883EF1917EC5A00C36852 /* NSImage+Hash.m in Sources */,
 				2F4F495A18B5223800BCA590 /* PanelController.m in Sources */,
 				2F4F495B18B5223800BCA590 /* StatusItemView.m in Sources */,
 				2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */,

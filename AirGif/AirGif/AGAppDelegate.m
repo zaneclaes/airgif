@@ -7,6 +7,7 @@
 //
 
 #import "AGAppDelegate.h"
+#import "AGDirectoryScanner.h"
 
 @implementation AGAppDelegate
 
@@ -42,6 +43,10 @@ void *kContextActivePanel = &kContextActivePanel;
   self.menubarController = [[MenubarController alloc] init];
   [self.window setHidesOnDeactivate:YES];
   [self.window orderOut:nil];
+
+  AGDirectoryScanner *scanner = [[AGDirectoryScanner alloc] initWithDirectory:@"/Users/zane/Dropbox/Gifs/"];
+  NSError *err = [scanner scan];
+  DLog(@"Scan[%@]: %@",err,scanner.animatedGifUrls);
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
