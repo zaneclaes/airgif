@@ -45,8 +45,7 @@ void *kContextActivePanel = &kContextActivePanel;
   [self.window orderOut:nil];
 
   AGDirectoryScanner *scanner = [[AGDirectoryScanner alloc] initWithDirectory:@"/Users/zane/Dropbox/Gifs/"];
-  NSError *err = [scanner scan];
-  DLog(@"Scan[%@]: %@",err,scanner.animatedGifUrls);
+  [scanner upload];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender

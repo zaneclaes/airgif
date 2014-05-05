@@ -8,13 +8,50 @@
 
 #import "AGDirectoryScanner.h"
 #import "NSImage+AnimatedGif.h"
+#import "NSImage+Hash.h"
+#import "HTTPRequest.h"
 
 @implementation AGDirectoryScanner {
-  NSMutableArray *_animatedGifPaths;
+  NSMutableDictionary *_animatedGifPaths;
 }
 
 - (NSArray*)animatedGifUrls {
-  return [_animatedGifPaths?:@[] copy];
+  return [[_animatedGifPaths allValues]?:@[] copy];
+}
+
+- (void)uploadNextFile {
+  if(self.filesUploaded >= _changeSet.count) {
+    [_delegate directoryScannerDidFinishUploadingFiles:self withError:nil];
+    return;
+  }
+  [_delegate directoryScannerDidProgress:self];
+  NSString *hash = _changeSet[self.filesUploaded];
+  NSURL *url = _animatedGifPaths[hash];
+  NSDictionary *params = @{@"file":url,@"hash":hash};
+  [[HTTPRequest alloc] post:URL_API(@"upload") params:params completion:^(HTTPRequest *req) {
+    _filesUploaded++;
+    [self uploadNextFile];
+  }];
+}
+
+- (void)upload {
+  _filesUploaded = 0;
+  _changeSet = nil;
+  if(!_animatedGifPaths.allKeys.count) {
+    [_delegate directoryScannerDidFinishUploadingFiles:self withError:nil];
+    return;
+  }
+  NSDictionary *params = @{@"hashes":_animatedGifPaths.allKeys};
+  [[HTTPRequest alloc] post:URL_API(@"upload") params:params completion:^(HTTPRequest *req) {
+    if(req.error) {
+      [_delegate directoryScannerDidFinishUploadingFiles:self withError:req.error];
+      return;
+    }
+    NSArray *arr = [req.response[@"hashes"] isKindOfClass:[NSArray class]] ? req.response[@"hashes"] : @[];
+    _changeSet = [[NSOrderedSet alloc] initWithArray:arr];
+    DLog(@"Found %lu files; %lu are new",_animatedGifPaths.allKeys.count,_changeSet.count);
+    [self uploadNextFile];
+  }];
 }
 
 - (NSError*)scan:(NSString*)dir {
@@ -30,7 +67,8 @@
     else {
       NSImage *img = [[NSImage alloc] initWithContentsOfFile:fp];
       if(img && img.isAnimatedGif) {
-        [_animatedGifPaths addObject:[NSURL fileURLWithPath:fp]];
+        NSString *hash = [NSImage hashImagePath:fp];
+        _animatedGifPaths[hash] = [NSURL fileURLWithPath:fp];
       }
     }
   }
@@ -38,13 +76,14 @@
 }
 
 - (NSError*)scan {
-  _animatedGifPaths = [NSMutableArray new];
+  _animatedGifPaths = [NSMutableDictionary new];
   return [self scan:self.directory];
 }
 
 - (id)initWithDirectory:(NSString*)dir {
   if((self = [super init])) {
     _directory = dir;
+    [self scan];
   }
   return self;
 }

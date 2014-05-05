@@ -87,6 +87,7 @@
 		2F6883F61917F17800C36852 /* NSImage+AnimatedGif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+AnimatedGif.m"; sourceTree = "<group>"; };
 		2F6883F81917F21800C36852 /* AGDirectoryScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGDirectoryScanner.h; sourceTree = "<group>"; };
 		2F6883F91917F21800C36852 /* AGDirectoryScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGDirectoryScanner.m; sourceTree = "<group>"; };
+		2F6883FB1917F65300C36852 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -173,6 +174,7 @@
 				2F4F48FA18B51C0E00BCA590 /* main.m */,
 				2F4F48FC18B51C0E00BCA590 /* AirGif-Prefix.pch */,
 				2F4F48FD18B51C0E00BCA590 /* Credits.rtf */,
+				2F6883FB1917F65300C36852 /* Defines.h */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
