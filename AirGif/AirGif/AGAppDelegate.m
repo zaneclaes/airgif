@@ -25,7 +25,7 @@
 {
   //[self.window setHidesOnDeactivate:YES];
   //[self.window orderOut:nil];
-  NSRect frame = NSMakeRect(0, 0, 200, 200);
+  NSRect frame = NSMakeRect(0, 0, 400, 200);
   OBMenuBarWindow* window  = [[OBMenuBarWindow alloc] initWithContentRect:frame
                                                    styleMask:NSBorderlessWindowMask
                                                      backing:NSBackingStoreBuffered
