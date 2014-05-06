@@ -51,6 +51,14 @@
 		2F68857619193D9D00C36852 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2F68855C19193D9D00C36852 /* Credits.rtf */; };
 		2F68857719193D9D00C36852 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F68855E19193D9D00C36852 /* InfoPlist.strings */; };
 		2F68857819193D9D00C36852 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F68856019193D9D00C36852 /* Localizable.strings */; };
+		2F68857D19193EC600C36852 /* AGSearchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F68857B19193EC600C36852 /* AGSearchViewController.m */; };
+		2F68857E19193EC600C36852 /* AGSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F68857C19193EC600C36852 /* AGSearchViewController.xib */; };
+		2F6885831919402800C36852 /* AGTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6885811919402800C36852 /* AGTagViewController.m */; };
+		2F6885841919402800C36852 /* AGTagViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6885821919402800C36852 /* AGTagViewController.xib */; };
+		2F688589191940DD00C36852 /* AGAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F688587191940DD00C36852 /* AGAccountViewController.m */; };
+		2F68858A191940DD00C36852 /* AGAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F688588191940DD00C36852 /* AGAccountViewController.xib */; };
+		2F68858D1919428500C36852 /* AGContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F68858C1919428500C36852 /* AGContentViewController.m */; };
+		2F688590191945C300C36852 /* AGSearchResultViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F68858F191945C300C36852 /* AGSearchResultViewItem.m */; };
 		2F9D6447191896C0004B1F38 /* GRGlassAccessoryWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6439191896C0004B1F38 /* GRGlassAccessoryWindow.m */; };
 		2F9D6448191896C0004B1F38 /* GRGlassThemeWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D643B191896C0004B1F38 /* GRGlassThemeWidget.m */; };
 		2F9D6449191896C0004B1F38 /* GRGlassWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D643D191896C0004B1F38 /* GRGlassWindow.m */; };
@@ -136,6 +144,19 @@
 		2F68855D19193D9D00C36852 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
 		2F68855F19193D9D00C36852 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2F68856119193D9D00C36852 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		2F68857A19193EC600C36852 /* AGSearchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSearchViewController.h; sourceTree = "<group>"; };
+		2F68857B19193EC600C36852 /* AGSearchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSearchViewController.m; sourceTree = "<group>"; };
+		2F68857C19193EC600C36852 /* AGSearchViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGSearchViewController.xib; sourceTree = "<group>"; };
+		2F6885801919402800C36852 /* AGTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTagViewController.h; sourceTree = "<group>"; };
+		2F6885811919402800C36852 /* AGTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTagViewController.m; sourceTree = "<group>"; };
+		2F6885821919402800C36852 /* AGTagViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTagViewController.xib; sourceTree = "<group>"; };
+		2F688586191940DD00C36852 /* AGAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGAccountViewController.h; sourceTree = "<group>"; };
+		2F688587191940DD00C36852 /* AGAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGAccountViewController.m; sourceTree = "<group>"; };
+		2F688588191940DD00C36852 /* AGAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGAccountViewController.xib; sourceTree = "<group>"; };
+		2F68858B1919428500C36852 /* AGContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGContentViewController.h; sourceTree = "<group>"; };
+		2F68858C1919428500C36852 /* AGContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGContentViewController.m; sourceTree = "<group>"; };
+		2F68858E191945C300C36852 /* AGSearchResultViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSearchResultViewItem.h; sourceTree = "<group>"; };
+		2F68858F191945C300C36852 /* AGSearchResultViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSearchResultViewItem.m; sourceTree = "<group>"; };
 		2F9D6438191896C0004B1F38 /* GRGlassAccessoryWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRGlassAccessoryWindow.h; sourceTree = "<group>"; };
 		2F9D6439191896C0004B1F38 /* GRGlassAccessoryWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRGlassAccessoryWindow.m; sourceTree = "<group>"; };
 		2F9D643A191896C0004B1F38 /* GRGlassThemeWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRGlassThemeWidget.h; sourceTree = "<group>"; };
@@ -317,8 +338,13 @@
 		2F68850C1919338C00C36852 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2F6885851919403600C36852 /* Account */,
+				2F68857F1919401000C36852 /* Tags */,
+				2F68857919193E4200C36852 /* Search */,
 				2F68850D1919340000C36852 /* AGMainWindow.h */,
 				2F68850E1919340000C36852 /* AGMainWindow.m */,
+				2F68858B1919428500C36852 /* AGContentViewController.h */,
+				2F68858C1919428500C36852 /* AGContentViewController.m */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -366,6 +392,38 @@
 				2F68856019193D9D00C36852 /* Localizable.strings */,
 			);
 			path = localization;
+			sourceTree = "<group>";
+		};
+		2F68857919193E4200C36852 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				2F68857A19193EC600C36852 /* AGSearchViewController.h */,
+				2F68857B19193EC600C36852 /* AGSearchViewController.m */,
+				2F68857C19193EC600C36852 /* AGSearchViewController.xib */,
+				2F68858E191945C300C36852 /* AGSearchResultViewItem.h */,
+				2F68858F191945C300C36852 /* AGSearchResultViewItem.m */,
+			);
+			name = Search;
+			sourceTree = "<group>";
+		};
+		2F68857F1919401000C36852 /* Tags */ = {
+			isa = PBXGroup;
+			children = (
+				2F6885801919402800C36852 /* AGTagViewController.h */,
+				2F6885811919402800C36852 /* AGTagViewController.m */,
+				2F6885821919402800C36852 /* AGTagViewController.xib */,
+			);
+			name = Tags;
+			sourceTree = "<group>";
+		};
+		2F6885851919403600C36852 /* Account */ = {
+			isa = PBXGroup;
+			children = (
+				2F688586191940DD00C36852 /* AGAccountViewController.h */,
+				2F688587191940DD00C36852 /* AGAccountViewController.m */,
+				2F688588191940DD00C36852 /* AGAccountViewController.xib */,
+			);
+			name = Account;
 			sourceTree = "<group>";
 		};
 		2F9D6436191896C0004B1F38 /* Libraries */ = {
@@ -507,11 +565,13 @@
 				2F68856319193D9D00C36852 /* 708-search-selected@2x.png in Resources */,
 				2F68857119193D9D00C36852 /* 973-user@2x.png in Resources */,
 				2F68856F19193D9D00C36852 /* 973-user-selected@2x.png in Resources */,
+				2F6885841919402800C36852 /* AGTagViewController.xib in Resources */,
 				2F68856E19193D9D00C36852 /* 973-user-selected.png in Resources */,
 				2F68856219193D9D00C36852 /* 708-search-selected.png in Resources */,
 				2F68857619193D9D00C36852 /* Credits.rtf in Resources */,
 				2F68857219193D9D00C36852 /* Status.png in Resources */,
 				2F68856619193D9D00C36852 /* 909-tags-selected.png in Resources */,
+				2F68858A191940DD00C36852 /* AGAccountViewController.xib in Resources */,
 				2F68857319193D9D00C36852 /* Status@2x.png in Resources */,
 				2F9D644B191896C0004B1F38 /* Roboto-Medium.ttf in Resources */,
 				2F68856719193D9D00C36852 /* 909-tags-selected@2x.png in Resources */,
@@ -527,6 +587,7 @@
 				2F4F490718B51C0E00BCA590 /* Images.xcassets in Resources */,
 				2F68856D19193D9D00C36852 /* 912-gears@2x.png in Resources */,
 				2F4F490518B51C0E00BCA590 /* MainMenu.xib in Resources */,
+				2F68857E19193EC600C36852 /* AGSearchViewController.xib in Resources */,
 				2F68857419193D9D00C36852 /* StatusHighlighted.png in Resources */,
 				2F68857019193D9D00C36852 /* 973-user.png in Resources */,
 				2F68856919193D9D00C36852 /* 909-tags@2x.png in Resources */,
@@ -548,15 +609,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F688589191940DD00C36852 /* AGAccountViewController.m in Sources */,
 				2F6883F71917F17800C36852 /* NSImage+AnimatedGif.m in Sources */,
 				2F9D646719191F40004B1F38 /* ITSidebar.m in Sources */,
+				2F68858D1919428500C36852 /* AGContentViewController.m in Sources */,
 				2F6883FA1917F21800C36852 /* AGDirectoryScanner.m in Sources */,
 				2F4F495818B5223800BCA590 /* Panel.m in Sources */,
 				2F68850F1919340000C36852 /* AGMainWindow.m in Sources */,
 				2F6883EC1917EC4F00C36852 /* HTTPRequest.m in Sources */,
 				2F4F495718B5223800BCA590 /* MenubarController.m in Sources */,
 				2F6883EF1917EC5A00C36852 /* NSImage+Hash.m in Sources */,
+				2F688590191945C300C36852 /* AGSearchResultViewItem.m in Sources */,
 				2F9D6447191896C0004B1F38 /* GRGlassAccessoryWindow.m in Sources */,
+				2F6885831919402800C36852 /* AGTagViewController.m in Sources */,
 				2F4F495A18B5223800BCA590 /* PanelController.m in Sources */,
 				2F9D644A191896C0004B1F38 /* NSWindow+Screenshot.m in Sources */,
 				2F9D646819191F40004B1F38 /* ITSidebarItemCell.m in Sources */,
@@ -564,6 +629,7 @@
 				2F9D6449191896C0004B1F38 /* GRGlassWindow.m in Sources */,
 				2F9D6448191896C0004B1F38 /* GRGlassThemeWidget.m in Sources */,
 				2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */,
+				2F68857D19193EC600C36852 /* AGSearchViewController.m in Sources */,
 				2F4F48FB18B51C0E00BCA590 /* main.m in Sources */,
 				2F4F495618B5223800BCA590 /* BackgroundView.m in Sources */,
 				2F9D644D191896C0004B1F38 /* OBMenuBarWindow.m in Sources */,
