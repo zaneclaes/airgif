@@ -59,6 +59,7 @@
 		2F68858A191940DD00C36852 /* AGAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F688588191940DD00C36852 /* AGAccountViewController.xib */; };
 		2F68858D1919428500C36852 /* AGContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F68858C1919428500C36852 /* AGContentViewController.m */; };
 		2F688590191945C300C36852 /* AGSearchResultViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F68858F191945C300C36852 /* AGSearchResultViewItem.m */; };
+		2F6885931919491700C36852 /* NSImage+Manipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6885921919491700C36852 /* NSImage+Manipulation.m */; };
 		2F9D6447191896C0004B1F38 /* GRGlassAccessoryWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6439191896C0004B1F38 /* GRGlassAccessoryWindow.m */; };
 		2F9D6448191896C0004B1F38 /* GRGlassThemeWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D643B191896C0004B1F38 /* GRGlassThemeWidget.m */; };
 		2F9D6449191896C0004B1F38 /* GRGlassWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D643D191896C0004B1F38 /* GRGlassWindow.m */; };
@@ -157,6 +158,8 @@
 		2F68858C1919428500C36852 /* AGContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGContentViewController.m; sourceTree = "<group>"; };
 		2F68858E191945C300C36852 /* AGSearchResultViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSearchResultViewItem.h; sourceTree = "<group>"; };
 		2F68858F191945C300C36852 /* AGSearchResultViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSearchResultViewItem.m; sourceTree = "<group>"; };
+		2F6885911919491700C36852 /* NSImage+Manipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Manipulation.h"; sourceTree = "<group>"; };
+		2F6885921919491700C36852 /* NSImage+Manipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Manipulation.m"; sourceTree = "<group>"; };
 		2F9D6438191896C0004B1F38 /* GRGlassAccessoryWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRGlassAccessoryWindow.h; sourceTree = "<group>"; };
 		2F9D6439191896C0004B1F38 /* GRGlassAccessoryWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRGlassAccessoryWindow.m; sourceTree = "<group>"; };
 		2F9D643A191896C0004B1F38 /* GRGlassThemeWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRGlassThemeWidget.h; sourceTree = "<group>"; };
@@ -320,6 +323,8 @@
 				2F6883F61917F17800C36852 /* NSImage+AnimatedGif.m */,
 				2F6883ED1917EC5A00C36852 /* NSImage+Hash.h */,
 				2F6883EE1917EC5A00C36852 /* NSImage+Hash.m */,
+				2F6885911919491700C36852 /* NSImage+Manipulation.h */,
+				2F6885921919491700C36852 /* NSImage+Manipulation.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -615,6 +620,7 @@
 				2F68858D1919428500C36852 /* AGContentViewController.m in Sources */,
 				2F6883FA1917F21800C36852 /* AGDirectoryScanner.m in Sources */,
 				2F4F495818B5223800BCA590 /* Panel.m in Sources */,
+				2F6885931919491700C36852 /* NSImage+Manipulation.m in Sources */,
 				2F68850F1919340000C36852 /* AGMainWindow.m in Sources */,
 				2F6883EC1917EC4F00C36852 /* HTTPRequest.m in Sources */,
 				2F4F495718B5223800BCA590 /* MenubarController.m in Sources */,
