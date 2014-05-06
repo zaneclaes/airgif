@@ -1,2 +1,5 @@
+*.DS_Store
+*Breakpoints_v2.xcbkptlist
+*UserInterfaceState.xcuserstate
 AirGif/AirGif.xcodeproj/xcuserdata/zane.xcuserdatad/xcdebugger/Breakpoints_v2.xcbkptlist
 AirGif/AirGif.xcodeproj/project.xcworkspace/xcuserdata/zane.xcuserdatad/UserInterfaceState.xcuserstate

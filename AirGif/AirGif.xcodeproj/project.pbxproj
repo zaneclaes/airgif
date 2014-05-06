@@ -32,6 +32,13 @@
 		2F6883EF1917EC5A00C36852 /* NSImage+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6883EE1917EC5A00C36852 /* NSImage+Hash.m */; };
 		2F6883F71917F17800C36852 /* NSImage+AnimatedGif.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6883F61917F17800C36852 /* NSImage+AnimatedGif.m */; };
 		2F6883FA1917F21800C36852 /* AGDirectoryScanner.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6883F91917F21800C36852 /* AGDirectoryScanner.m */; };
+		2F9D6447191896C0004B1F38 /* GRGlassAccessoryWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6439191896C0004B1F38 /* GRGlassAccessoryWindow.m */; };
+		2F9D6448191896C0004B1F38 /* GRGlassThemeWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D643B191896C0004B1F38 /* GRGlassThemeWidget.m */; };
+		2F9D6449191896C0004B1F38 /* GRGlassWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D643D191896C0004B1F38 /* GRGlassWindow.m */; };
+		2F9D644A191896C0004B1F38 /* NSWindow+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D643F191896C0004B1F38 /* NSWindow+Screenshot.m */; };
+		2F9D644B191896C0004B1F38 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D6442191896C0004B1F38 /* Roboto-Medium.ttf */; };
+		2F9D644C191896C0004B1F38 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D6443191896C0004B1F38 /* Roboto-Regular.ttf */; };
+		2F9D644D191896C0004B1F38 /* OBMenuBarWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6446191896C0004B1F38 /* OBMenuBarWindow.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -88,6 +95,19 @@
 		2F6883F81917F21800C36852 /* AGDirectoryScanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGDirectoryScanner.h; sourceTree = "<group>"; };
 		2F6883F91917F21800C36852 /* AGDirectoryScanner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGDirectoryScanner.m; sourceTree = "<group>"; };
 		2F6883FB1917F65300C36852 /* Defines.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Defines.h; sourceTree = "<group>"; };
+		2F9D6438191896C0004B1F38 /* GRGlassAccessoryWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRGlassAccessoryWindow.h; sourceTree = "<group>"; };
+		2F9D6439191896C0004B1F38 /* GRGlassAccessoryWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRGlassAccessoryWindow.m; sourceTree = "<group>"; };
+		2F9D643A191896C0004B1F38 /* GRGlassThemeWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRGlassThemeWidget.h; sourceTree = "<group>"; };
+		2F9D643B191896C0004B1F38 /* GRGlassThemeWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRGlassThemeWidget.m; sourceTree = "<group>"; };
+		2F9D643C191896C0004B1F38 /* GRGlassWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRGlassWindow.h; sourceTree = "<group>"; };
+		2F9D643D191896C0004B1F38 /* GRGlassWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRGlassWindow.m; sourceTree = "<group>"; };
+		2F9D643E191896C0004B1F38 /* NSWindow+Screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+Screenshot.h"; sourceTree = "<group>"; };
+		2F9D643F191896C0004B1F38 /* NSWindow+Screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+Screenshot.m"; sourceTree = "<group>"; };
+		2F9D6440191896C0004B1F38 /* PrivateStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateStuff.h; sourceTree = "<group>"; };
+		2F9D6442191896C0004B1F38 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
+		2F9D6443191896C0004B1F38 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
+		2F9D6445191896C0004B1F38 /* OBMenuBarWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBMenuBarWindow.h; sourceTree = "<group>"; };
+		2F9D6446191896C0004B1F38 /* OBMenuBarWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBMenuBarWindow.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,6 +173,7 @@
 		2F4F48F418B51C0E00BCA590 /* AirGif */ = {
 			isa = PBXGroup;
 			children = (
+				2F9D6436191896C0004B1F38 /* Libraries */,
 				2F6883E81917EC4F00C36852 /* Categories */,
 				2F6883E91917EC4F00C36852 /* Utilities */,
 				2F4F494A18B5223800BCA590 /* Popup */,
@@ -248,6 +269,50 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
+		2F9D6436191896C0004B1F38 /* Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				2F9D6437191896C0004B1F38 /* GRGlassWindow */,
+				2F9D6444191896C0004B1F38 /* OBMenuBarWindow */,
+			);
+			path = Libraries;
+			sourceTree = "<group>";
+		};
+		2F9D6437191896C0004B1F38 /* GRGlassWindow */ = {
+			isa = PBXGroup;
+			children = (
+				2F9D6438191896C0004B1F38 /* GRGlassAccessoryWindow.h */,
+				2F9D6439191896C0004B1F38 /* GRGlassAccessoryWindow.m */,
+				2F9D643A191896C0004B1F38 /* GRGlassThemeWidget.h */,
+				2F9D643B191896C0004B1F38 /* GRGlassThemeWidget.m */,
+				2F9D643C191896C0004B1F38 /* GRGlassWindow.h */,
+				2F9D643D191896C0004B1F38 /* GRGlassWindow.m */,
+				2F9D643E191896C0004B1F38 /* NSWindow+Screenshot.h */,
+				2F9D643F191896C0004B1F38 /* NSWindow+Screenshot.m */,
+				2F9D6440191896C0004B1F38 /* PrivateStuff.h */,
+				2F9D6441191896C0004B1F38 /* Resources */,
+			);
+			path = GRGlassWindow;
+			sourceTree = "<group>";
+		};
+		2F9D6441191896C0004B1F38 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				2F9D6442191896C0004B1F38 /* Roboto-Medium.ttf */,
+				2F9D6443191896C0004B1F38 /* Roboto-Regular.ttf */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		2F9D6444191896C0004B1F38 /* OBMenuBarWindow */ = {
+			isa = PBXGroup;
+			children = (
+				2F9D6445191896C0004B1F38 /* OBMenuBarWindow.h */,
+				2F9D6446191896C0004B1F38 /* OBMenuBarWindow.m */,
+			);
+			path = OBMenuBarWindow;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -325,6 +390,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F9D644B191896C0004B1F38 /* Roboto-Medium.ttf in Resources */,
+				2F9D644C191896C0004B1F38 /* Roboto-Regular.ttf in Resources */,
 				2F4F48F918B51C0E00BCA590 /* InfoPlist.strings in Resources */,
 				2F4F495918B5223800BCA590 /* Panel.xib in Resources */,
 				2F4F490718B51C0E00BCA590 /* Images.xcassets in Resources */,
@@ -358,11 +425,16 @@
 				2F6883EC1917EC4F00C36852 /* HTTPRequest.m in Sources */,
 				2F4F495718B5223800BCA590 /* MenubarController.m in Sources */,
 				2F6883EF1917EC5A00C36852 /* NSImage+Hash.m in Sources */,
+				2F9D6447191896C0004B1F38 /* GRGlassAccessoryWindow.m in Sources */,
 				2F4F495A18B5223800BCA590 /* PanelController.m in Sources */,
+				2F9D644A191896C0004B1F38 /* NSWindow+Screenshot.m in Sources */,
 				2F4F495B18B5223800BCA590 /* StatusItemView.m in Sources */,
+				2F9D6449191896C0004B1F38 /* GRGlassWindow.m in Sources */,
+				2F9D6448191896C0004B1F38 /* GRGlassThemeWidget.m in Sources */,
 				2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */,
 				2F4F48FB18B51C0E00BCA590 /* main.m in Sources */,
 				2F4F495618B5223800BCA590 /* BackgroundView.m in Sources */,
+				2F9D644D191896C0004B1F38 /* OBMenuBarWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

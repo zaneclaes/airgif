@@ -7,16 +7,11 @@
 //
 
 #import <Cocoa/Cocoa.h>
-#import "MenubarController.h"
-#import "PanelController.h"
 
-@interface AGAppDelegate : NSObject <NSApplicationDelegate, PanelControllerDelegate>
+@class OBMenuBarWindow;
 
-@property (assign) IBOutlet NSWindow *window;
+@interface AGAppDelegate : NSObject <NSApplicationDelegate>
 
-@property (nonatomic, strong) MenubarController *menubarController;
-@property (nonatomic, strong, readonly) PanelController *panelController;
-
-- (IBAction)togglePanel:(id)sender;
+@property (nonatomic, strong) OBMenuBarWindow *menuBarWindow;
 
 @end
