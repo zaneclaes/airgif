@@ -8,10 +8,10 @@
 
 #import <Cocoa/Cocoa.h>
 
-@class OBMenuBarWindow;
+@class AGMainWindow;
 
 @interface AGAppDelegate : NSObject <NSApplicationDelegate>
 
-@property (nonatomic, strong) OBMenuBarWindow *menuBarWindow;
+@property (nonatomic, strong) AGMainWindow *window;
 
 @end

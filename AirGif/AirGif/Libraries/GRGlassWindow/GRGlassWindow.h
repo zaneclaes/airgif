@@ -8,10 +8,11 @@
 
 #import <Cocoa/Cocoa.h>
 #import "PrivateStuff.h"
+#import "OBMenuBarWindow.h"
 
 @class GRGlassWindowFrame;
 
-@interface GRGlassWindow : NSWindow
+@interface GRGlassWindow : OBMenuBarWindow
 
 // an accessory view placed on the right hand side of the window,
 // this can be used to put a button or other view,

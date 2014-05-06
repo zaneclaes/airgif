@@ -81,8 +81,6 @@
 }
 - (void)initialiseScrollView {
     [[self enclosingScrollView] setDrawsBackground:YES];
-    
-    // Style scroll view
     [[self enclosingScrollView] setBorderType:NSNoBorder];
     [self setBackgroundColor:kDefaultBackgroundColor];
     [self setScrollerKnobStyle:kDefaultScrollerKnobStyle];

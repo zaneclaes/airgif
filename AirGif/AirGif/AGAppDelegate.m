@@ -7,41 +7,17 @@
 //
 
 #import "AGAppDelegate.h"
-#import "OBMenuBarWindow.h"
+#import "AGMainWindow.h"
 
 @implementation AGAppDelegate
 
-#pragma mark -
-
-- (void)dealloc
-{
-}
-
-#pragma mark -
-
-#pragma mark - NSApplicationDelegate
-
-- (void)applicationDidFinishLaunching:(NSNotification *)notification
-{
+- (void)applicationDidFinishLaunching:(NSNotification *)notification {
   //[self.window setHidesOnDeactivate:YES];
   //[self.window orderOut:nil];
-  NSRect frame = NSMakeRect(0, 0, 400, 200);
-  OBMenuBarWindow* window  = [[OBMenuBarWindow alloc] initWithContentRect:frame
-                                                   styleMask:NSBorderlessWindowMask
-                                                     backing:NSBackingStoreBuffered
-                                                       defer:NO];
-  window.hasMenuBarIcon = YES;
-  window.menuBarIcon = [NSImage imageNamed:@"Status"];
-  window.highlightedMenuBarIcon = [NSImage imageNamed:@"StatusHighlighted"];
-  window.attachedToMenuBar = YES;
-  window.isDetachable = NO;
-  //[window setBackgroundColor:[NSColor blueColor]];
-  //[window makeKeyAndOrderFront:NSApp];
-  self.menuBarWindow = window;
+  self.window = [[AGMainWindow alloc] init];
 }
 
-- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender
-{
+- (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
   return NSTerminateNow;
 }
 

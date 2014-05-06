@@ -57,8 +57,8 @@
   AGDirectoryScanner *scanner = [[AGDirectoryScanner alloc] initWithDirectory:@"/Users/zane/Dropbox/Gifs/"];
   [scanner upload];
   
-  NSImage *img = [[NSImage alloc] initWithContentsOfURL:scanner.animatedGifs[arc4random_uniform(scanner.animatedGifs.count)-1]];
-  self.imageView.image = img;
+  //NSImage *img = [[NSImage alloc] initWithContentsOfURL:scanner.animatedGifs[arc4random_uniform(scanner.animatedGifs.count)-1]];
+  //self.imageView.image = img;
   
   // Follow search string
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(runSearch) name:NSControlTextDidChangeNotification object:self.searchField];

@@ -110,7 +110,7 @@
     
         if([self state] == NSOnState || [self isHighlighted])
         {
-            [self drawSelectionWithFrame:frame inView:view];
+            //[self drawSelectionWithFrame:frame inView:view];
         }
     }
     [NSGraphicsContext restoreGraphicsState];
