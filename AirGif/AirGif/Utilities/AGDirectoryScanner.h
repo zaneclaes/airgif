@@ -19,7 +19,7 @@
 
 @property (nonatomic, weak) id<AGDirectoryScannerDelegate> delegate;
 @property (nonatomic, readonly) NSString *directory;
-@property (nonatomic, readonly) NSArray *animatedGifUrls;// Populated at instantiation by the scan function
+@property (nonatomic, readonly) NSArray *animatedGifs;// Populated at instantiation by the scan function
 @property (nonatomic, readonly) NSOrderedSet *changeSet;// An array of hashes that the server does not contain; gets populated during [upload];
 @property (nonatomic, readonly) NSInteger filesUploaded;// The index within the changeSet that is being uploaded
 

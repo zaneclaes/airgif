@@ -15,7 +15,7 @@
   NSMutableDictionary *_animatedGifPaths;
 }
 
-- (NSArray*)animatedGifUrls {
+- (NSArray*)animatedGifs {
   return [[_animatedGifPaths allValues]?:@[] copy];
 }
 
