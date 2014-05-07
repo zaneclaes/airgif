@@ -8,6 +8,7 @@
 
 #import "AGSearchResultViewItem.h"
 #import "NSImage+Manipulation.h"
+#import "AGGif.h"
 
 @interface AGSearchResultViewItem ()
 
@@ -16,7 +17,7 @@
 @implementation AGSearchResultViewItem
 
 - (void)loadView {
-  NSImageView *iv = [[NSImageView alloc] initWithFrame:CGRectMake(0, 0, kSearchResultThumbnailSize,kSearchResultThumbnailSize)];
+  NSImageView *iv = [[NSImageView alloc] initWithFrame:CGRectMake(0, 0, kGifThumbnailSize, kGifThumbnailSize)];
   //iv.animates = YES;
   iv.imageScaling = NSImageScaleNone;
   [self setView:iv];

@@ -64,6 +64,7 @@ typedef void (^HTTPRequestResponder)(HTTPRequest* req);
 - (id) postThreaded:(NSString*)endpoint params:(NSDictionary*)params completion:(HTTPRequestResponder)completion;
 - (id) get:(NSString*)endpoint params:(NSDictionary*)params completion:(HTTPRequestResponder)completion;
 - (id) post:(NSString*)endpoint params:(NSDictionary*)params completion:(HTTPRequestResponder)completion;
+- (id) download:(NSString*)endpoint completion:(HTTPRequestResponder)completion;
 + (NSOperationQueue*) Queue;
 
 @end

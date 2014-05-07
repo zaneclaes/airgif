@@ -8,8 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-static NSInteger const kSearchResultThumbnailSize = 150;
-
 @interface AGSearchResultViewItem : NSCollectionViewItem
 
 @end

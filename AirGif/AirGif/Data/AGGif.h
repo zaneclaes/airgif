@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+static NSInteger const kGifThumbnailSize = 150;
+
 @interface AGGif : NSManagedObject
 
 @property (nonatomic, strong) NSString *imageHash;
@@ -19,8 +21,14 @@
 @property (nonatomic, strong) NSNumber *downloads;
 @property (nonatomic, strong) NSNumber *flags;
 
-+ (AGGif*)gifWithServerDictionary:(NSDictionary*)dict;
+@property (nonatomic, readonly) NSURL *cachedGifUrl;
+@property (nonatomic, readonly) NSURL *cachedThumbnailUrl;
 
+- (void)cache:(void (^)(NSError *))block;
+
++ (AGGif*)gifWithServerDictionary:(NSDictionary*)dict;
++ (AGGif*)gifWithImageHash:(NSString*)imageHash;
++ (NSArray*)gifsWithPredicate:(NSPredicate*)pred;
 + (NSArray*)allGifs;
 
 @end

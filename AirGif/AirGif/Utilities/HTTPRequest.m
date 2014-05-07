@@ -378,4 +378,12 @@ storage = _storage;
   ret.jsonDecode = YES;
   return ret;
 }
+
+- (id) download:(NSString*)endpoint completion:(HTTPRequestResponder)completion
+{
+  HTTPRequest* ret = [[self initWithEndpoint:endpoint httpMethod:@"GET" headers:nil params:nil completion:completion] connect];
+  ret.unthread = YES;
+  ret.jsonDecode = NO;
+  return ret;
+}
 @end

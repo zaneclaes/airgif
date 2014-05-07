@@ -52,7 +52,12 @@
     NSArray *new_hashes = [req.response[@"new_hashes"] isKindOfClass:[NSArray class]] ? req.response[@"new_hashes"] : @[];
     NSArray *existing = [req.response[@"existing"] isKindOfClass:[NSArray class]] ? req.response[@"existing"] : @[];
     for(NSDictionary *data in existing) {
-      [AGGif gifWithServerDictionary:data];
+      AGGif *gif = [AGGif gifWithServerDictionary:data];
+      // Copy the file, so we have a cached version which does not reqquire downloading...
+      if(![[NSFileManager defaultManager] fileExistsAtPath:gif.cachedGifUrl.path]) {
+        [[NSFileManager defaultManager] copyItemAtURL:_animatedGifPaths[gif.imageHash] toURL:gif.cachedGifUrl error:nil];
+      }
+      [gif cache:nil];
     }
     [[AGDataStore sharedStore] saveContext];
     _changeSet = [[NSOrderedSet alloc] initWithArray:new_hashes];

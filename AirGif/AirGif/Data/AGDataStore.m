@@ -66,7 +66,7 @@
     return _persistentStoreCoordinator;
   }
   
-  NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"AirGifs.sqlite"];
+  NSURL *storeURL = [[self cacheDirectory] URLByAppendingPathComponent:@"AirGifs.sqlite"];
   
   NSError *error = nil;
   _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];
@@ -103,7 +103,7 @@
 #pragma mark - Application's Documents directory
 
 // Returns the URL to the application's Documents directory.
-- (NSURL *)applicationDocumentsDirectory
+- (NSURL *)cacheDirectory
 {
   
   NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);

@@ -8,10 +8,61 @@
 
 #import "AGGif.h"
 #import "AGDataStore.h"
+#import "HTTPRequest.h"
 
 @implementation AGGif
 
 @dynamic imageHash, name, type, uploadedAt, size, views, downloads, flags;
+
+- (void)cache:(void (^)(NSError *))block {
+  __block NSInteger downloading = 0;
+  __block NSError *err = nil;
+  
+  if(![[NSFileManager defaultManager] fileExistsAtPath:self.cachedGifUrl.path]) {
+    downloading++;
+    [[HTTPRequest alloc] download:URL_GIF(self.imageHash) completion:^(HTTPRequest *req) {
+      err = err ?: req.error;
+      if(!req.error && req.data) {
+        [req.data writeToURL:self.cachedGifUrl atomically:YES];
+      }
+      downloading--;
+      if(block && downloading==0) {
+        block(err);
+      }
+    }];
+  }
+  
+  if(![[NSFileManager defaultManager] fileExistsAtPath:self.cachedThumbnailUrl.path]) {
+    downloading++;
+    [[HTTPRequest alloc] download:URL_THUMBNAIL(self.imageHash, kGifThumbnailSize) completion:^(HTTPRequest *req) {
+      err = err ?: req.error;
+      if(req.data.length) {
+        [req.data writeToURL:self.cachedThumbnailUrl atomically:YES];
+      }
+      downloading--;
+      if(block && downloading==0) {
+        block(err);
+      }
+    }];
+  }
+  
+  if(!downloading) {
+    if(block) {
+      block(nil);
+      block = nil;
+    }
+    return;
+  }
+}
+
+- (NSURL*)cachedGifUrl {
+  return [[AGDataStore sharedStore].cacheDirectory URLByAppendingPathComponent:self.imageHash];
+}
+
+- (NSURL*)cachedThumbnailUrl {
+  NSString *fn = [NSString stringWithFormat:@"%@_%lu",self.imageHash,kGifThumbnailSize];
+  return [[AGDataStore sharedStore].cacheDirectory URLByAppendingPathComponent:fn];
+}
 
 + (NSArray*)gifsWithPredicate:(NSPredicate*)pred {
   NSError *err;
