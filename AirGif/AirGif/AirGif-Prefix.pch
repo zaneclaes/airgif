@@ -6,12 +6,13 @@
 
 #ifdef __OBJC__
   #import <Cocoa/Cocoa.h>
+  #import <CoreData/CoreData.h>
 
-#import "Defines.h"
-#ifdef DEBUG
-#define DLog(fmt, ...)                                                         \
-NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
-#else
-#define DLog(...)
-#endif
+  #import "Defines.h"
+  #ifdef DEBUG
+  #define DLog(fmt, ...)                                                         \
+  NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+  #else
+  #define DLog(...)
+  #endif
 #endif

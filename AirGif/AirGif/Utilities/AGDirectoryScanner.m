@@ -10,6 +10,8 @@
 #import "NSImage+AnimatedGif.h"
 #import "NSImage+Hash.h"
 #import "HTTPRequest.h"
+#import "AGGif.h"
+#import "AGDataStore.h"
 
 @implementation AGDirectoryScanner {
   NSMutableDictionary *_animatedGifPaths;
@@ -47,9 +49,14 @@
       [_delegate directoryScannerDidFinishUploadingFiles:self withError:req.error];
       return;
     }
-    NSArray *arr = [req.response[@"hashes"] isKindOfClass:[NSArray class]] ? req.response[@"hashes"] : @[];
-    _changeSet = [[NSOrderedSet alloc] initWithArray:arr];
-    DLog(@"Found %lu files; %lu are new",_animatedGifPaths.allKeys.count,_changeSet.count);
+    NSArray *new_hashes = [req.response[@"new_hashes"] isKindOfClass:[NSArray class]] ? req.response[@"new_hashes"] : @[];
+    NSArray *existing = [req.response[@"existing"] isKindOfClass:[NSArray class]] ? req.response[@"existing"] : @[];
+    for(NSDictionary *data in existing) {
+      [AGGif gifWithServerDictionary:data];
+    }
+    [[AGDataStore sharedStore] saveContext];
+    _changeSet = [[NSOrderedSet alloc] initWithArray:new_hashes];
+    DLog(@"Found %lu files; %lu are new; %lu exist in core data",_animatedGifPaths.allKeys.count,_changeSet.count,[AGGif allGifs].count);
     [self uploadNextFile];
   }];
 }

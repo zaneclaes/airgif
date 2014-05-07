@@ -16,8 +16,7 @@
 @implementation AGSearchResultViewItem
 
 - (void)loadView {
-  CGSize size = [[self class] idealSize];
-  NSImageView *iv = [[NSImageView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+  NSImageView *iv = [[NSImageView alloc] initWithFrame:CGRectMake(0, 0, kSearchResultThumbnailSize,kSearchResultThumbnailSize)];
   //iv.animates = YES;
   iv.imageScaling = NSImageScaleNone;
   [self setView:iv];
@@ -25,19 +24,14 @@
 
 - (void)setRepresentedObject:(id)representedObject {
   [super setRepresentedObject:representedObject];
-  CGSize idealSize = [[self class] idealSize];
   NSImage *image = [[NSImage alloc] initWithContentsOfURL:representedObject];
-  CGFloat scaleX = image.size.width / idealSize.width;
+  /*CGFloat scaleX = image.size.width / idealSize.width;
   CGFloat scaleY = image.size.height / idealSize.height;
   CGFloat scale = MAX(scaleX, scaleY);
   if(scale != 1) {
     image = [image scale:scale];
-  }
+  }*/
   ((NSImageView*)self.view).image = image;
-}
-
-+ (CGSize)idealSize {
-  return CGSizeMake(150, 150);
 }
 
 @end

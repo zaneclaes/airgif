@@ -9,6 +9,7 @@
 #import "AGSearchViewController.h"
 #import "AGSearchResultViewItem.h"
 #import "AGDirectoryScanner.h"
+#import "AGGif.h"
 
 @interface AGSearchViewController ()
 

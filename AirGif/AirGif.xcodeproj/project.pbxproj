@@ -68,6 +68,10 @@
 		2F9D644D191896C0004B1F38 /* OBMenuBarWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6446191896C0004B1F38 /* OBMenuBarWindow.m */; };
 		2F9D646719191F40004B1F38 /* ITSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D645019191F40004B1F38 /* ITSidebar.m */; };
 		2F9D646819191F40004B1F38 /* ITSidebarItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D645219191F40004B1F38 /* ITSidebarItemCell.m */; };
+		2F9D647F191A7821004B1F38 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4F48F218B51C0E00BCA590 /* CoreData.framework */; };
+		2F9D6482191A7849004B1F38 /* AirGifs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6480191A7849004B1F38 /* AirGifs.xcdatamodeld */; };
+		2F9D6485191A78E2004B1F38 /* AGDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6484191A78E2004B1F38 /* AGDataStore.m */; };
+		2F9D648C191A7A5C004B1F38 /* AGGif.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D648B191A7A5C004B1F38 /* AGGif.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -176,6 +180,11 @@
 		2F9D645119191F40004B1F38 /* ITSidebarItemCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSidebarItemCell.h; sourceTree = "<group>"; };
 		2F9D645219191F40004B1F38 /* ITSidebarItemCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ITSidebarItemCell.m; sourceTree = "<group>"; };
 		2F9D647D19191F6E004B1F38 /* ITLeakWarningHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITLeakWarningHelper.h; sourceTree = "<group>"; };
+		2F9D6481191A7849004B1F38 /* AirGifs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AirGifs.xcdatamodel; sourceTree = "<group>"; };
+		2F9D6483191A78E2004B1F38 /* AGDataStore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGDataStore.h; sourceTree = "<group>"; };
+		2F9D6484191A78E2004B1F38 /* AGDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGDataStore.m; sourceTree = "<group>"; };
+		2F9D648A191A7A5C004B1F38 /* AGGif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGGif.h; sourceTree = "<group>"; };
+		2F9D648B191A7A5C004B1F38 /* AGGif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGGif.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,6 +192,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F9D647F191A7821004B1F38 /* CoreData.framework in Frameworks */,
 				2F688511191938AF00C36852 /* QuartzCore.framework in Frameworks */,
 				2F4F48EF18B51C0E00BCA590 /* Cocoa.framework in Frameworks */,
 			);
@@ -247,6 +257,7 @@
 				2F6883E81917EC4F00C36852 /* Categories */,
 				2F6883E91917EC4F00C36852 /* Utilities */,
 				2F4F494A18B5223800BCA590 /* Popup */,
+				2F9D647E191A7808004B1F38 /* Data */,
 				2F68850C1919338C00C36852 /* UI */,
 				2F4F490018B51C0E00BCA590 /* AGAppDelegate.h */,
 				2F4F490118B51C0E00BCA590 /* AGAppDelegate.m */,
@@ -307,6 +318,7 @@
 		2F4F495C18B522A300BCA590 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				2F9D6480191A7849004B1F38 /* AirGifs.xcdatamodeld */,
 				2F68854519193D9D00C36852 /* images */,
 				2F68855B19193D9D00C36852 /* localization */,
 			);
@@ -485,6 +497,17 @@
 			path = ITSidebar;
 			sourceTree = "<group>";
 		};
+		2F9D647E191A7808004B1F38 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				2F9D6483191A78E2004B1F38 /* AGDataStore.h */,
+				2F9D6484191A78E2004B1F38 /* AGDataStore.m */,
+				2F9D648A191A7A5C004B1F38 /* AGGif.h */,
+				2F9D648B191A7A5C004B1F38 /* AGGif.m */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -618,11 +641,14 @@
 				2F4F495818B5223800BCA590 /* Panel.m in Sources */,
 				2F6885931919491700C36852 /* NSImage+Manipulation.m in Sources */,
 				2F68850F1919340000C36852 /* AGMainWindow.m in Sources */,
+				2F9D648C191A7A5C004B1F38 /* AGGif.m in Sources */,
 				2F6883EC1917EC4F00C36852 /* HTTPRequest.m in Sources */,
+				2F9D6485191A78E2004B1F38 /* AGDataStore.m in Sources */,
 				2F4F495718B5223800BCA590 /* MenubarController.m in Sources */,
 				2F6883EF1917EC5A00C36852 /* NSImage+Hash.m in Sources */,
 				2F688590191945C300C36852 /* AGSearchResultViewItem.m in Sources */,
 				2F9D6447191896C0004B1F38 /* GRGlassAccessoryWindow.m in Sources */,
+				2F9D6482191A7849004B1F38 /* AirGifs.xcdatamodeld in Sources */,
 				2F6885831919402800C36852 /* AGTagViewController.m in Sources */,
 				2F4F495A18B5223800BCA590 /* PanelController.m in Sources */,
 				2F9D644A191896C0004B1F38 /* NSWindow+Screenshot.m in Sources */,
@@ -859,6 +885,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2F9D6480191A7849004B1F38 /* AirGifs.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2F9D6481191A7849004B1F38 /* AirGifs.xcdatamodel */,
+			);
+			currentVersion = 2F9D6481191A7849004B1F38 /* AirGifs.xcdatamodel */;
+			path = AirGifs.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 2F4F48E318B51C0E00BCA590 /* Project object */;
 }

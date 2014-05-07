@@ -14,7 +14,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 static NSInteger const kSideBarCellSize = 60;
-static CGSize const kMainContentSize = {320,400};
+static CGSize const kMainContentSize = {315,400};
 
 @interface AGMainWindow ()
 @property (nonatomic, strong) NSScrollView *sidebarWrapper;       // Scroll wrapper
@@ -71,7 +71,6 @@ static CGSize const kMainContentSize = {320,400};
 
     self.sidebarWrapper = [[NSScrollView alloc] initWithFrame:NSMakeRect(0, 0, kSideBarCellSize, kMainContentSize.height)];
     [self.sidebarWrapper setBorderType:NSNoBorder];
-    [self.sidebarWrapper setHasVerticalScroller:YES];
     self.sidebarWrapper.backgroundColor = [NSColor blackColor];
     [self.contentView addSubview:self.sidebarWrapper];
 
