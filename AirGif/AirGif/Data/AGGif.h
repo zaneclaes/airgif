@@ -23,12 +23,13 @@ static NSInteger const kGifThumbnailSize = 150;
 
 @property (nonatomic, readonly) NSURL *cachedGifUrl;
 @property (nonatomic, readonly) NSURL *cachedThumbnailUrl;
+@property (nonatomic, readonly) BOOL isCached;
 
-- (void)cache:(void (^)(NSError *))block;
+- (void)cache:(void (^)(BOOL))block;
 
 + (AGGif*)gifWithServerDictionary:(NSDictionary*)dict;
 + (AGGif*)gifWithImageHash:(NSString*)imageHash;
-+ (NSArray*)gifsWithPredicate:(NSPredicate*)pred;
 + (NSArray*)allGifs;
++ (NSArray*)recentGifs:(NSInteger)limit;
 
 @end

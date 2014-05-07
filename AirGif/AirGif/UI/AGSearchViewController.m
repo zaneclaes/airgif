@@ -25,10 +25,7 @@
 - (void)awakeFromNib {
   [super awakeFromNib];
   [self.resultsGrid setItemPrototype:[AGSearchResultViewItem new]];
-
-  AGDirectoryScanner *scanner = [[AGDirectoryScanner alloc] initWithDirectory:@"/Users/zane/Dropbox/Gifs/"];
-  [scanner upload];
-  [self.resultsGrid setContent:scanner.animatedGifs];
+  [self.resultsGrid setContent:[AGGif recentGifs:100]];
 }
 
 @end

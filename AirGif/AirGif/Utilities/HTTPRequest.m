@@ -335,7 +335,7 @@ storage = _storage;
       _headers_in = headers;
     if(!_requests) {
       _requests = [[NSOperationQueue alloc] init];
-      [_requests setMaxConcurrentOperationCount:5];
+      [_requests setMaxConcurrentOperationCount:3];
     }
   }
   return self;

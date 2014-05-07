@@ -10,49 +10,68 @@
 #import "AGDataStore.h"
 #import "HTTPRequest.h"
 
+static NSOperationQueue * _requests = nil;
+
 @implementation AGGif
 
 @dynamic imageHash, name, type, uploadedAt, size, views, downloads, flags;
 
-- (void)cache:(void (^)(NSError *))block {
-  __block NSInteger downloading = 0;
-  __block NSError *err = nil;
-  
-  if(![[NSFileManager defaultManager] fileExistsAtPath:self.cachedGifUrl.path]) {
-    downloading++;
-    [[HTTPRequest alloc] download:URL_GIF(self.imageHash) completion:^(HTTPRequest *req) {
-      err = err ?: req.error;
-      if(!req.error && req.data) {
-        [req.data writeToURL:self.cachedGifUrl atomically:YES];
-      }
-      downloading--;
-      if(block && downloading==0) {
-        block(err);
-      }
-    }];
+/*******************************************************************************
+ * Caching
+ ******************************************************************************/
+
+- (BOOL)_cacheImage:(NSURL*)urlFrom to:(NSURL*)urlTo {
+  if([[NSFileManager defaultManager] fileExistsAtPath:urlTo.path]) {
+    return YES;
   }
-  
-  if(![[NSFileManager defaultManager] fileExistsAtPath:self.cachedThumbnailUrl.path]) {
-    downloading++;
-    [[HTTPRequest alloc] download:URL_THUMBNAIL(self.imageHash, kGifThumbnailSize) completion:^(HTTPRequest *req) {
-      err = err ?: req.error;
-      if(req.data.length) {
-        [req.data writeToURL:self.cachedThumbnailUrl atomically:YES];
-      }
-      downloading--;
-      if(block && downloading==0) {
-        block(err);
-      }
-    }];
+  for(NSInteger tries=0; tries<1; tries++) {
+    NSData *data = [NSData dataWithContentsOfURL:urlFrom];
+    [data writeToURL:urlTo atomically:YES];
+    NSImage *test = [[NSImage alloc] initWithContentsOfURL:urlTo];
+    if(test) {
+      return YES;
+    }
+    else {
+      DLog(@"Failed to cache from %@ to %@; downloaded %lu bytes => %@",urlFrom,urlTo,data.length,[[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
+    }
   }
-  
-  if(!downloading) {
+  [[NSFileManager defaultManager] removeItemAtURL:urlTo error:nil];
+  return NO;
+}
+
+- (void)_cache:(void (^)(BOOL))block {
+  NSInteger thumbSize = kGifThumbnailSize * 2;//[[NSScreen mainScreen] backingScaleFactor];
+  BOOL cachedThumbnail = [self _cacheImage:[NSURL URLWithString:URL_THUMBNAIL(self.imageHash, thumbSize)] to:self.cachedThumbnailUrl];
+  BOOL cachedGif = [self _cacheImage:[NSURL URLWithString:URL_GIF(self.imageHash)] to:self.cachedGifUrl];
+  if(block) {
+    dispatch_async(dispatch_get_main_queue(), ^{
+      block(cachedThumbnail && cachedGif);
+    });
+  }
+}
+
+- (void)cache:(void (^)(BOOL))block {
+  if(self.isCached) {
     if(block) {
-      block(nil);
-      block = nil;
+      block(YES);
     }
     return;
   }
+
+  static dispatch_once_t onceToken = 0;
+  dispatch_once(&onceToken, ^{
+    _requests = [[NSOperationQueue alloc] init];
+    [_requests setMaxConcurrentOperationCount:2];// Don't overload the PHP script.
+  });
+  __weak typeof(self) wself = self;
+  [_requests addOperationWithBlock:^{
+    [wself _cache:block];
+  }];
+}
+
+- (BOOL)isCached {
+  return [[NSFileManager defaultManager] fileExistsAtPath:self.cachedGifUrl.path] &&
+          [[NSFileManager defaultManager] fileExistsAtPath:self.cachedThumbnailUrl.path];
 }
 
 - (NSURL*)cachedGifUrl {
@@ -60,29 +79,45 @@
 }
 
 - (NSURL*)cachedThumbnailUrl {
-  NSString *fn = [NSString stringWithFormat:@"%@_%lu",self.imageHash,kGifThumbnailSize];
+  NSString *fn = [NSString stringWithFormat:@"t_%@_%lu.jpg",self.imageHash,kGifThumbnailSize];
   return [[AGDataStore sharedStore].cacheDirectory URLByAppendingPathComponent:fn];
 }
 
-+ (NSArray*)gifsWithPredicate:(NSPredicate*)pred {
+/*******************************************************************************
+ * Core Data
+ ******************************************************************************/
++ (NSArray*)gifsWithPredicate:(NSPredicate*)pred sort:(NSArray*)sort range:(NSRange)range {
   NSError *err;
   NSFetchRequest *request = [[NSFetchRequest alloc] init];
   [request setEntity:[[self class] entityDescription]];
   if(pred) {
     [request setPredicate:pred];
   }
+  if(sort) {
+    [request setSortDescriptors:sort];
+  }
+  if(range.length != 0) {
+    [request setFetchLimit:range.length];
+    [request setFetchOffset:range.location];
+  }
   return [[AGDataStore sharedStore].managedObjectContext executeFetchRequest:request error:&err];
 }
 
 + (NSArray*)allGifs {
-  return [self gifsWithPredicate:nil];
+  return [self gifsWithPredicate:nil sort:nil range:NSMakeRange(0, 0)];
+}
+
++ (NSArray*)recentGifs:(NSInteger)limit {
+  NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"uploadedAt" ascending:NO];
+  NSRange range = NSMakeRange(0, limit);
+  return [self gifsWithPredicate:nil sort:@[sort] range:range];
 }
 
 + (AGGif*)gifWithImageHash:(NSString*)imageHash {
   if(!imageHash.length) {
     return nil;
   }
-  NSArray *gifs = [self gifsWithPredicate:[NSPredicate predicateWithFormat:@"imageHash == %@",imageHash]];
+  NSArray *gifs = [self gifsWithPredicate:[NSPredicate predicateWithFormat:@"imageHash == %@",imageHash] sort:nil range:NSMakeRange(0, 0)];
   return gifs.count ? gifs[0] : nil;
 }
 

@@ -19,20 +19,14 @@
 - (void)loadView {
   NSImageView *iv = [[NSImageView alloc] initWithFrame:CGRectMake(0, 0, kGifThumbnailSize, kGifThumbnailSize)];
   //iv.animates = YES;
-  iv.imageScaling = NSImageScaleNone;
+  iv.imageScaling = NSImageScaleProportionallyDown;
   [self setView:iv];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
   [super setRepresentedObject:representedObject];
-  NSImage *image = [[NSImage alloc] initWithContentsOfURL:representedObject];
-  /*CGFloat scaleX = image.size.width / idealSize.width;
-  CGFloat scaleY = image.size.height / idealSize.height;
-  CGFloat scale = MAX(scaleX, scaleY);
-  if(scale != 1) {
-    image = [image scale:scale];
-  }*/
-  ((NSImageView*)self.view).image = image;
+  AGGif *gif = representedObject;
+  ((NSImageView*)self.view).image = [[NSImage alloc] initWithContentsOfURL:gif.cachedThumbnailUrl];;
 }
 
 @end
