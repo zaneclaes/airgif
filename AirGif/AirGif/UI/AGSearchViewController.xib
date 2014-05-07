@@ -18,24 +18,15 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
-                <searchField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-Lk-jdE">
-                    <rect key="frame" x="20" y="358" width="260" height="19"/>
-                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" focusRingType="none" alignment="left" placeholderString="Search animated gifs..." usesSingleLineMode="YES" bezelStyle="round" id="gwb-E7-L50">
-                        <font key="font" metaFont="smallSystem"/>
-                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
-                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
-                    </searchFieldCell>
-                </searchField>
-                <scrollView fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vk4-tD-tZT">
-                    <rect key="frame" x="0.0" y="0.0" width="300" height="336"/>
+                <scrollView autoresizesSubviews="NO" fixedFrame="YES" borderType="none" autohidesScrollers="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vk4-tD-tZT">
+                    <rect key="frame" x="0.0" y="1" width="300" height="399"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <clipView key="contentView" ambiguous="YES" misplaced="YES" id="ZrR-YC-ydb">
-                        <rect key="frame" x="0.0" y="0.0" width="300" height="336"/>
+                    <clipView key="contentView" ambiguous="YES" misplaced="YES" drawsBackground="NO" copiesOnScroll="NO" id="ZrR-YC-ydb">
+                        <rect key="frame" x="0.0" y="0.0" width="300" height="399"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <collectionView ambiguous="YES" id="qh7-Mu-2R8">
-                                <rect key="frame" x="0.0" y="0.0" width="300" height="336"/>
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="399"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <color key="primaryBackgroundColor" name="controlBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 <connections>
@@ -53,6 +44,15 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </scroller>
                 </scrollView>
+                <searchField focusRingType="none" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="QOQ-Lk-jdE">
+                    <rect key="frame" x="20" y="358" width="260" height="19"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                    <searchFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" borderStyle="bezel" focusRingType="none" alignment="left" placeholderString="Search animated gifs..." usesSingleLineMode="YES" bezelStyle="round" id="gwb-E7-L50">
+                        <font key="font" metaFont="smallSystem"/>
+                        <color key="textColor" name="textColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </searchFieldCell>
+                </searchField>
             </subviews>
         </customView>
         <collectionViewItem id="ZGG-tW-7mL"/>

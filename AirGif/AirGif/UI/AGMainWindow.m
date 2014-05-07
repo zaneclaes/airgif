@@ -14,7 +14,7 @@
 #import <QuartzCore/QuartzCore.h>
 
 static NSInteger const kSideBarCellSize = 60;
-static CGSize const kMainContentSize = {300,400};
+static CGSize const kMainContentSize = {320,400};
 
 @interface AGMainWindow ()
 @property (nonatomic, strong) NSScrollView *sidebarWrapper;       // Scroll wrapper

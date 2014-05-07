@@ -10,7 +10,6 @@
 		2F4F48EF18B51C0E00BCA590 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */; };
 		2F4F48FB18B51C0E00BCA590 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F48FA18B51C0E00BCA590 /* main.m */; };
 		2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F490118B51C0E00BCA590 /* AGAppDelegate.m */; };
-		2F4F490518B51C0E00BCA590 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F490318B51C0E00BCA590 /* MainMenu.xib */; };
 		2F4F490718B51C0E00BCA590 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F490618B51C0E00BCA590 /* Images.xcassets */; };
 		2F4F490E18B51C0E00BCA590 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4F490D18B51C0E00BCA590 /* XCTest.framework */; };
 		2F4F490F18B51C0E00BCA590 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */; };
@@ -92,7 +91,6 @@
 		2F4F48FC18B51C0E00BCA590 /* AirGif-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirGif-Prefix.pch"; sourceTree = "<group>"; };
 		2F4F490018B51C0E00BCA590 /* AGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGAppDelegate.h; sourceTree = "<group>"; };
 		2F4F490118B51C0E00BCA590 /* AGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGAppDelegate.m; sourceTree = "<group>"; };
-		2F4F490418B51C0E00BCA590 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		2F4F490618B51C0E00BCA590 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2F4F490C18B51C0E00BCA590 /* AirGifTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirGifTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4F490D18B51C0E00BCA590 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
@@ -252,7 +250,6 @@
 				2F68850C1919338C00C36852 /* UI */,
 				2F4F490018B51C0E00BCA590 /* AGAppDelegate.h */,
 				2F4F490118B51C0E00BCA590 /* AGAppDelegate.m */,
-				2F4F490318B51C0E00BCA590 /* MainMenu.xib */,
 				2F4F490618B51C0E00BCA590 /* Images.xcassets */,
 				2F4F495C18B522A300BCA590 /* Resources */,
 				2F4F48F518B51C0E00BCA590 /* Supporting Files */,
@@ -591,7 +588,6 @@
 				2F68856819193D9D00C36852 /* 909-tags.png in Resources */,
 				2F4F490718B51C0E00BCA590 /* Images.xcassets in Resources */,
 				2F68856D19193D9D00C36852 /* 912-gears@2x.png in Resources */,
-				2F4F490518B51C0E00BCA590 /* MainMenu.xib in Resources */,
 				2F68857E19193EC600C36852 /* AGSearchViewController.xib in Resources */,
 				2F68857419193D9D00C36852 /* StatusHighlighted.png in Resources */,
 				2F68857019193D9D00C36852 /* 973-user.png in Resources */,
@@ -661,14 +657,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		2F4F490318B51C0E00BCA590 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2F4F490418B51C0E00BCA590 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
 		2F4F491518B51C0E00BCA590 /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
