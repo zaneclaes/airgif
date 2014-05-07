@@ -105,7 +105,16 @@
 // Returns the URL to the application's Documents directory.
 - (NSURL *)applicationDocumentsDirectory
 {
-  return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
+  
+  NSArray *paths = NSSearchPathForDirectoriesInDomains(NSCachesDirectory, NSUserDomainMask, YES);
+  NSString* fp = [NSString stringWithFormat:@"%@/%@",[paths objectAtIndex:0],[[NSBundle mainBundle] bundleIdentifier]];
+  NSError * error = nil;
+  [[NSFileManager defaultManager] createDirectoryAtPath:fp
+                            withIntermediateDirectories:YES
+                                             attributes:nil
+                                                  error:&error];
+  return [NSURL fileURLWithPath:fp];
+  //return [[[NSFileManager defaultManager] URLsForDirectory:NSDocumentDirectory inDomains:NSUserDomainMask] lastObject];
 }
 
 
