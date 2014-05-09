@@ -49,16 +49,6 @@ static CGSize const kMainContentSize = {315,480};
 
 - (void)awakeFromNib {
   [super awakeFromNib];
-  [self setFrame:NSMakeRect(0, 0, kMainContentSize.width + kSideBarCellSize, kMainContentSize.height)
-         display:YES animate:NO];
-
-  self.hasMenuBarIcon = YES;
-  self.menuBarIcon = [NSImage imageNamed:@"Status"];
-  self.highlightedMenuBarIcon = [NSImage imageNamed:@"StatusHighlighted"];
-  self.attachedToMenuBar = YES;
-  self.isDetachable = NO;
-  self.backgroundColor = [NSColor whiteColor];
-
   self.mainContentView = [[NSView alloc] initWithFrame:NSMakeRect(kSideBarCellSize, 0, kMainContentSize.width, kMainContentSize.height)];
   CALayer *viewLayer = [CALayer layer];
   [viewLayer setBackgroundColor:CGColorCreateGenericRGB(1,1,1,1)]; //RGB plus Alpha Channel
@@ -96,6 +86,19 @@ static CGSize const kMainContentSize = {315,480};
   [self.sidebarWrapper addSubview:self.sidebar];
   [self.sidebar awakeFromNib];// Triggers setup manually...
   [self onSidebarChanged];
+}
+
+- (id)initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag {
+  contentRect = NSMakeRect(0, 0, kMainContentSize.width + kSideBarCellSize, kMainContentSize.height);
+  if((self = [super initWithContentRect:contentRect styleMask:aStyle backing:bufferingType defer:flag])) {    
+    self.hasMenuBarIcon = YES;
+    self.menuBarIcon = [NSImage imageNamed:@"Status"];
+    self.highlightedMenuBarIcon = [NSImage imageNamed:@"StatusHighlighted"];
+    self.attachedToMenuBar = YES;
+    self.isDetachable = NO;
+    self.backgroundColor = [NSColor whiteColor];
+  }
+  return self;
 }
 
 @end
