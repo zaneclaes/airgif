@@ -57,7 +57,7 @@
       if(![[NSFileManager defaultManager] fileExistsAtPath:gif.cachedGifUrl.path]) {
         [[NSFileManager defaultManager] copyItemAtURL:_animatedGifPaths[gif.imageHash] toURL:gif.cachedGifUrl error:nil];
       }
-      [gif cache:nil];
+      [gif cacheThumbnail:nil];
     }
     [[AGDataStore sharedStore] saveContext];
     _changeSet = [[NSOrderedSet alloc] initWithArray:new_hashes];

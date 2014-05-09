@@ -8,7 +8,7 @@
 
 #import "AGContentViewController.h"
 
-@interface AGSearchViewController : AGContentViewController
+@interface AGSearchViewController : AGContentViewController <NSTextFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet NSSearchField *searchField;
 @property (nonatomic, weak) IBOutlet NSCollectionView *resultsGrid;

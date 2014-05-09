@@ -8,13 +8,14 @@
 
 #import "AGAppDelegate.h"
 #import "AGMainWindow.h"
+#import "AGDirectoryScanner.h"
 
 @implementation AGAppDelegate
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   //[self.window setHidesOnDeactivate:YES];
   //[self.window orderOut:nil];
-  self.window = [[AGMainWindow alloc] init];
+  [[[AGDirectoryScanner alloc] initWithDirectory:@"/Users/zane/Dropbox/Gifs/"] upload];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {

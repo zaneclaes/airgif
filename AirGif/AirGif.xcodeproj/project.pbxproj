@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2F016D59191C2EA000DDC252 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F016D58191C2EA000DDC252 /* MainMenu.xib */; };
 		2F4F48EF18B51C0E00BCA590 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */; };
 		2F4F48FB18B51C0E00BCA590 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F48FA18B51C0E00BCA590 /* main.m */; };
 		2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F490118B51C0E00BCA590 /* AGAppDelegate.m */; };
@@ -85,6 +86,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F016D58191C2EA000DDC252 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		2F4F48EB18B51C0E00BCA590 /* AirGif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirGif.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2F4F48F118B51C0E00BCA590 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -359,6 +361,7 @@
 				2F68850E1919340000C36852 /* AGMainWindow.m */,
 				2F68858B1919428500C36852 /* AGContentViewController.h */,
 				2F68858C1919428500C36852 /* AGContentViewController.m */,
+				2F016D58191C2EA000DDC252 /* MainMenu.xib */,
 			);
 			path = UI;
 			sourceTree = "<group>";
@@ -605,6 +608,7 @@
 				2F68857519193D9D00C36852 /* StatusHighlighted@2x.png in Resources */,
 				2F68857719193D9D00C36852 /* InfoPlist.strings in Resources */,
 				2F68857819193D9D00C36852 /* Localizable.strings in Resources */,
+				2F016D59191C2EA000DDC252 /* MainMenu.xib in Resources */,
 				2F4F495918B5223800BCA590 /* Panel.xib in Resources */,
 				2F68856519193D9D00C36852 /* 708-search@2x.png in Resources */,
 				2F68856C19193D9D00C36852 /* 912-gears.png in Resources */,

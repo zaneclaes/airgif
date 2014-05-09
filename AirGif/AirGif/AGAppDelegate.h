@@ -12,6 +12,6 @@
 
 @interface AGAppDelegate : NSObject <NSApplicationDelegate>
 
-@property (nonatomic, strong) AGMainWindow *window;
+@property (nonatomic, strong) IBOutlet AGMainWindow *window;
 
 @end

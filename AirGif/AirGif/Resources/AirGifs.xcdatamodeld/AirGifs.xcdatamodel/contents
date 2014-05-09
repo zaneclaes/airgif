@@ -4,6 +4,8 @@
         <attribute name="downloads" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="flags" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="imageHash" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="isGifCached" optional="YES" attributeType="Boolean" syncable="YES"/>
+        <attribute name="isThumbnailCached" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
@@ -11,6 +13,6 @@
         <attribute name="views" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AGGif" positionX="-63" positionY="-18" width="128" height="165"/>
+        <element name="AGGif" positionX="-63" positionY="-18" width="128" height="195"/>
     </elements>
 </model>

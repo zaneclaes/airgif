@@ -9,17 +9,14 @@
 #import <Cocoa/Cocoa.h>
 #import "AGAppDelegate.h"
 
-int main(int argc, const char * argv[])
-{
-  //return NSApplicationMain(argc, argv);
-  
-  @autoreleasepool {
+int main(int argc, const char * argv[]) {
+  return NSApplicationMain(argc, argv);
+  /*@autoreleasepool {
     [NSApplication sharedApplication];
     
     AGAppDelegate *appDelegate = [[AGAppDelegate alloc] init];
     [NSApp setDelegate:appDelegate];
     [NSApp run];
-    
   }
-  return 0;
+  return 0;*/
 }
