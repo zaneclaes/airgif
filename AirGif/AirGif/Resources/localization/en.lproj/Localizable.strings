@@ -1,1 +1,5 @@
 "Account" = "Account";
+
+"points.0" = "No points for that one. Try again?";
+"points.1" = "BOOM! one point!";
+"points.many" = "Woah! %d points!";

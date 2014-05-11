@@ -7,6 +7,11 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AGTagViewController">
             <connections>
+                <outlet property="headerLabel" destination="DrQ-tj-HHo" id="nMT-am-SDf"/>
+                <outlet property="imageView" destination="SBj-Fx-Qhj" id="rBg-3f-Ui5"/>
+                <outlet property="nextButton" destination="ahW-pT-rVE" id="i1U-vr-Ukg"/>
+                <outlet property="progressBar" destination="mBU-23-glM" id="T75-22-Uy6"/>
+                <outlet property="tagsField" destination="ld2-JW-rMl" id="ncD-Lp-uCq"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
         </customObject>
@@ -15,6 +20,71 @@
         <customView id="Hz6-mo-xeY">
             <rect key="frame" x="0.0" y="0.0" width="315" height="480"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <tokenField verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ld2-JW-rMl">
+                    <rect key="frame" x="19" y="53" width="275" height="81"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <tokenFieldCell key="cell" selectable="YES" editable="YES" borderStyle="bezel" alignment="left" drawsBackground="YES" allowsEditingTextAttributes="YES" id="52z-31-rXd">
+                        <font key="font" metaFont="titleBar" size="12"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                    </tokenFieldCell>
+                    <connections>
+                        <outlet property="delegate" destination="-2" id="clW-wL-3jD"/>
+                    </connections>
+                </tokenField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SBj-Fx-Qhj">
+                    <rect key="frame" x="20" y="146" width="274" height="274"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" animates="YES" imageScaling="proportionallyDown" id="vak-VE-cdp"/>
+                </imageView>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DrQ-tj-HHo">
+                    <rect key="frame" x="18" y="443" width="278" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" alignment="center" title="Add tags to this gif to gain points..." id="SrL-dI-ZgM">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KY9-n7-adD">
+                    <rect key="frame" x="18" y="17" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Utf-Xd-fIp">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onPressedHelp:" target="-2" id="jmA-bB-2V4"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ahW-pT-rVE">
+                    <rect key="frame" x="230" y="13" width="70" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Next" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2l2-Kb-Jcn">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onPressedNext:" target="-2" id="nVT-RQ-gcE"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3fw-Bo-6bz">
+                    <rect key="frame" x="97" y="13" width="121" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Report NSFW" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ygy-O7-Fhg">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onPressedNSFW:" target="-2" id="gRO-pT-1xB"/>
+                    </connections>
+                </button>
+                <progressIndicator fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" indeterminate="YES" style="bar" translatesAutoresizingMaskIntoConstraints="NO" id="mBU-23-glM">
+                    <rect key="frame" x="19" y="441" width="276" height="20"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                </progressIndicator>
+            </subviews>
         </customView>
     </objects>
 </document>

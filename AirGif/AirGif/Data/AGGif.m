@@ -115,6 +115,7 @@ static NSOperationQueue * _requests = nil;
   NSError *err;
   NSFetchRequest *request = [[NSFetchRequest alloc] init];
   [request setEntity:[[self class] entityDescription]];
+  [request setReturnsDistinctResults:YES];
   if(pred) {
     [request setPredicate:pred];
   }
@@ -125,7 +126,12 @@ static NSOperationQueue * _requests = nil;
     [request setFetchLimit:range.length];
     [request setFetchOffset:range.location];
   }
-  return [[AGDataStore sharedStore].managedObjectContext executeFetchRequest:request error:&err];
+  NSArray *arr = [[AGDataStore sharedStore].managedObjectContext executeFetchRequest:request error:&err];
+  NSMutableDictionary *dedupe = [NSMutableDictionary new];
+  for(AGGif *gif in arr) {
+    dedupe[gif.imageHash] = gif;
+  }
+  return dedupe.allValues;
 }
 
 + (NSArray*)allGifs {
