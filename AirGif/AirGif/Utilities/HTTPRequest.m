@@ -184,6 +184,9 @@ storage = _storage;
   {
     _error = error;
   }
+  else if(!_data.length) {
+    _error = [NSError errorWithDomain:@"HTTP" code:7 userInfo:@{NSLocalizedDescriptionKey:@"No Data"}];
+  }
   else if([_contents rangeOfString:@"xe-fatal-error"].location!=NSNotFound)
   {
     _error = [NSError errorWithDomain:@"HTTP" code:6 userInfo:@{NSLocalizedDescriptionKey:_contents?:@""}];

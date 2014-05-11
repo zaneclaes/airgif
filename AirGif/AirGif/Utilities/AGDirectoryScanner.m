@@ -61,7 +61,9 @@
     }
     [[AGDataStore sharedStore] saveContext];
     _changeSet = [[NSOrderedSet alloc] initWithArray:new_hashes];
-    DLog(@"Found %lu files; %lu are new; %lu exist in core data",_animatedGifPaths.allKeys.count,_changeSet.count,[AGGif allGifs].count);
+    DLog(@"Found %lu files; %lu are new; %lu exist in core data",_animatedGifPaths.allKeys.count,
+                                                                 _changeSet.count,
+                                                                 [AGGif allGifs].count);
     [self uploadNextFile];
   }];
 }

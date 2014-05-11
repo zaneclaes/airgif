@@ -90,7 +90,7 @@ static CGSize const kMainContentSize = {315,480};
 
 - (id)initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag {
   contentRect = NSMakeRect(0, 0, kMainContentSize.width + kSideBarCellSize, kMainContentSize.height);
-  if((self = [super initWithContentRect:contentRect styleMask:aStyle backing:bufferingType defer:flag])) {    
+  if((self = [super initWithContentRect:contentRect styleMask:aStyle backing:bufferingType defer:flag])) {
     self.hasMenuBarIcon = YES;
     self.menuBarIcon = [NSImage imageNamed:@"Status"];
     self.highlightedMenuBarIcon = [NSImage imageNamed:@"StatusHighlighted"];

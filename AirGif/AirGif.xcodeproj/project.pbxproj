@@ -73,6 +73,8 @@
 		2F9D6482191A7849004B1F38 /* AirGifs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6480191A7849004B1F38 /* AirGifs.xcdatamodeld */; };
 		2F9D6485191A78E2004B1F38 /* AGDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6484191A78E2004B1F38 /* AGDataStore.m */; };
 		2F9D648C191A7A5C004B1F38 /* AGGif.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D648B191A7A5C004B1F38 /* AGGif.m */; };
+		2F9D6491191FCB63004B1F38 /* AGGifTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6490191FCB63004B1F38 /* AGGifTag.m */; };
+		2F9D6494191FCCE5004B1F38 /* AGData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6493191FCCE5004B1F38 /* AGData.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +189,10 @@
 		2F9D6484191A78E2004B1F38 /* AGDataStore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGDataStore.m; sourceTree = "<group>"; };
 		2F9D648A191A7A5C004B1F38 /* AGGif.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGGif.h; sourceTree = "<group>"; };
 		2F9D648B191A7A5C004B1F38 /* AGGif.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGGif.m; sourceTree = "<group>"; };
+		2F9D648F191FCB63004B1F38 /* AGGifTag.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGGifTag.h; sourceTree = "<group>"; };
+		2F9D6490191FCB63004B1F38 /* AGGifTag.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGGifTag.m; sourceTree = "<group>"; };
+		2F9D6492191FCCE5004B1F38 /* AGData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGData.h; sourceTree = "<group>"; };
+		2F9D6493191FCCE5004B1F38 /* AGData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGData.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -507,6 +513,10 @@
 				2F9D6484191A78E2004B1F38 /* AGDataStore.m */,
 				2F9D648A191A7A5C004B1F38 /* AGGif.h */,
 				2F9D648B191A7A5C004B1F38 /* AGGif.m */,
+				2F9D648F191FCB63004B1F38 /* AGGifTag.h */,
+				2F9D6490191FCB63004B1F38 /* AGGifTag.m */,
+				2F9D6492191FCCE5004B1F38 /* AGData.h */,
+				2F9D6493191FCCE5004B1F38 /* AGData.m */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -640,6 +650,7 @@
 				2F688589191940DD00C36852 /* AGAccountViewController.m in Sources */,
 				2F6883F71917F17800C36852 /* NSImage+AnimatedGif.m in Sources */,
 				2F9D646719191F40004B1F38 /* ITSidebar.m in Sources */,
+				2F9D6494191FCCE5004B1F38 /* AGData.m in Sources */,
 				2F68858D1919428500C36852 /* AGContentViewController.m in Sources */,
 				2F6883FA1917F21800C36852 /* AGDirectoryScanner.m in Sources */,
 				2F4F495818B5223800BCA590 /* Panel.m in Sources */,
@@ -656,6 +667,7 @@
 				2F6885831919402800C36852 /* AGTagViewController.m in Sources */,
 				2F4F495A18B5223800BCA590 /* PanelController.m in Sources */,
 				2F9D644A191896C0004B1F38 /* NSWindow+Screenshot.m in Sources */,
+				2F9D6491191FCB63004B1F38 /* AGGifTag.m in Sources */,
 				2F9D646819191F40004B1F38 /* ITSidebarItemCell.m in Sources */,
 				2F4F495B18B5223800BCA590 /* StatusItemView.m in Sources */,
 				2F9D6449191896C0004B1F38 /* GRGlassWindow.m in Sources */,

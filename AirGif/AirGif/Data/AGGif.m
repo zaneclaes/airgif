@@ -8,13 +8,14 @@
 
 #import "AGGif.h"
 #import "AGDataStore.h"
+#import "AGGifTag.h"
 #import "HTTPRequest.h"
 
 static NSOperationQueue * _requests = nil;
 
 @implementation AGGif
 
-@dynamic imageHash, name, type, uploadedAt, size, views, downloads, flags, isGifCached, isThumbnailCached;
+@dynamic imageHash, name, type, uploadedAt, size, views, downloads, flags, isGifCached, isThumbnailCached, tags;
 
 /*******************************************************************************
  * Caching
@@ -139,7 +140,8 @@ static NSOperationQueue * _requests = nil;
 }
 
 + (NSArray*)searchGifs:(NSString*)query {
-  NSPredicate *pred = [NSPredicate predicateWithFormat:@"isThumbnailCached == YES AND name CONTAINS[cd] %@",query];
+  NSPredicate *pred = [NSPredicate predicateWithFormat:@"isThumbnailCached == YES AND \
+                       ((name CONTAINS[cd] %@) OR (SUBQUERY(tags, $x, $x.tag CONTAINS[cd] %@).@count > 0))",query,query];
   return [self gifsWithPredicate:pred sort:nil range:NSMakeRange(0, 0)];
 }
 
@@ -152,8 +154,7 @@ static NSOperationQueue * _requests = nil;
 }
 
 + (AGGif*)gifWithServerDictionary:(NSDictionary*)dict {
-  AGGif * gif = [AGGif gifWithImageHash:dict[@"hash"]] ?: [[AGGif alloc] initWithEntity:[[self class] entityDescription]
-                                                         insertIntoManagedObjectContext:[AGDataStore sharedStore].managedObjectContext];
+  AGGif * gif = [AGGif gifWithImageHash:dict[@"hash"]] ?: [[AGGif alloc] initAndInsert];
   gif.imageHash = dict[@"hash"];
   gif.name = dict[@"name"];
   gif.type = dict[@"type"];
@@ -162,11 +163,19 @@ static NSOperationQueue * _requests = nil;
   gif.flags = @([dict[@"flags"] integerValue]) ?: @(0);
   gif.downloads = @([dict[@"downloads"] integerValue]) ?: @(0);
   gif.views = @([dict[@"views"] integerValue]) ?: @(0);
+  
+  // Tags.
+  gif.tags = [NSMutableOrderedSet new];
+  NSArray *tagDefs = [dict[@"tags"] isKindOfClass:[NSArray class]] ? dict[@"tags"] : @[];
+  for(NSDictionary *tagData in tagDefs) {
+    AGGifTag *tag = [[AGGifTag alloc] initAndInsert];
+    tag.tag = tagData[@"tag"];
+    tag.strength = @([tagData[@"strength"] integerValue]);
+    tag.gif = gif;
+    [gif.tags addObject:tag];
+  }
+  
   return gif;
-}
-
-+ (NSEntityDescription*)entityDescription {
-  return [NSEntityDescription entityForName:NSStringFromClass([self class]) inManagedObjectContext:[AGDataStore sharedStore].managedObjectContext];
 }
 
 @end
