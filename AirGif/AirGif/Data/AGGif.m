@@ -100,7 +100,7 @@ static NSOperationQueue * _requests = nil;
 }
 
 - (NSURL*)cachedGifUrl {
-  return [[AGDataStore sharedStore].cacheDirectory URLByAppendingPathComponent:self.imageHash];
+  return [[AGDataStore sharedStore].cacheDirectory URLByAppendingPathComponent:[NSString stringWithFormat:@"%@.gif",self.imageHash]];
 }
 
 - (NSURL*)cachedThumbnailUrl {

@@ -7,11 +7,12 @@
 //
 
 #import "AGContentViewController.h"
+#import <WebKit/WebKit.h>
 
 @interface AGTagViewController : AGContentViewController <NSTokenFieldDelegate>
 
 @property (nonatomic, weak) IBOutlet NSTextField *headerLabel;
-@property (nonatomic, weak) IBOutlet NSImageView *imageView;
+@property (nonatomic, weak) IBOutlet WebView *webView;
 @property (nonatomic, weak) IBOutlet NSTokenField *tagsField;
 @property (nonatomic, weak) IBOutlet NSButton *nextButton;
 @property (nonatomic, weak) IBOutlet NSProgressIndicator *progressBar;

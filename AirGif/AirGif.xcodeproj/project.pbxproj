@@ -60,6 +60,9 @@
 		2F68858D1919428500C36852 /* AGContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F68858C1919428500C36852 /* AGContentViewController.m */; };
 		2F688590191945C300C36852 /* AGSearchResultViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F68858F191945C300C36852 /* AGSearchResultViewItem.m */; };
 		2F6885931919491700C36852 /* NSImage+Manipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6885921919491700C36852 /* NSImage+Manipulation.m */; };
+		2F6D7FB6191FFC1300CDCEA6 /* ORImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D7FB5191FFC1300CDCEA6 /* ORImageView.m */; };
+		2F6D7FB8191FFC3800CDCEA6 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6D7FB7191FFC3800CDCEA6 /* Quartz.framework */; };
+		2F6D7FBA191FFDF900CDCEA6 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6D7FB9191FFDF900CDCEA6 /* WebKit.framework */; };
 		2F9D6447191896C0004B1F38 /* GRGlassAccessoryWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6439191896C0004B1F38 /* GRGlassAccessoryWindow.m */; };
 		2F9D6448191896C0004B1F38 /* GRGlassThemeWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D643B191896C0004B1F38 /* GRGlassThemeWidget.m */; };
 		2F9D6449191896C0004B1F38 /* GRGlassWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D643D191896C0004B1F38 /* GRGlassWindow.m */; };
@@ -166,6 +169,10 @@
 		2F68858F191945C300C36852 /* AGSearchResultViewItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSearchResultViewItem.m; sourceTree = "<group>"; };
 		2F6885911919491700C36852 /* NSImage+Manipulation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Manipulation.h"; sourceTree = "<group>"; };
 		2F6885921919491700C36852 /* NSImage+Manipulation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSImage+Manipulation.m"; sourceTree = "<group>"; };
+		2F6D7FB4191FFC1300CDCEA6 /* ORImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ORImageView.h; sourceTree = "<group>"; };
+		2F6D7FB5191FFC1300CDCEA6 /* ORImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORImageView.m; sourceTree = "<group>"; };
+		2F6D7FB7191FFC3800CDCEA6 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
+		2F6D7FB9191FFDF900CDCEA6 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		2F9D6438191896C0004B1F38 /* GRGlassAccessoryWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRGlassAccessoryWindow.h; sourceTree = "<group>"; };
 		2F9D6439191896C0004B1F38 /* GRGlassAccessoryWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRGlassAccessoryWindow.m; sourceTree = "<group>"; };
 		2F9D643A191896C0004B1F38 /* GRGlassThemeWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRGlassThemeWidget.h; sourceTree = "<group>"; };
@@ -200,6 +207,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F6D7FBA191FFDF900CDCEA6 /* WebKit.framework in Frameworks */,
+				2F6D7FB8191FFC3800CDCEA6 /* Quartz.framework in Frameworks */,
 				2F9D647F191A7821004B1F38 /* CoreData.framework in Frameworks */,
 				2F688511191938AF00C36852 /* QuartzCore.framework in Frameworks */,
 				2F4F48EF18B51C0E00BCA590 /* Cocoa.framework in Frameworks */,
@@ -240,6 +249,8 @@
 		2F4F48ED18B51C0E00BCA590 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F6D7FB9191FFDF900CDCEA6 /* WebKit.framework */,
+				2F6D7FB7191FFC3800CDCEA6 /* Quartz.framework */,
 				2F688510191938AF00C36852 /* QuartzCore.framework */,
 				2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */,
 				2F4F490D18B51C0E00BCA590 /* XCTest.framework */,
@@ -449,9 +460,19 @@
 			name = Account;
 			sourceTree = "<group>";
 		};
+		2F6D7FB3191FFC0400CDCEA6 /* ORImageView */ = {
+			isa = PBXGroup;
+			children = (
+				2F6D7FB4191FFC1300CDCEA6 /* ORImageView.h */,
+				2F6D7FB5191FFC1300CDCEA6 /* ORImageView.m */,
+			);
+			name = ORImageView;
+			sourceTree = "<group>";
+		};
 		2F9D6436191896C0004B1F38 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				2F6D7FB3191FFC0400CDCEA6 /* ORImageView */,
 				2F9D644E19191F40004B1F38 /* ITSidebar */,
 				2F9D6437191896C0004B1F38 /* GRGlassWindow */,
 				2F9D6444191896C0004B1F38 /* OBMenuBarWindow */,
@@ -658,6 +679,7 @@
 				2F68850F1919340000C36852 /* AGMainWindow.m in Sources */,
 				2F9D648C191A7A5C004B1F38 /* AGGif.m in Sources */,
 				2F6883EC1917EC4F00C36852 /* HTTPRequest.m in Sources */,
+				2F6D7FB6191FFC1300CDCEA6 /* ORImageView.m in Sources */,
 				2F9D6485191A78E2004B1F38 /* AGDataStore.m in Sources */,
 				2F4F495718B5223800BCA590 /* MenubarController.m in Sources */,
 				2F6883EF1917EC5A00C36852 /* NSImage+Hash.m in Sources */,

@@ -11,11 +11,16 @@
 #import "AGDataStore.h"
 #import "AGGif.h"
 #import "AGGifTag.h"
+#import "NSImage+AnimatedGif.h"
+#import "ORImageView.h"
+#import <Quartz/Quartz.h>
 
 @interface AGTagViewController ()
 @property (nonatomic, strong) NSMutableOrderedSet *allTags;
 @property (nonatomic, strong) NSMutableDictionary *queue;
 @property (nonatomic, strong) AGGif *currentGif;
+@property (nonatomic, strong) ORImageView *orImageView;
+@property (nonatomic, readwrite) CGFloat scale;
 @end
 
 @implementation AGTagViewController
@@ -28,11 +33,17 @@
   }
   NSString *imageHash = self.queue.allKeys[0];
   self.currentGif = self.queue[imageHash];
-  [self.queue removeObjectForKey:imageHash];
-  self.imageView.image = [[NSImage alloc] initWithContentsOfURL:self.currentGif.cachedGifUrl];
-  self.imageView.animates = YES;
   [self.progressBar stopAnimation:nil];
   [self.tagsField becomeFirstResponder];
+  
+  [[[[[self.webView mainFrame] frameView] documentView] superview] scaleUnitSquareToSize:NSMakeSize(1.f / self.scale, 1.f / self.scale)];
+  NSImage *image = [[NSImage alloc] initWithContentsOfURL:self.currentGif.cachedGifUrl];
+  CGFloat scaleX = MIN(1, self.webView.frame.size.width / image.size.width);
+  CGFloat scaleY = MIN(1, self.webView.frame.size.height / image.size.height);
+  self.scale = MIN(scaleX, scaleY);
+  [[[[[self.webView mainFrame] frameView] documentView] superview] scaleUnitSquareToSize:NSMakeSize(self.scale, self.scale)];
+  [[self.webView mainFrame] loadRequest:[NSURLRequest requestWithURL:self.currentGif.cachedGifUrl]];
+  //self.imageView.image = [[NSImage alloc] initWithContentsOfURL:self.currentGif.cachedGifUrl];
 }
 
 // Refill the queue
@@ -66,15 +77,19 @@
     [[AGDataStore sharedStore] saveContext];
     
     // Points?
-    NSInteger points = [req.response[@"score"] integerValue];
-    NSString *str = nil;
-    if(points < 2) {
-      str = NSLocalizedString(([NSString stringWithFormat:@"points.%lu",points]), @"");
+    if(params) {
+      NSInteger points = [req.response[@"score"] integerValue];
+      NSString *str = [req.response[@"message"] isKindOfClass:[NSString class]] ? req.response[@"message"] : nil;
+      if(!str) {
+        if(points < 2) {
+          str = NSLocalizedString(([NSString stringWithFormat:@"points.%lu",points]), @"");
+        }
+        else {
+          str = [NSString stringWithFormat:NSLocalizedString(@"points.many", @""),points];
+        }
+      }
+      self.headerLabel.stringValue = str;
     }
-    else {
-      str = [NSString stringWithFormat:NSLocalizedString(@"points.many", @""),points];
-    }
-    self.headerLabel.stringValue = str;
     
     // New tags from server?
     NSArray *tags = [req.response[@"tags"] isKindOfClass:[NSArray class]] ? req.response[@"tags"] :@[];
@@ -99,9 +114,19 @@
 }
 
 - (IBAction)onPressedNext:(NSButton*)sender {
+  if(!self.currentGif.imageHash.length) {
+    return;
+  }
+  NSMutableArray *tags = [[self.tagsField objectValue] mutableCopy];
+  for(NSInteger x=0; x<tags.count; x++) {
+    [tags replaceObjectAtIndex:x withObject:[tags[x] lowercaseString]];
+  }
+  [self.allTags addObjectsFromArray:tags];
+  [self.queue removeObjectForKey:self.currentGif.imageHash];
+  
   NSMutableDictionary *params = [NSMutableDictionary new];
   params[@"hash"] = self.currentGif.imageHash;
-  params[@"tags"] = [self.tagsField objectValue];
+  params[@"tags"] = tags;
   [self _submit:params];
 }
 
@@ -118,14 +143,8 @@
 // Return tokens (tags) for the given autocomplete
 - (NSArray *)tokenField:(NSTokenField *)tokenField completionsForSubstring:(NSString *)substring
            indexOfToken:(NSInteger)tokenIndex indexOfSelectedItem:(NSInteger *)selectedIndex {
-  NSMutableSet *ret = [NSMutableSet new];
-  substring = [substring lowercaseString];
-  for(NSString *tag in self.allTags) {
-    if([[tag lowercaseString] hasPrefix:substring]) {
-      [ret addObject:tag];
-    }
-  }
-  return [ret allObjects];
+  return [[self.allTags array] filteredArrayUsingPredicate:
+                  [NSPredicate predicateWithFormat:@"SELF beginswith[cd] %@", substring]];
 }
 
 // Prevent adding the same token twice
@@ -136,13 +155,16 @@
     NSString *token = [filtered[x] lowercaseString];
     NSInteger count = 0;
     for(NSString *e in existing) {
-      if([token isEqualToString:[e lowercaseString]]) {
+      if([token isEqualToString:e]) {
         count++;
       }
     }
     if(count > 1) {
       [filtered removeObject:filtered[x]];
       x--;
+    }
+    else if(![filtered[x] isEqualToString:token]) {
+      [filtered replaceObjectAtIndex:x withObject:token];
     }
   }
   return filtered;
@@ -152,12 +174,17 @@
   [super viewDidAppear];
   self.allTags = [[AGGifTag allTags] mutableCopy];
   if(!self.queue.count) {
-    [self _submit:@{}];
+    [self _submit:nil];
   }
+}
+
+- (void)viewWillDisappear {
+  [super viewWillDisappear];
 }
 
 - (void)awakeFromNib {
   [super awakeFromNib];
+  self.scale = 1.f;
   self.queue = [NSMutableDictionary new];
 }
 
