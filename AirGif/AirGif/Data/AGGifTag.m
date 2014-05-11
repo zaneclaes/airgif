@@ -13,4 +13,8 @@
 
 @dynamic tag, strength, gif;
 
++ (NSArray*)allTags {
+  
+}
+
 @end

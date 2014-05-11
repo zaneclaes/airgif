@@ -2,7 +2,7 @@
 //  AGAppDelegate.h
 //  AirGif
 //
-//  Created by an Airbnb Engineer on 2/19/14.
+//  Created by Zane Claes on 2/19/14.
 //  Copyright (c) 2014 inZania. All rights reserved.
 //
 

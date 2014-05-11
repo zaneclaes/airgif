@@ -16,4 +16,6 @@
 @property (nonatomic, strong) NSNumber *strength;
 @property (nonatomic, strong) AGGif *gif;
 
++ (NSArray*)allTags; // Array of strings
+
 @end
