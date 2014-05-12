@@ -1,5 +1,10 @@
 "Account" = "Account";
 
+"setup.directory" = "Choose a Gif Directory";
+"setup.directory.invalid" = "That directory is not writable by the app";
+"setup.directory.subtext" = "Where do your gifs live? Press the folder button to manage a directory with AirGif.";
+"setup.done" = "Done";
+
 "points.0" = "No points for that one. Try again?";
 "points.1" = "BOOM! one point!";
 "points.many" = "Woah! %d points!";

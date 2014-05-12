@@ -8,6 +8,19 @@
 
 /* Begin PBXBuildFile section */
 		2F016D59191C2EA000DDC252 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F016D58191C2EA000DDC252 /* MainMenu.xib */; };
+		2F016F4B1921250800DDC252 /* BlueDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F016F3B1921250800DDC252 /* BlueDot.png */; };
+		2F016F4C1921250800DDC252 /* DisabledGrayDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F016F3D1921250800DDC252 /* DisabledGrayDot.png */; };
+		2F016F4D1921250800DDC252 /* GrayDot.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F016F3E1921250800DDC252 /* GrayDot.png */; };
+		2F016F4E1921250800DDC252 /* NSBundle+TEAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F016F401921250800DDC252 /* NSBundle+TEAdditions.m */; };
+		2F016F4F1921250800DDC252 /* SetupAssistant.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F016F411921250800DDC252 /* SetupAssistant.xib */; };
+		2F016F501921250800DDC252 /* SetupAssistantMini.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F016F421921250800DDC252 /* SetupAssistantMini.xib */; };
+		2F016F511921250800DDC252 /* TEInstallStepCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F016F441921250800DDC252 /* TEInstallStepCell.m */; };
+		2F016F521921250800DDC252 /* TEInstallStepView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F016F461921250800DDC252 /* TEInstallStepView.m */; };
+		2F016F531921250800DDC252 /* TESetupAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F016F481921250800DDC252 /* TESetupAssistant.m */; };
+		2F016F541921250800DDC252 /* TESetupAssistantBGView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F016F4A1921250800DDC252 /* TESetupAssistantBGView.m */; };
+		2F016F57192125AA00DDC252 /* AGSetupAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F016F56192125AA00DDC252 /* AGSetupAssistant.m */; };
+		2F016F5F192126ED00DDC252 /* AGSetupDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F016F5D192126ED00DDC252 /* AGSetupDirectory.m */; };
+		2F016F60192126ED00DDC252 /* AGSetupDirectory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F016F5E192126ED00DDC252 /* AGSetupDirectory.xib */; };
 		2F4F48EF18B51C0E00BCA590 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */; };
 		2F4F48FB18B51C0E00BCA590 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F48FA18B51C0E00BCA590 /* main.m */; };
 		2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F490118B51C0E00BCA590 /* AGAppDelegate.m */; };
@@ -92,6 +105,27 @@
 
 /* Begin PBXFileReference section */
 		2F016D58191C2EA000DDC252 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
+		2F016F3B1921250800DDC252 /* BlueDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BlueDot.png; sourceTree = "<group>"; };
+		2F016F3C1921250800DDC252 /* Common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
+		2F016F3D1921250800DDC252 /* DisabledGrayDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = DisabledGrayDot.png; sourceTree = "<group>"; };
+		2F016F3E1921250800DDC252 /* GrayDot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = GrayDot.png; sourceTree = "<group>"; };
+		2F016F3F1921250800DDC252 /* NSBundle+TEAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSBundle+TEAdditions.h"; sourceTree = "<group>"; };
+		2F016F401921250800DDC252 /* NSBundle+TEAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSBundle+TEAdditions.m"; sourceTree = "<group>"; };
+		2F016F411921250800DDC252 /* SetupAssistant.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupAssistant.xib; sourceTree = "<group>"; };
+		2F016F421921250800DDC252 /* SetupAssistantMini.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SetupAssistantMini.xib; sourceTree = "<group>"; };
+		2F016F431921250800DDC252 /* TEInstallStepCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEInstallStepCell.h; sourceTree = "<group>"; };
+		2F016F441921250800DDC252 /* TEInstallStepCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEInstallStepCell.m; sourceTree = "<group>"; };
+		2F016F451921250800DDC252 /* TEInstallStepView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TEInstallStepView.h; sourceTree = "<group>"; };
+		2F016F461921250800DDC252 /* TEInstallStepView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TEInstallStepView.m; sourceTree = "<group>"; };
+		2F016F471921250800DDC252 /* TESetupAssistant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TESetupAssistant.h; sourceTree = "<group>"; };
+		2F016F481921250800DDC252 /* TESetupAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESetupAssistant.m; sourceTree = "<group>"; };
+		2F016F491921250800DDC252 /* TESetupAssistantBGView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TESetupAssistantBGView.h; sourceTree = "<group>"; };
+		2F016F4A1921250800DDC252 /* TESetupAssistantBGView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TESetupAssistantBGView.m; sourceTree = "<group>"; };
+		2F016F55192125AA00DDC252 /* AGSetupAssistant.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSetupAssistant.h; sourceTree = "<group>"; };
+		2F016F56192125AA00DDC252 /* AGSetupAssistant.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSetupAssistant.m; sourceTree = "<group>"; };
+		2F016F5C192126ED00DDC252 /* AGSetupDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSetupDirectory.h; sourceTree = "<group>"; };
+		2F016F5D192126ED00DDC252 /* AGSetupDirectory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSetupDirectory.m; sourceTree = "<group>"; };
+		2F016F5E192126ED00DDC252 /* AGSetupDirectory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGSetupDirectory.xib; sourceTree = "<group>"; };
 		2F4F48EB18B51C0E00BCA590 /* AirGif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirGif.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2F4F48F118B51C0E00BCA590 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -227,6 +261,41 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2F016F3A1921250800DDC252 /* TESetupAssistant */ = {
+			isa = PBXGroup;
+			children = (
+				2F016F3B1921250800DDC252 /* BlueDot.png */,
+				2F016F3C1921250800DDC252 /* Common.h */,
+				2F016F3D1921250800DDC252 /* DisabledGrayDot.png */,
+				2F016F3E1921250800DDC252 /* GrayDot.png */,
+				2F016F3F1921250800DDC252 /* NSBundle+TEAdditions.h */,
+				2F016F401921250800DDC252 /* NSBundle+TEAdditions.m */,
+				2F016F411921250800DDC252 /* SetupAssistant.xib */,
+				2F016F421921250800DDC252 /* SetupAssistantMini.xib */,
+				2F016F431921250800DDC252 /* TEInstallStepCell.h */,
+				2F016F441921250800DDC252 /* TEInstallStepCell.m */,
+				2F016F451921250800DDC252 /* TEInstallStepView.h */,
+				2F016F461921250800DDC252 /* TEInstallStepView.m */,
+				2F016F471921250800DDC252 /* TESetupAssistant.h */,
+				2F016F481921250800DDC252 /* TESetupAssistant.m */,
+				2F016F491921250800DDC252 /* TESetupAssistantBGView.h */,
+				2F016F4A1921250800DDC252 /* TESetupAssistantBGView.m */,
+			);
+			path = TESetupAssistant;
+			sourceTree = "<group>";
+		};
+		2F016F58192125E700DDC252 /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				2F016F55192125AA00DDC252 /* AGSetupAssistant.h */,
+				2F016F56192125AA00DDC252 /* AGSetupAssistant.m */,
+				2F016F5C192126ED00DDC252 /* AGSetupDirectory.h */,
+				2F016F5D192126ED00DDC252 /* AGSetupDirectory.m */,
+				2F016F5E192126ED00DDC252 /* AGSetupDirectory.xib */,
+			);
+			name = Setup;
+			sourceTree = "<group>";
+		};
 		2F4F48E218B51C0E00BCA590 = {
 			isa = PBXGroup;
 			children = (
@@ -371,6 +440,7 @@
 		2F68850C1919338C00C36852 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2F016F58192125E700DDC252 /* Setup */,
 				2F6885851919403600C36852 /* Account */,
 				2F68857F1919401000C36852 /* Tags */,
 				2F68857919193E4200C36852 /* Search */,
@@ -472,6 +542,7 @@
 		2F9D6436191896C0004B1F38 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				2F016F3A1921250800DDC252 /* TESetupAssistant */,
 				2F6D7FB3191FFC0400CDCEA6 /* ORImageView */,
 				2F9D644E19191F40004B1F38 /* ITSidebar */,
 				2F9D6437191896C0004B1F38 /* GRGlassWindow */,
@@ -619,10 +690,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F016F4C1921250800DDC252 /* DisabledGrayDot.png in Resources */,
 				2F68856B19193D9D00C36852 /* 912-gears-selected@2x.png in Resources */,
 				2F68856A19193D9D00C36852 /* 912-gears-selected.png in Resources */,
 				2F68856319193D9D00C36852 /* 708-search-selected@2x.png in Resources */,
 				2F68857119193D9D00C36852 /* 973-user@2x.png in Resources */,
+				2F016F4F1921250800DDC252 /* SetupAssistant.xib in Resources */,
 				2F68856F19193D9D00C36852 /* 973-user-selected@2x.png in Resources */,
 				2F6885841919402800C36852 /* AGTagViewController.xib in Resources */,
 				2F68856E19193D9D00C36852 /* 973-user-selected.png in Resources */,
@@ -632,6 +705,7 @@
 				2F68856619193D9D00C36852 /* 909-tags-selected.png in Resources */,
 				2F68858A191940DD00C36852 /* AGAccountViewController.xib in Resources */,
 				2F68857319193D9D00C36852 /* Status@2x.png in Resources */,
+				2F016F4B1921250800DDC252 /* BlueDot.png in Resources */,
 				2F9D644B191896C0004B1F38 /* Roboto-Medium.ttf in Resources */,
 				2F68856719193D9D00C36852 /* 909-tags-selected@2x.png in Resources */,
 				2F68856419193D9D00C36852 /* 708-search.png in Resources */,
@@ -639,8 +713,11 @@
 				2F68857519193D9D00C36852 /* StatusHighlighted@2x.png in Resources */,
 				2F68857719193D9D00C36852 /* InfoPlist.strings in Resources */,
 				2F68857819193D9D00C36852 /* Localizable.strings in Resources */,
+				2F016F501921250800DDC252 /* SetupAssistantMini.xib in Resources */,
 				2F016D59191C2EA000DDC252 /* MainMenu.xib in Resources */,
 				2F4F495918B5223800BCA590 /* Panel.xib in Resources */,
+				2F016F4D1921250800DDC252 /* GrayDot.png in Resources */,
+				2F016F60192126ED00DDC252 /* AGSetupDirectory.xib in Resources */,
 				2F68856519193D9D00C36852 /* 708-search@2x.png in Resources */,
 				2F68856C19193D9D00C36852 /* 912-gears.png in Resources */,
 				2F68856819193D9D00C36852 /* 909-tags.png in Resources */,
@@ -676,21 +753,28 @@
 				2F6883FA1917F21800C36852 /* AGDirectoryScanner.m in Sources */,
 				2F4F495818B5223800BCA590 /* Panel.m in Sources */,
 				2F6885931919491700C36852 /* NSImage+Manipulation.m in Sources */,
+				2F016F531921250800DDC252 /* TESetupAssistant.m in Sources */,
 				2F68850F1919340000C36852 /* AGMainWindow.m in Sources */,
 				2F9D648C191A7A5C004B1F38 /* AGGif.m in Sources */,
 				2F6883EC1917EC4F00C36852 /* HTTPRequest.m in Sources */,
+				2F016F521921250800DDC252 /* TEInstallStepView.m in Sources */,
+				2F016F511921250800DDC252 /* TEInstallStepCell.m in Sources */,
 				2F6D7FB6191FFC1300CDCEA6 /* ORImageView.m in Sources */,
 				2F9D6485191A78E2004B1F38 /* AGDataStore.m in Sources */,
 				2F4F495718B5223800BCA590 /* MenubarController.m in Sources */,
+				2F016F57192125AA00DDC252 /* AGSetupAssistant.m in Sources */,
 				2F6883EF1917EC5A00C36852 /* NSImage+Hash.m in Sources */,
+				2F016F4E1921250800DDC252 /* NSBundle+TEAdditions.m in Sources */,
 				2F688590191945C300C36852 /* AGSearchResultViewItem.m in Sources */,
 				2F9D6447191896C0004B1F38 /* GRGlassAccessoryWindow.m in Sources */,
 				2F9D6482191A7849004B1F38 /* AirGifs.xcdatamodeld in Sources */,
+				2F016F5F192126ED00DDC252 /* AGSetupDirectory.m in Sources */,
 				2F6885831919402800C36852 /* AGTagViewController.m in Sources */,
 				2F4F495A18B5223800BCA590 /* PanelController.m in Sources */,
 				2F9D644A191896C0004B1F38 /* NSWindow+Screenshot.m in Sources */,
 				2F9D6491191FCB63004B1F38 /* AGGifTag.m in Sources */,
 				2F9D646819191F40004B1F38 /* ITSidebarItemCell.m in Sources */,
+				2F016F541921250800DDC252 /* TESetupAssistantBGView.m in Sources */,
 				2F4F495B18B5223800BCA590 /* StatusItemView.m in Sources */,
 				2F9D6449191896C0004B1F38 /* GRGlassWindow.m in Sources */,
 				2F9D6448191896C0004B1F38 /* GRGlassThemeWidget.m in Sources */,

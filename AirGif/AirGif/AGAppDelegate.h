@@ -9,9 +9,11 @@
 #import <Cocoa/Cocoa.h>
 
 @class AGMainWindow;
+@class AGSetupAssistant;
 
 @interface AGAppDelegate : NSObject <NSApplicationDelegate>
 
 @property (nonatomic, strong) IBOutlet AGMainWindow *window;
+@property (nonatomic, strong) AGSetupAssistant *setupAssistant;
 
 @end
