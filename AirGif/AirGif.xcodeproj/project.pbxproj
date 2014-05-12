@@ -126,6 +126,7 @@
 		2F016F5C192126ED00DDC252 /* AGSetupDirectory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSetupDirectory.h; sourceTree = "<group>"; };
 		2F016F5D192126ED00DDC252 /* AGSetupDirectory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSetupDirectory.m; sourceTree = "<group>"; };
 		2F016F5E192126ED00DDC252 /* AGSetupDirectory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGSetupDirectory.xib; sourceTree = "<group>"; };
+		2F016F6119212D9C00DDC252 /* AirGif.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AirGif.entitlements; sourceTree = "<group>"; };
 		2F4F48EB18B51C0E00BCA590 /* AirGif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirGif.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2F4F48F118B51C0E00BCA590 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -341,6 +342,7 @@
 		2F4F48F418B51C0E00BCA590 /* AirGif */ = {
 			isa = PBXGroup;
 			children = (
+				2F016F6119212D9C00DDC252 /* AirGif.entitlements */,
 				2F9D6436191896C0004B1F38 /* Libraries */,
 				2F6883E81917EC4F00C36852 /* Categories */,
 				2F6883E91917EC4F00C36852 /* Utilities */,
@@ -661,6 +663,13 @@
 				LastUpgradeCheck = 0500;
 				ORGANIZATIONNAME = inZania;
 				TargetAttributes = {
+					2F4F48EA18B51C0E00BCA590 = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
 					2F4F490B18B51C0E00BCA590 = {
 						TestTargetID = 2F4F48EA18B51C0E00BCA590;
 					};
@@ -912,6 +921,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AirGif/AirGif.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirGif/AirGif-Prefix.pch";
@@ -926,6 +937,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AirGif/AirGif.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				COMBINE_HIDPI_IMAGES = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "AirGif/AirGif-Prefix.pch";
