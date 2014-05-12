@@ -11,6 +11,7 @@
                 <outlet property="headerLabel" destination="DrQ-tj-HHo" id="nMT-am-SDf"/>
                 <outlet property="nextButton" destination="ahW-pT-rVE" id="i1U-vr-Ukg"/>
                 <outlet property="progressBar" destination="mBU-23-glM" id="T75-22-Uy6"/>
+                <outlet property="shareButton" destination="fp8-IJ-KoC" id="IQy-fh-7Va"/>
                 <outlet property="tagsField" destination="ld2-JW-rMl" id="ncD-Lp-uCq"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
                 <outlet property="webView" destination="JJW-FZ-Jqz" id="g1v-Na-73Y"/>
@@ -65,8 +66,19 @@
                         <action selector="onPressedNext:" target="-2" id="nVT-RQ-gcE"/>
                     </connections>
                 </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fp8-IJ-KoC">
+                    <rect key="frame" x="49" y="13" width="50" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSShareTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VPa-qq-MnT">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="cellTitle"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onPressedShare:" target="-2" id="PbG-un-kce"/>
+                    </connections>
+                </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="3fw-Bo-6bz">
-                    <rect key="frame" x="97" y="13" width="121" height="32"/>
+                    <rect key="frame" x="104" y="13" width="121" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Report NSFW" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="Ygy-O7-Fhg">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -88,4 +100,7 @@
             </subviews>
         </customView>
     </objects>
+    <resources>
+        <image name="NSShareTemplate" width="18" height="16"/>
+    </resources>
 </document>

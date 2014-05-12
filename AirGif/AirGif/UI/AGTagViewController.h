@@ -15,10 +15,12 @@
 @property (nonatomic, weak) IBOutlet WebView *webView;
 @property (nonatomic, weak) IBOutlet NSTokenField *tagsField;
 @property (nonatomic, weak) IBOutlet NSButton *nextButton;
+@property (nonatomic, weak) IBOutlet NSButton *shareButton;
 @property (nonatomic, weak) IBOutlet NSProgressIndicator *progressBar;
 
 - (IBAction)onPressedNext:(NSButton*)sender;
 - (IBAction)onPressedNSFW:(NSButton*)sender;
 - (IBAction)onPressedHelp:(NSButton*)sender;
+- (IBAction)onPressedShare:(NSButton*)sender;
 
 @end

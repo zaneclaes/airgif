@@ -15,7 +15,7 @@
 #import "ORImageView.h"
 #import <Quartz/Quartz.h>
 
-@interface AGTagViewController ()
+@interface AGTagViewController () <NSSharingServicePickerDelegate>
 @property (nonatomic, strong) NSMutableOrderedSet *allTags;
 @property (nonatomic, strong) NSMutableDictionary *queue;
 @property (nonatomic, strong) AGGif *currentGif;
@@ -24,8 +24,9 @@
 @end
 
 @implementation AGTagViewController
-
+//
 // Show the next gif. Turns off loader.
+//
 - (void)presentGif {
   if(!self.queue.allKeys.count) {
     [self.progressBar startAnimation:nil];
@@ -36,17 +37,23 @@
   [self.progressBar stopAnimation:nil];
   [self.tagsField becomeFirstResponder];
   
-  [[[[[self.webView mainFrame] frameView] documentView] superview] scaleUnitSquareToSize:NSMakeSize(1.f / self.scale, 1.f / self.scale)];
   NSImage *image = [[NSImage alloc] initWithContentsOfURL:self.currentGif.cachedGifUrl];
+  if(image.size.width == 0 || image.size.height == 0) {
+    [self.queue removeObjectForKey:imageHash];
+    [self presentGif];
+    return;
+  }
+  
+  [[[[[self.webView mainFrame] frameView] documentView] superview] scaleUnitSquareToSize:NSMakeSize(1.f / self.scale, 1.f / self.scale)];
   CGFloat scaleX = MIN(1, self.webView.frame.size.width / image.size.width);
   CGFloat scaleY = MIN(1, self.webView.frame.size.height / image.size.height);
   self.scale = MIN(scaleX, scaleY);
   [[[[[self.webView mainFrame] frameView] documentView] superview] scaleUnitSquareToSize:NSMakeSize(self.scale, self.scale)];
   [[self.webView mainFrame] loadRequest:[NSURLRequest requestWithURL:self.currentGif.cachedGifUrl]];
-  //self.imageView.image = [[NSImage alloc] initWithContentsOfURL:self.currentGif.cachedGifUrl];
 }
-
+//
 // Refill the queue
+//
 - (void)saveToQueue:(AGGif*)gif {
   if(!gif || !gif.imageHash.length) {
     return;
@@ -57,8 +64,9 @@
     [self presentGif];
   }
 }
-
+//
 // Send any tagging data to the server
+//
 - (void)_submit:(NSDictionary*)params {
   [self presentGif];
   __weak typeof(self) wself = self;
@@ -97,14 +105,15 @@
   }];
   self.tagsField.objectValue = @[];
 }
-
+//
+// Hotkey
+//
 - (BOOL)isCommandEnterEvent:(NSEvent *)e {
   NSUInteger flags = (e.modifierFlags & NSDeviceIndependentModifierFlagsMask);
   BOOL isCommand = (flags & NSCommandKeyMask) == NSCommandKeyMask;
   BOOL isEnter = (e.keyCode == 0x24); // VK_RETURN
   return (isCommand && isEnter);
 }
-
 - (BOOL)control:(NSControl *)control textView:(NSTextView *)textView doCommandBySelector:(SEL)commandSelector {
   if ((commandSelector == NSSelectorFromString(@"noop:")) && [self isCommandEnterEvent:[NSApp currentEvent]]) {
     [self onPressedNext:nil];
@@ -112,7 +121,9 @@
   }
   return NO;
 }
-
+/*************************************************************************************************
+ * Buttons
+ ************************************************************************************************/
 - (IBAction)onPressedNext:(NSButton*)sender {
   if(!self.currentGif.imageHash.length) {
     return;
@@ -139,6 +150,19 @@
 - (IBAction)onPressedHelp:(NSButton*)sender {
   
 }
+
+- (IBAction)onPressedShare:(NSButton*)sender {
+  NSArray *urls = @[[NSURL URLWithString:URL_SHARE_GIF(self.currentGif.imageHash)]];
+  NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:urls];
+  sharingServicePicker.delegate = self;
+  
+  [sharingServicePicker showRelativeToRect:[sender bounds]
+                                    ofView:sender
+                             preferredEdge:NSMinYEdge];
+}
+/*************************************************************************************************
+ * Tokens
+ ************************************************************************************************/
 
 // Return tokens (tags) for the given autocomplete
 - (NSArray *)tokenField:(NSTokenField *)tokenField completionsForSubstring:(NSString *)substring
@@ -170,9 +194,13 @@
   return filtered;
 }
 
+/*************************************************************************************************
+ * Lifecycle
+ ************************************************************************************************/
 - (void)viewDidAppear {
   [super viewDidAppear];
   self.allTags = [[AGGifTag allTags] mutableCopy];
+  [self.tagsField becomeFirstResponder];
   if(!self.queue.count) {
     [self _submit:nil];
   }
@@ -180,10 +208,12 @@
 
 - (void)viewWillDisappear {
   [super viewWillDisappear];
+  [[self.webView mainFrame] loadRequest:nil];
 }
 
 - (void)awakeFromNib {
   [super awakeFromNib];
+  [self.shareButton sendActionOn:NSLeftMouseDownMask];
   self.scale = 1.f;
   self.queue = [NSMutableDictionary new];
 }
