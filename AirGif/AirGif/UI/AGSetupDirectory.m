@@ -44,8 +44,10 @@
 }
 - (void)nextPressed:(id)sender {
   NSString *path = self.pathLabel.stringValue;
+  NSError *err = nil;
+  [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&err];
   // Check write permissions...?
-  if(!path.length || ![[NSFileManager defaultManager] isWritableFileAtPath:path]) {
+  if(!path.length || err || ![[NSFileManager defaultManager] isWritableFileAtPath:path]) {
     self.titleLabel.stringValue = NSLocalizedString(@"setup.directory.invalid", @"");
     return;
   }

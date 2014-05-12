@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-static NSString * const kKeyGifDirectory = @"dir_gifs";
+static NSString * const kKeyGifDirectory = @"dir_gif";
 
 @interface AGSetupAssistant : NSObject
 

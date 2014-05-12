@@ -21,6 +21,8 @@
 		2F016F57192125AA00DDC252 /* AGSetupAssistant.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F016F56192125AA00DDC252 /* AGSetupAssistant.m */; };
 		2F016F5F192126ED00DDC252 /* AGSetupDirectory.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F016F5D192126ED00DDC252 /* AGSetupDirectory.m */; };
 		2F016F60192126ED00DDC252 /* AGSetupDirectory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F016F5E192126ED00DDC252 /* AGSetupDirectory.xib */; };
+		2F016F661921327800DDC252 /* AGGifWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F016F641921327800DDC252 /* AGGifWindowController.m */; };
+		2F016F671921327800DDC252 /* AGGifWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F016F651921327800DDC252 /* AGGifWindowController.xib */; };
 		2F4F48EF18B51C0E00BCA590 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */; };
 		2F4F48FB18B51C0E00BCA590 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F48FA18B51C0E00BCA590 /* main.m */; };
 		2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F490118B51C0E00BCA590 /* AGAppDelegate.m */; };
@@ -127,6 +129,9 @@
 		2F016F5D192126ED00DDC252 /* AGSetupDirectory.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSetupDirectory.m; sourceTree = "<group>"; };
 		2F016F5E192126ED00DDC252 /* AGSetupDirectory.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGSetupDirectory.xib; sourceTree = "<group>"; };
 		2F016F6119212D9C00DDC252 /* AirGif.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AirGif.entitlements; sourceTree = "<group>"; };
+		2F016F631921327800DDC252 /* AGGifWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGGifWindowController.h; sourceTree = "<group>"; };
+		2F016F641921327800DDC252 /* AGGifWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGGifWindowController.m; sourceTree = "<group>"; };
+		2F016F651921327800DDC252 /* AGGifWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGGifWindowController.xib; sourceTree = "<group>"; };
 		2F4F48EB18B51C0E00BCA590 /* AirGif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirGif.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2F4F48F118B51C0E00BCA590 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -297,6 +302,16 @@
 			name = Setup;
 			sourceTree = "<group>";
 		};
+		2F016F621921325D00DDC252 /* Gif */ = {
+			isa = PBXGroup;
+			children = (
+				2F016F631921327800DDC252 /* AGGifWindowController.h */,
+				2F016F641921327800DDC252 /* AGGifWindowController.m */,
+				2F016F651921327800DDC252 /* AGGifWindowController.xib */,
+			);
+			name = Gif;
+			sourceTree = "<group>";
+		};
 		2F4F48E218B51C0E00BCA590 = {
 			isa = PBXGroup;
 			children = (
@@ -442,6 +457,7 @@
 		2F68850C1919338C00C36852 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				2F016F621921325D00DDC252 /* Gif */,
 				2F016F58192125E700DDC252 /* Setup */,
 				2F6885851919403600C36852 /* Account */,
 				2F68857F1919401000C36852 /* Tags */,
@@ -725,6 +741,7 @@
 				2F016F501921250800DDC252 /* SetupAssistantMini.xib in Resources */,
 				2F016D59191C2EA000DDC252 /* MainMenu.xib in Resources */,
 				2F4F495918B5223800BCA590 /* Panel.xib in Resources */,
+				2F016F671921327800DDC252 /* AGGifWindowController.xib in Resources */,
 				2F016F4D1921250800DDC252 /* GrayDot.png in Resources */,
 				2F016F60192126ED00DDC252 /* AGSetupDirectory.xib in Resources */,
 				2F68856519193D9D00C36852 /* 708-search@2x.png in Resources */,
@@ -779,6 +796,7 @@
 				2F9D6482191A7849004B1F38 /* AirGifs.xcdatamodeld in Sources */,
 				2F016F5F192126ED00DDC252 /* AGSetupDirectory.m in Sources */,
 				2F6885831919402800C36852 /* AGTagViewController.m in Sources */,
+				2F016F661921327800DDC252 /* AGGifWindowController.m in Sources */,
 				2F4F495A18B5223800BCA590 /* PanelController.m in Sources */,
 				2F9D644A191896C0004B1F38 /* NSWindow+Screenshot.m in Sources */,
 				2F9D6491191FCB63004B1F38 /* AGGifTag.m in Sources */,

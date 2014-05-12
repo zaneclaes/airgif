@@ -151,6 +151,14 @@ static NSOperationQueue * _requests = nil;
   return [self gifsWithPredicate:pred sort:nil range:NSMakeRange(0, 0)];
 }
 
+- (NSArray*)tagNames {
+  NSMutableArray *names = [NSMutableArray new];
+  for(AGGifTag *tag in self.tags) {
+    [names addObject:tag.tag];
+  }
+  return names;
+}
+
 + (AGGif*)gifWithImageHash:(NSString*)imageHash {
   if(!imageHash.length) {
     return nil;
@@ -171,9 +179,14 @@ static NSOperationQueue * _requests = nil;
   gif.views = @([dict[@"views"] integerValue]) ?: @(0);
   
   // Tags.
-  gif.tags = [NSMutableOrderedSet new];
+  NSArray *existing = [gif tagNames];
+  gif.tags = gif.tags ?: [NSMutableOrderedSet new];
   NSArray *tagDefs = [dict[@"tags"] isKindOfClass:[NSArray class]] ? dict[@"tags"] : @[];
   for(NSDictionary *tagData in tagDefs) {
+    NSString *name = tagData[@"tag"];
+    if([existing containsObject:name]) {
+      continue;
+    }
     AGGifTag *tag = [[AGGifTag alloc] initAndInsert];
     tag.tag = tagData[@"tag"];
     tag.strength = @([tagData[@"strength"] integerValue]);
