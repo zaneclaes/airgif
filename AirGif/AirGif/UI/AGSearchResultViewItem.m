@@ -27,7 +27,7 @@
   NSInteger clickCount = [theEvent clickCount];
   if(clickCount == 1) {
     NSLog(@"Open Gif: %@",self.gif);
-    NSWindowController* mycontroller = [[AGGifWindowController alloc] init];
+    NSWindowController* mycontroller = [[AGGifWindowController alloc] initWithWindowNibName:@"AGGifWindowController"];
     [mycontroller showWindow:nil];
   }
 }
