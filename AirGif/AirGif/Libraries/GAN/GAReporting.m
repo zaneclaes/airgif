@@ -9,7 +9,7 @@
 #import "GAReporting.h"
 
 #define URL_GA    @"https://ssl.google-analytics.com/collect?payload_data"
-#define DEBUG_GA  YES
+#define DEBUG_GA  NO
 
 //
 // Helper methods for building URLs

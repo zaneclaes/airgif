@@ -14,6 +14,12 @@
 + (void)trackGifAction:(NSString*)action label:(NSString*)label value:(NSNumber*)val {
   [[AGAnalytics tracker] sendEventWithCategory:@"gif" withAction:action withLabel:label withValue:val];
 }
++ (void)trackSetupAction:(NSString*)action label:(NSString*)label value:(NSNumber*)val {
+  [[AGAnalytics tracker] sendEventWithCategory:@"setup" withAction:action withLabel:label withValue:val];
+}
++ (void)view:(NSString*)screen {
+  [[AGAnalytics tracker] sendView:[NSString stringWithFormat:@"osx/%@",[screen lowercaseString]]];
+}
 
 + (GAReporting*)tracker {
   static AGAnalytics *_analytics = nil;

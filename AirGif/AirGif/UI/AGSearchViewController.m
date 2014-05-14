@@ -25,6 +25,7 @@ static CGFloat const kSearchDelay = 0.3;
   NSString *q = self.searchField.stringValue;
   NSArray *gifs = q.length ? [AGGif searchGifs:q] : [AGGif recentGifs:1000];
   [self.resultsGrid setContent:gifs];
+  [AGAnalytics trackGifAction:@"search" label:q?:@"" value:@(gifs.count)];
 }
 
 - (void)controlTextDidChange:(NSNotification *)obj {

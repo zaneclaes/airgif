@@ -139,16 +139,19 @@
   params[@"hash"] = self.currentGif.imageHash;
   params[@"tags"] = tags;
   [self _submit:params];
+  [AGAnalytics trackGifAction:@"game" label:@"tag" value:@(tags.count)];
 }
 
 - (IBAction)onPressedNSFW:(NSButton*)sender {
   NSMutableDictionary *params = [NSMutableDictionary new];
   params[@"flag"] = @(1);
   [self _submit:params];
+  [AGAnalytics trackGifAction:@"game" label:@"flag" value:@(1)];
 }
 
 - (IBAction)onPressedHelp:(NSButton*)sender {
-  
+
+  [AGAnalytics trackGifAction:@"game" label:@"help" value:@(0)];
 }
 
 - (IBAction)onPressedShare:(NSButton*)sender {
@@ -159,6 +162,7 @@
   [sharingServicePicker showRelativeToRect:[sender bounds]
                                     ofView:sender
                              preferredEdge:NSMinYEdge];
+  [AGAnalytics trackGifAction:@"game" label:@"share" value:@(0)];
 }
 /*************************************************************************************************
  * Tokens

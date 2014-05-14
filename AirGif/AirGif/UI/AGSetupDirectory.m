@@ -41,6 +41,8 @@
   [[controller nextButton] setTitle:NSLocalizedString(@"setup.done", @"")];
   self.pathLabel.stringValue = @"";
   self.titleLabel.stringValue = NSLocalizedString(@"setup.directory.subtext", @"");
+  [AGAnalytics view:@"setup"];
+  [AGAnalytics trackSetupAction:@"start" label:nil value:nil];
 }
 - (void)nextPressed:(id)sender {
   NSString *path = self.pathLabel.stringValue;
@@ -49,11 +51,13 @@
   // Check write permissions...?
   if(!path.length || err || ![[NSFileManager defaultManager] isWritableFileAtPath:path]) {
     self.titleLabel.stringValue = NSLocalizedString(@"setup.directory.invalid", @"");
+    [AGAnalytics trackSetupAction:@"error" label:err.localizedDescription value:nil];
     return;
   }
 
   [[NSUserDefaults standardUserDefaults] setObject:path forKey:kKeyGifDirectory];
   [[NSUserDefaults standardUserDefaults] synchronize];
+  [AGAnalytics trackSetupAction:@"stop" label:nil value:nil];
   [super nextPressed:sender];
 }
 

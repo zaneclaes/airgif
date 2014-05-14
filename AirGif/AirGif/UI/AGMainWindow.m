@@ -45,6 +45,8 @@ static CGSize const kMainContentSize = {315,480};
   [self.currentViewController viewDidDisappear];
   _currentViewController = viewController;
   [viewController viewDidAppear];
+
+  [AGAnalytics view:titles[self.sidebar.selectedIndex]];
 }
 
 - (void)awakeFromNib {

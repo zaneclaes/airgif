@@ -33,7 +33,10 @@
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {
-  return NSTerminateNow;
+  [[AGAnalytics tracker] sendShutdown:@"shutdown" callback:^(NSError *err) {
+    [sender replyToApplicationShouldTerminate:YES];
+  }];
+  return NSTerminateLater;
 }
 
 
