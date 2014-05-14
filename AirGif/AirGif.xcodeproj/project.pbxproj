@@ -23,6 +23,8 @@
 		2F016F60192126ED00DDC252 /* AGSetupDirectory.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F016F5E192126ED00DDC252 /* AGSetupDirectory.xib */; };
 		2F016F661921327800DDC252 /* AGGifWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F016F641921327800DDC252 /* AGGifWindowController.m */; };
 		2F016F671921327800DDC252 /* AGGifWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F016F651921327800DDC252 /* AGGifWindowController.xib */; };
+		2F45C9DC1923C3B100FC35AE /* GAReporting.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9DB1923C3B100FC35AE /* GAReporting.m */; };
+		2F45C9DF1923C6A300FC35AE /* AGAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9DE1923C6A300FC35AE /* AGAnalytics.m */; };
 		2F4F48EF18B51C0E00BCA590 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */; };
 		2F4F48FB18B51C0E00BCA590 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F48FA18B51C0E00BCA590 /* main.m */; };
 		2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F490118B51C0E00BCA590 /* AGAppDelegate.m */; };
@@ -132,6 +134,10 @@
 		2F016F631921327800DDC252 /* AGGifWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGGifWindowController.h; sourceTree = "<group>"; };
 		2F016F641921327800DDC252 /* AGGifWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGGifWindowController.m; sourceTree = "<group>"; };
 		2F016F651921327800DDC252 /* AGGifWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGGifWindowController.xib; sourceTree = "<group>"; };
+		2F45C9DA1923C3B100FC35AE /* GAReporting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAReporting.h; sourceTree = "<group>"; };
+		2F45C9DB1923C3B100FC35AE /* GAReporting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAReporting.m; sourceTree = "<group>"; };
+		2F45C9DD1923C6A300FC35AE /* AGAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGAnalytics.h; sourceTree = "<group>"; };
+		2F45C9DE1923C6A300FC35AE /* AGAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGAnalytics.m; sourceTree = "<group>"; };
 		2F4F48EB18B51C0E00BCA590 /* AirGif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirGif.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2F4F48F118B51C0E00BCA590 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -312,6 +318,15 @@
 			name = Gif;
 			sourceTree = "<group>";
 		};
+		2F45C9D91923C38A00FC35AE /* GAN */ = {
+			isa = PBXGroup;
+			children = (
+				2F45C9DA1923C3B100FC35AE /* GAReporting.h */,
+				2F45C9DB1923C3B100FC35AE /* GAReporting.m */,
+			);
+			path = GAN;
+			sourceTree = "<group>";
+		};
 		2F4F48E218B51C0E00BCA590 = {
 			isa = PBXGroup;
 			children = (
@@ -450,6 +465,8 @@
 				2F6883EB1917EC4F00C36852 /* HTTPRequest.m */,
 				2F6883F81917F21800C36852 /* AGDirectoryScanner.h */,
 				2F6883F91917F21800C36852 /* AGDirectoryScanner.m */,
+				2F45C9DD1923C6A300FC35AE /* AGAnalytics.h */,
+				2F45C9DE1923C6A300FC35AE /* AGAnalytics.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -560,6 +577,7 @@
 		2F9D6436191896C0004B1F38 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				2F45C9D91923C38A00FC35AE /* GAN */,
 				2F016F3A1921250800DDC252 /* TESetupAssistant */,
 				2F6D7FB3191FFC0400CDCEA6 /* ORImageView */,
 				2F9D644E19191F40004B1F38 /* ITSidebar */,
@@ -779,6 +797,7 @@
 				2F6883FA1917F21800C36852 /* AGDirectoryScanner.m in Sources */,
 				2F4F495818B5223800BCA590 /* Panel.m in Sources */,
 				2F6885931919491700C36852 /* NSImage+Manipulation.m in Sources */,
+				2F45C9DF1923C6A300FC35AE /* AGAnalytics.m in Sources */,
 				2F016F531921250800DDC252 /* TESetupAssistant.m in Sources */,
 				2F68850F1919340000C36852 /* AGMainWindow.m in Sources */,
 				2F9D648C191A7A5C004B1F38 /* AGGif.m in Sources */,
@@ -807,6 +826,7 @@
 				2F9D6448191896C0004B1F38 /* GRGlassThemeWidget.m in Sources */,
 				2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */,
 				2F68857D19193EC600C36852 /* AGSearchViewController.m in Sources */,
+				2F45C9DC1923C3B100FC35AE /* GAReporting.m in Sources */,
 				2F4F48FB18B51C0E00BCA590 /* main.m in Sources */,
 				2F4F495618B5223800BCA590 /* BackgroundView.m in Sources */,
 				2F9D644D191896C0004B1F38 /* OBMenuBarWindow.m in Sources */,

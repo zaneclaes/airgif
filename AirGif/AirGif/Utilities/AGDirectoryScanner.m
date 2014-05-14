@@ -24,6 +24,7 @@
 - (void)uploadNextFile {
   if(self.filesUploaded >= _changeSet.count) {
     [_delegate directoryScannerDidFinishUploadingFiles:self withError:nil];
+    [AGAnalytics trackGifAction:@"upload" label:@"end" value:@(self.filesUploaded)];
     return;
   }
   [_delegate directoryScannerDidProgress:self];
@@ -39,6 +40,7 @@
 - (void)upload {
   _filesUploaded = 0;
   _changeSet = nil;
+  [AGAnalytics trackGifAction:@"upload" label:@"begin" value:@(_animatedGifPaths.allKeys.count)];
   if(!_animatedGifPaths.allKeys.count) {
     [_delegate directoryScannerDidFinishUploadingFiles:self withError:nil];
     return;

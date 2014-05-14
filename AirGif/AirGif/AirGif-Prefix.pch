@@ -9,6 +9,7 @@
   #import <CoreData/CoreData.h>
 
   #import "Defines.h"
+  #import "AGAnalytics.h"
   #ifdef DEBUG
   #define DLog(fmt, ...)                                                         \
   NSLog((@"%s [Line %d] " fmt), __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
