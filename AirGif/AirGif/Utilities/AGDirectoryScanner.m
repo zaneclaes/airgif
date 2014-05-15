@@ -30,7 +30,9 @@
   [_delegate directoryScannerDidProgress:self];
   NSString *hash = _changeSet[self.filesUploaded];
   NSURL *url = _animatedGifPaths[hash];
-  NSDictionary *params = @{@"file":url,@"hash":hash};
+  NSMutableDictionary *params = [AGAnalytics trackedParams];
+  params[@"file"] = url;
+  params[@"hash"] = hash;
   [[HTTPRequest alloc] post:URL_API(@"upload") params:params completion:^(HTTPRequest *req) {
     _filesUploaded++;
     [self uploadNextFile];
@@ -45,7 +47,8 @@
     [_delegate directoryScannerDidFinishUploadingFiles:self withError:nil];
     return;
   }
-  NSDictionary *params = @{@"hashes":_animatedGifPaths.allKeys};
+  NSMutableDictionary *params = [AGAnalytics trackedParams];
+  params[@"hashes"] = _animatedGifPaths.allKeys;
   [[HTTPRequest alloc] post:URL_API(@"upload") params:params completion:^(HTTPRequest *req) {
     if(req.error) {
       [_delegate directoryScannerDidFinishUploadingFiles:self withError:req.error];

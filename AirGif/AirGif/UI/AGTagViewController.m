@@ -134,8 +134,8 @@
   }
   [self.allTags addObjectsFromArray:tags];
   [self.queue removeObjectForKey:self.currentGif.imageHash];
-  
-  NSMutableDictionary *params = [NSMutableDictionary new];
+
+  NSMutableDictionary *params = [AGAnalytics trackedParams];
   params[@"hash"] = self.currentGif.imageHash;
   params[@"tags"] = tags;
   [self _submit:params];
@@ -143,7 +143,7 @@
 }
 
 - (IBAction)onPressedNSFW:(NSButton*)sender {
-  NSMutableDictionary *params = [NSMutableDictionary new];
+  NSMutableDictionary *params = [AGAnalytics trackedParams];
   params[@"flag"] = @(1);
   [self _submit:params];
   [AGAnalytics trackGifAction:@"game" label:@"flag" value:@(1)];
