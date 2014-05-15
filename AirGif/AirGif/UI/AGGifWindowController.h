@@ -8,6 +8,12 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class AGGif;
+
 @interface AGGifWindowController : NSWindowController
+
+@property (nonatomic, strong) AGGif *gif;
+
+- (id)initWithGif:(AGGif*)gif;
 
 @end

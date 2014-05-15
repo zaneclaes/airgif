@@ -13,8 +13,7 @@
 #import "MASShortcutView+UserDefaults.h"
 #import "MASShortcut+UserDefaults.h"
 #import "MASShortcut+Monitoring.h"
-#import "AGAppDelegate.h"
-#import "AGMainWindow.h"
+#import "AGWindowUtilities.h"
 
 NSString *const MASPreferenceKeyShortcut = @"MASDemoShortcut";
 NSString *const MASPreferenceKeyShortcutEnabled = @"MASDemoShortcutEnabled";
@@ -66,10 +65,7 @@ NSString *const MASPreferenceKeyShortcutEnabled = @"MASDemoShortcutEnabled";
 {
   if (self.shortcutEnabled) {
     [MASShortcut registerGlobalShortcutWithUserDefaultsKey:MASPreferenceKeyShortcut handler:^{
-      AGAppDelegate *app = [NSApplication sharedApplication].delegate;
-      [NSApp activateIgnoringOtherApps:YES];
-      [app.window setCollectionBehavior: NSWindowCollectionBehaviorCanJoinAllSpaces];
-      [app.window orderFront:nil];
+      [AGWindowUtilities activateMainWindow];
     }];
   }
   else {

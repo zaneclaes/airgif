@@ -27,6 +27,7 @@ static NSString * const kNotificationGifCached              = @"NotificationGifC
 @property (nonatomic, strong) NSNumber *flags;
 @property (nonatomic, strong) NSMutableOrderedSet *tags;
 
+@property (nonatomic, readonly) NSArray *tagNames;
 @property (nonatomic, readonly) NSURL *cachedGifUrl;
 @property (nonatomic, readonly) NSURL *cachedThumbnailUrl;
 

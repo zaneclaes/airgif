@@ -32,6 +32,7 @@
 		2F45C9EF1923D11E00FC35AE /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9EA1923D11E00FC35AE /* MASShortcutView.m */; };
 		2F45C9F11923D14D00FC35AE /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F45C9F01923D14D00FC35AE /* Carbon.framework */; };
 		2F45CA0E19251A5300FC35AE /* AGSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45CA0D19251A5300FC35AE /* AGSettings.m */; };
+		2F45CA1E192528E600FC35AE /* AGWindowUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45CA1D192528E600FC35AE /* AGWindowUtilities.m */; };
 		2F4F48EF18B51C0E00BCA590 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */; };
 		2F4F48FB18B51C0E00BCA590 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F48FA18B51C0E00BCA590 /* main.m */; };
 		2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F490118B51C0E00BCA590 /* AGAppDelegate.m */; };
@@ -152,6 +153,8 @@
 		2F45C9F01923D14D00FC35AE /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
 		2F45CA0C19251A5300FC35AE /* AGSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSettings.h; sourceTree = "<group>"; };
 		2F45CA0D19251A5300FC35AE /* AGSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSettings.m; sourceTree = "<group>"; };
+		2F45CA1C192528E600FC35AE /* AGWindowUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGWindowUtilities.h; sourceTree = "<group>"; };
+		2F45CA1D192528E600FC35AE /* AGWindowUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGWindowUtilities.m; sourceTree = "<group>"; };
 		2F4F48EB18B51C0E00BCA590 /* AirGif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirGif.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2F4F48F118B51C0E00BCA590 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -472,6 +475,8 @@
 				2F45C9DE1923C6A300FC35AE /* AGAnalytics.m */,
 				2F45CA0C19251A5300FC35AE /* AGSettings.h */,
 				2F45CA0D19251A5300FC35AE /* AGSettings.m */,
+				2F45CA1C192528E600FC35AE /* AGWindowUtilities.h */,
+				2F45CA1D192528E600FC35AE /* AGWindowUtilities.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -826,6 +831,7 @@
 				2F016F661921327800DDC252 /* AGGifWindowController.m in Sources */,
 				2F9D644A191896C0004B1F38 /* NSWindow+Screenshot.m in Sources */,
 				2F9D6491191FCB63004B1F38 /* AGGifTag.m in Sources */,
+				2F45CA1E192528E600FC35AE /* AGWindowUtilities.m in Sources */,
 				2F9D646819191F40004B1F38 /* ITSidebarItemCell.m in Sources */,
 				2F016F541921250800DDC252 /* TESetupAssistantBGView.m in Sources */,
 				2F45C9EF1923D11E00FC35AE /* MASShortcutView.m in Sources */,

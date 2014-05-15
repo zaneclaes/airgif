@@ -7,6 +7,8 @@
 //
 
 #import "AGGifWindowController.h"
+#import "AGWindowUtilities.h"
+#import "AGGif.h"
 
 @interface AGGifWindowController ()
 
@@ -14,20 +16,27 @@
 
 @implementation AGGifWindowController
 
-- (id)initWithWindow:(NSWindow *)window
-{
-    self = [super initWithWindow:window];
-    if (self) {
-        // Initialization code here.
-    }
-    return self;
+- (id)initWithWindow:(NSWindow *)window {
+  if ((self = [super initWithWindow:window])) {
+    self.windowFrameAutosaveName = @"GifPreview";
+  }
+  return self;
+}
+- (void)windowWillClose:(NSNotification *)notification {
+  [NSApp stopModal];
+  [AGWindowUtilities activateMainWindow];
 }
 
-- (void)windowDidLoad
-{
-    [super windowDidLoad];
-    
-    // Implement this method to handle any initialization after your window controller's window has been loaded from its nib file.
+- (void)windowDidLoad {
+  [super windowDidLoad];
+  self.window.title = [self.gif.tagNames componentsJoinedByString:@", "];
+}
+
+- (id)initWithGif:(AGGif*)gif {
+  if((self = [super initWithWindowNibName:@"AGGifWindowController"])) {
+    self.gif = gif;
+  }
+  return self;
 }
 
 @end

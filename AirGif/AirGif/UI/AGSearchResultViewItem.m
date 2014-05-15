@@ -9,7 +9,9 @@
 #import "AGSearchResultViewItem.h"
 #import "NSImage+Manipulation.h"
 #import "AGGif.h"
+#import "AGAppDelegate.h"
 #import "AGGifWindowController.h"
+#import "AGMainWindow.h"
 
 @interface AGSearchResultImage : NSImageView
 @property (nonatomic, strong) AGGif *gif;
@@ -26,9 +28,8 @@
 {
   NSInteger clickCount = [theEvent clickCount];
   if(clickCount == 1) {
-    NSLog(@"Open Gif: %@",self.gif);
-    NSWindowController* mycontroller = [[AGGifWindowController alloc] initWithWindowNibName:@"AGGifWindowController"];
-    [mycontroller showWindow:nil];
+    NSWindowController* mycontroller = [[AGGifWindowController alloc] initWithGif:self.gif];
+    [[NSApplication sharedApplication] runModalForWindow:mycontroller.window];
   }
 }
 
