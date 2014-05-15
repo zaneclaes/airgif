@@ -40,12 +40,6 @@
 		2F4F490F18B51C0E00BCA590 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */; };
 		2F4F491718B51C0E00BCA590 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F491518B51C0E00BCA590 /* InfoPlist.strings */; };
 		2F4F491918B51C0E00BCA590 /* AirGifTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F491818B51C0E00BCA590 /* AirGifTests.m */; };
-		2F4F495618B5223800BCA590 /* BackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F494C18B5223800BCA590 /* BackgroundView.m */; };
-		2F4F495718B5223800BCA590 /* MenubarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F494E18B5223800BCA590 /* MenubarController.m */; };
-		2F4F495818B5223800BCA590 /* Panel.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F495018B5223800BCA590 /* Panel.m */; };
-		2F4F495918B5223800BCA590 /* Panel.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F4F495118B5223800BCA590 /* Panel.xib */; };
-		2F4F495A18B5223800BCA590 /* PanelController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F495318B5223800BCA590 /* PanelController.m */; };
-		2F4F495B18B5223800BCA590 /* StatusItemView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F495518B5223800BCA590 /* StatusItemView.m */; };
 		2F6883EC1917EC4F00C36852 /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6883EB1917EC4F00C36852 /* HTTPRequest.m */; };
 		2F6883EF1917EC5A00C36852 /* NSImage+Hash.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6883EE1917EC5A00C36852 /* NSImage+Hash.m */; };
 		2F6883F71917F17800C36852 /* NSImage+AnimatedGif.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6883F61917F17800C36852 /* NSImage+AnimatedGif.m */; };
@@ -174,17 +168,6 @@
 		2F4F491418B51C0E00BCA590 /* AirGifTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AirGifTests-Info.plist"; sourceTree = "<group>"; };
 		2F4F491618B51C0E00BCA590 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		2F4F491818B51C0E00BCA590 /* AirGifTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirGifTests.m; sourceTree = "<group>"; };
-		2F4F494B18B5223800BCA590 /* BackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BackgroundView.h; sourceTree = "<group>"; };
-		2F4F494C18B5223800BCA590 /* BackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BackgroundView.m; sourceTree = "<group>"; };
-		2F4F494D18B5223800BCA590 /* MenubarController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MenubarController.h; sourceTree = "<group>"; };
-		2F4F494E18B5223800BCA590 /* MenubarController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MenubarController.m; sourceTree = "<group>"; };
-		2F4F494F18B5223800BCA590 /* Panel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Panel.h; sourceTree = "<group>"; };
-		2F4F495018B5223800BCA590 /* Panel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Panel.m; sourceTree = "<group>"; };
-		2F4F495118B5223800BCA590 /* Panel.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = Panel.xib; sourceTree = "<group>"; };
-		2F4F495218B5223800BCA590 /* PanelController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PanelController.h; sourceTree = "<group>"; };
-		2F4F495318B5223800BCA590 /* PanelController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PanelController.m; sourceTree = "<group>"; };
-		2F4F495418B5223800BCA590 /* StatusItemView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = StatusItemView.h; sourceTree = "<group>"; };
-		2F4F495518B5223800BCA590 /* StatusItemView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = StatusItemView.m; sourceTree = "<group>"; };
 		2F6883EA1917EC4F00C36852 /* HTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = "<group>"; };
 		2F6883EB1917EC4F00C36852 /* HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequest.m; sourceTree = "<group>"; };
 		2F6883ED1917EC5A00C36852 /* NSImage+Hash.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSImage+Hash.h"; sourceTree = "<group>"; };
@@ -415,7 +398,6 @@
 				2F9D6436191896C0004B1F38 /* Libraries */,
 				2F6883E81917EC4F00C36852 /* Categories */,
 				2F6883E91917EC4F00C36852 /* Utilities */,
-				2F4F494A18B5223800BCA590 /* Popup */,
 				2F9D647E191A7808004B1F38 /* Data */,
 				2F68850C1919338C00C36852 /* UI */,
 				2F4F490018B51C0E00BCA590 /* AGAppDelegate.h */,
@@ -454,24 +436,6 @@
 				2F4F491518B51C0E00BCA590 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		2F4F494A18B5223800BCA590 /* Popup */ = {
-			isa = PBXGroup;
-			children = (
-				2F4F494B18B5223800BCA590 /* BackgroundView.h */,
-				2F4F494C18B5223800BCA590 /* BackgroundView.m */,
-				2F4F494D18B5223800BCA590 /* MenubarController.h */,
-				2F4F494E18B5223800BCA590 /* MenubarController.m */,
-				2F4F494F18B5223800BCA590 /* Panel.h */,
-				2F4F495018B5223800BCA590 /* Panel.m */,
-				2F4F495118B5223800BCA590 /* Panel.xib */,
-				2F4F495218B5223800BCA590 /* PanelController.h */,
-				2F4F495318B5223800BCA590 /* PanelController.m */,
-				2F4F495418B5223800BCA590 /* StatusItemView.h */,
-				2F4F495518B5223800BCA590 /* StatusItemView.m */,
-			);
-			path = Popup;
 			sourceTree = "<group>";
 		};
 		2F4F495C18B522A300BCA590 /* Resources */ = {
@@ -800,7 +764,6 @@
 				2F68857819193D9D00C36852 /* Localizable.strings in Resources */,
 				2F016F501921250800DDC252 /* SetupAssistantMini.xib in Resources */,
 				2F016D59191C2EA000DDC252 /* MainMenu.xib in Resources */,
-				2F4F495918B5223800BCA590 /* Panel.xib in Resources */,
 				2F016F671921327800DDC252 /* AGGifWindowController.xib in Resources */,
 				2F016F4D1921250800DDC252 /* GrayDot.png in Resources */,
 				2F016F60192126ED00DDC252 /* AGSetupDirectory.xib in Resources */,
@@ -838,7 +801,6 @@
 				2F9D6494191FCCE5004B1F38 /* AGData.m in Sources */,
 				2F68858D1919428500C36852 /* AGContentViewController.m in Sources */,
 				2F6883FA1917F21800C36852 /* AGDirectoryScanner.m in Sources */,
-				2F4F495818B5223800BCA590 /* Panel.m in Sources */,
 				2F6885931919491700C36852 /* NSImage+Manipulation.m in Sources */,
 				2F45C9DF1923C6A300FC35AE /* AGAnalytics.m in Sources */,
 				2F016F531921250800DDC252 /* TESetupAssistant.m in Sources */,
@@ -852,7 +814,6 @@
 				2F6D7FB6191FFC1300CDCEA6 /* ORImageView.m in Sources */,
 				2F45C9ED1923D11E00FC35AE /* MASShortcut.m in Sources */,
 				2F9D6485191A78E2004B1F38 /* AGDataStore.m in Sources */,
-				2F4F495718B5223800BCA590 /* MenubarController.m in Sources */,
 				2F016F57192125AA00DDC252 /* AGSetupAssistant.m in Sources */,
 				2F6883EF1917EC5A00C36852 /* NSImage+Hash.m in Sources */,
 				2F016F4E1921250800DDC252 /* NSBundle+TEAdditions.m in Sources */,
@@ -863,20 +824,17 @@
 				2F016F5F192126ED00DDC252 /* AGSetupDirectory.m in Sources */,
 				2F6885831919402800C36852 /* AGTagViewController.m in Sources */,
 				2F016F661921327800DDC252 /* AGGifWindowController.m in Sources */,
-				2F4F495A18B5223800BCA590 /* PanelController.m in Sources */,
 				2F9D644A191896C0004B1F38 /* NSWindow+Screenshot.m in Sources */,
 				2F9D6491191FCB63004B1F38 /* AGGifTag.m in Sources */,
 				2F9D646819191F40004B1F38 /* ITSidebarItemCell.m in Sources */,
 				2F016F541921250800DDC252 /* TESetupAssistantBGView.m in Sources */,
 				2F45C9EF1923D11E00FC35AE /* MASShortcutView.m in Sources */,
-				2F4F495B18B5223800BCA590 /* StatusItemView.m in Sources */,
 				2F9D6449191896C0004B1F38 /* GRGlassWindow.m in Sources */,
 				2F9D6448191896C0004B1F38 /* GRGlassThemeWidget.m in Sources */,
 				2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */,
 				2F68857D19193EC600C36852 /* AGSearchViewController.m in Sources */,
 				2F45C9DC1923C3B100FC35AE /* GAReporting.m in Sources */,
 				2F4F48FB18B51C0E00BCA590 /* main.m in Sources */,
-				2F4F495618B5223800BCA590 /* BackgroundView.m in Sources */,
 				2F9D644D191896C0004B1F38 /* OBMenuBarWindow.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
