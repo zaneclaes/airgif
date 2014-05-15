@@ -13,6 +13,8 @@
 
 @property (nonatomic, strong) GAReporting *tracker;
 
++ (NSMutableDictionary*)trackedParams;
+
 + (void)trackGifAction:(NSString*)action label:(NSString*)label value:(NSNumber*)val;
 + (void)trackSetupAction:(NSString*)action label:(NSString*)label value:(NSNumber*)val;
 + (void)view:(NSString*)screen;

@@ -10,6 +10,11 @@
 
 @implementation AGAnalytics
 
++ (NSMutableDictionary*)trackedParams {
+  NSMutableDictionary *p = [NSMutableDictionary new];
+  p[@"udid"] = [AGAnalytics tracker].deviceIdentifier;
+  return p;
+}
 
 + (void)trackGifAction:(NSString*)action label:(NSString*)label value:(NSNumber*)val {
   [[AGAnalytics tracker] sendEventWithCategory:@"gif" withAction:action withLabel:label withValue:val];

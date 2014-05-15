@@ -12,5 +12,11 @@
 
 @property (nonatomic, weak) IBOutlet NSSearchField *searchField;
 @property (nonatomic, weak) IBOutlet NSCollectionView *resultsGrid;
+@property (nonatomic, weak) IBOutlet NSSegmentedControl *searchStyleSegment;
+@property (nonatomic, weak) IBOutlet NSProgressIndicator *progressIndicator;
+
+@property (nonatomic, readonly) BOOL searchOnline;
+
+- (IBAction)search:(id)sender;
 
 @end
