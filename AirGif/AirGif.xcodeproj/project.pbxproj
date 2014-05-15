@@ -25,6 +25,13 @@
 		2F016F671921327800DDC252 /* AGGifWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F016F651921327800DDC252 /* AGGifWindowController.xib */; };
 		2F45C9DC1923C3B100FC35AE /* GAReporting.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9DB1923C3B100FC35AE /* GAReporting.m */; };
 		2F45C9DF1923C6A300FC35AE /* AGAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9DE1923C6A300FC35AE /* AGAnalytics.m */; };
+		2F45C9EB1923D11E00FC35AE /* MASShortcut+Monitoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9E21923D11E00FC35AE /* MASShortcut+Monitoring.m */; };
+		2F45C9EC1923D11E00FC35AE /* MASShortcut+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9E41923D11E00FC35AE /* MASShortcut+UserDefaults.m */; };
+		2F45C9ED1923D11E00FC35AE /* MASShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9E61923D11E00FC35AE /* MASShortcut.m */; };
+		2F45C9EE1923D11E00FC35AE /* MASShortcutView+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9E81923D11E00FC35AE /* MASShortcutView+UserDefaults.m */; };
+		2F45C9EF1923D11E00FC35AE /* MASShortcutView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9EA1923D11E00FC35AE /* MASShortcutView.m */; };
+		2F45C9F11923D14D00FC35AE /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F45C9F01923D14D00FC35AE /* Carbon.framework */; };
+		2F45CA0E19251A5300FC35AE /* AGSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45CA0D19251A5300FC35AE /* AGSettings.m */; };
 		2F4F48EF18B51C0E00BCA590 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */; };
 		2F4F48FB18B51C0E00BCA590 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F48FA18B51C0E00BCA590 /* main.m */; };
 		2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F4F490118B51C0E00BCA590 /* AGAppDelegate.m */; };
@@ -72,8 +79,8 @@
 		2F68857E19193EC600C36852 /* AGSearchViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F68857C19193EC600C36852 /* AGSearchViewController.xib */; };
 		2F6885831919402800C36852 /* AGTagViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6885811919402800C36852 /* AGTagViewController.m */; };
 		2F6885841919402800C36852 /* AGTagViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F6885821919402800C36852 /* AGTagViewController.xib */; };
-		2F688589191940DD00C36852 /* AGAccountViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F688587191940DD00C36852 /* AGAccountViewController.m */; };
-		2F68858A191940DD00C36852 /* AGAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F688588191940DD00C36852 /* AGAccountViewController.xib */; };
+		2F688589191940DD00C36852 /* AGSettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F688587191940DD00C36852 /* AGSettingsViewController.m */; };
+		2F68858A191940DD00C36852 /* AGSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F688588191940DD00C36852 /* AGSettingsViewController.xib */; };
 		2F68858D1919428500C36852 /* AGContentViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F68858C1919428500C36852 /* AGContentViewController.m */; };
 		2F688590191945C300C36852 /* AGSearchResultViewItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F68858F191945C300C36852 /* AGSearchResultViewItem.m */; };
 		2F6885931919491700C36852 /* NSImage+Manipulation.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6885921919491700C36852 /* NSImage+Manipulation.m */; };
@@ -138,6 +145,19 @@
 		2F45C9DB1923C3B100FC35AE /* GAReporting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAReporting.m; sourceTree = "<group>"; };
 		2F45C9DD1923C6A300FC35AE /* AGAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGAnalytics.h; sourceTree = "<group>"; };
 		2F45C9DE1923C6A300FC35AE /* AGAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGAnalytics.m; sourceTree = "<group>"; };
+		2F45C9E11923D11E00FC35AE /* MASShortcut+Monitoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcut+Monitoring.h"; sourceTree = "<group>"; };
+		2F45C9E21923D11E00FC35AE /* MASShortcut+Monitoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcut+Monitoring.m"; sourceTree = "<group>"; };
+		2F45C9E31923D11E00FC35AE /* MASShortcut+UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcut+UserDefaults.h"; sourceTree = "<group>"; };
+		2F45C9E41923D11E00FC35AE /* MASShortcut+UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcut+UserDefaults.m"; sourceTree = "<group>"; };
+		2F45C9E51923D11E00FC35AE /* MASShortcut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShortcut.h; sourceTree = "<group>"; };
+		2F45C9E61923D11E00FC35AE /* MASShortcut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcut.m; sourceTree = "<group>"; };
+		2F45C9E71923D11E00FC35AE /* MASShortcutView+UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcutView+UserDefaults.h"; sourceTree = "<group>"; };
+		2F45C9E81923D11E00FC35AE /* MASShortcutView+UserDefaults.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcutView+UserDefaults.m"; sourceTree = "<group>"; };
+		2F45C9E91923D11E00FC35AE /* MASShortcutView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MASShortcutView.h; sourceTree = "<group>"; };
+		2F45C9EA1923D11E00FC35AE /* MASShortcutView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MASShortcutView.m; sourceTree = "<group>"; };
+		2F45C9F01923D14D00FC35AE /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
+		2F45CA0C19251A5300FC35AE /* AGSettings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSettings.h; sourceTree = "<group>"; };
+		2F45CA0D19251A5300FC35AE /* AGSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSettings.m; sourceTree = "<group>"; };
 		2F4F48EB18B51C0E00BCA590 /* AirGif.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirGif.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2F4F48EE18B51C0E00BCA590 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		2F4F48F118B51C0E00BCA590 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -206,9 +226,9 @@
 		2F6885801919402800C36852 /* AGTagViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGTagViewController.h; sourceTree = "<group>"; };
 		2F6885811919402800C36852 /* AGTagViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGTagViewController.m; sourceTree = "<group>"; };
 		2F6885821919402800C36852 /* AGTagViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGTagViewController.xib; sourceTree = "<group>"; };
-		2F688586191940DD00C36852 /* AGAccountViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGAccountViewController.h; sourceTree = "<group>"; };
-		2F688587191940DD00C36852 /* AGAccountViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGAccountViewController.m; sourceTree = "<group>"; };
-		2F688588191940DD00C36852 /* AGAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGAccountViewController.xib; sourceTree = "<group>"; };
+		2F688586191940DD00C36852 /* AGSettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSettingsViewController.h; sourceTree = "<group>"; };
+		2F688587191940DD00C36852 /* AGSettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSettingsViewController.m; sourceTree = "<group>"; };
+		2F688588191940DD00C36852 /* AGSettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGSettingsViewController.xib; sourceTree = "<group>"; };
 		2F68858B1919428500C36852 /* AGContentViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGContentViewController.h; sourceTree = "<group>"; };
 		2F68858C1919428500C36852 /* AGContentViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGContentViewController.m; sourceTree = "<group>"; };
 		2F68858E191945C300C36852 /* AGSearchResultViewItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSearchResultViewItem.h; sourceTree = "<group>"; };
@@ -253,6 +273,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2F45C9F11923D14D00FC35AE /* Carbon.framework in Frameworks */,
 				2F6D7FBA191FFDF900CDCEA6 /* WebKit.framework in Frameworks */,
 				2F6D7FB8191FFC3800CDCEA6 /* Quartz.framework in Frameworks */,
 				2F9D647F191A7821004B1F38 /* CoreData.framework in Frameworks */,
@@ -327,6 +348,23 @@
 			path = GAN;
 			sourceTree = "<group>";
 		};
+		2F45C9E01923D11E00FC35AE /* MASShortcut */ = {
+			isa = PBXGroup;
+			children = (
+				2F45C9E11923D11E00FC35AE /* MASShortcut+Monitoring.h */,
+				2F45C9E21923D11E00FC35AE /* MASShortcut+Monitoring.m */,
+				2F45C9E31923D11E00FC35AE /* MASShortcut+UserDefaults.h */,
+				2F45C9E41923D11E00FC35AE /* MASShortcut+UserDefaults.m */,
+				2F45C9E51923D11E00FC35AE /* MASShortcut.h */,
+				2F45C9E61923D11E00FC35AE /* MASShortcut.m */,
+				2F45C9E71923D11E00FC35AE /* MASShortcutView+UserDefaults.h */,
+				2F45C9E81923D11E00FC35AE /* MASShortcutView+UserDefaults.m */,
+				2F45C9E91923D11E00FC35AE /* MASShortcutView.h */,
+				2F45C9EA1923D11E00FC35AE /* MASShortcutView.m */,
+			);
+			path = MASShortcut;
+			sourceTree = "<group>";
+		};
 		2F4F48E218B51C0E00BCA590 = {
 			isa = PBXGroup;
 			children = (
@@ -349,6 +387,7 @@
 		2F4F48ED18B51C0E00BCA590 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2F45C9F01923D14D00FC35AE /* Carbon.framework */,
 				2F6D7FB9191FFDF900CDCEA6 /* WebKit.framework */,
 				2F6D7FB7191FFC3800CDCEA6 /* Quartz.framework */,
 				2F688510191938AF00C36852 /* QuartzCore.framework */,
@@ -467,6 +506,8 @@
 				2F6883F91917F21800C36852 /* AGDirectoryScanner.m */,
 				2F45C9DD1923C6A300FC35AE /* AGAnalytics.h */,
 				2F45C9DE1923C6A300FC35AE /* AGAnalytics.m */,
+				2F45CA0C19251A5300FC35AE /* AGSettings.h */,
+				2F45CA0D19251A5300FC35AE /* AGSettings.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -476,7 +517,7 @@
 			children = (
 				2F016F621921325D00DDC252 /* Gif */,
 				2F016F58192125E700DDC252 /* Setup */,
-				2F6885851919403600C36852 /* Account */,
+				2F6885851919403600C36852 /* Settings */,
 				2F68857F1919401000C36852 /* Tags */,
 				2F68857919193E4200C36852 /* Search */,
 				2F68850D1919340000C36852 /* AGMainWindow.h */,
@@ -555,14 +596,14 @@
 			name = Tags;
 			sourceTree = "<group>";
 		};
-		2F6885851919403600C36852 /* Account */ = {
+		2F6885851919403600C36852 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				2F688586191940DD00C36852 /* AGAccountViewController.h */,
-				2F688587191940DD00C36852 /* AGAccountViewController.m */,
-				2F688588191940DD00C36852 /* AGAccountViewController.xib */,
+				2F688586191940DD00C36852 /* AGSettingsViewController.h */,
+				2F688587191940DD00C36852 /* AGSettingsViewController.m */,
+				2F688588191940DD00C36852 /* AGSettingsViewController.xib */,
 			);
-			name = Account;
+			name = Settings;
 			sourceTree = "<group>";
 		};
 		2F6D7FB3191FFC0400CDCEA6 /* ORImageView */ = {
@@ -577,6 +618,7 @@
 		2F9D6436191896C0004B1F38 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				2F45C9E01923D11E00FC35AE /* MASShortcut */,
 				2F45C9D91923C38A00FC35AE /* GAN */,
 				2F016F3A1921250800DDC252 /* TESetupAssistant */,
 				2F6D7FB3191FFC0400CDCEA6 /* ORImageView */,
@@ -746,7 +788,7 @@
 				2F68857619193D9D00C36852 /* Credits.rtf in Resources */,
 				2F68857219193D9D00C36852 /* Status.png in Resources */,
 				2F68856619193D9D00C36852 /* 909-tags-selected.png in Resources */,
-				2F68858A191940DD00C36852 /* AGAccountViewController.xib in Resources */,
+				2F68858A191940DD00C36852 /* AGSettingsViewController.xib in Resources */,
 				2F68857319193D9D00C36852 /* Status@2x.png in Resources */,
 				2F016F4B1921250800DDC252 /* BlueDot.png in Resources */,
 				2F9D644B191896C0004B1F38 /* Roboto-Medium.ttf in Resources */,
@@ -789,7 +831,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2F688589191940DD00C36852 /* AGAccountViewController.m in Sources */,
+				2F45C9EC1923D11E00FC35AE /* MASShortcut+UserDefaults.m in Sources */,
+				2F688589191940DD00C36852 /* AGSettingsViewController.m in Sources */,
 				2F6883F71917F17800C36852 /* NSImage+AnimatedGif.m in Sources */,
 				2F9D646719191F40004B1F38 /* ITSidebar.m in Sources */,
 				2F9D6494191FCCE5004B1F38 /* AGData.m in Sources */,
@@ -800,11 +843,14 @@
 				2F45C9DF1923C6A300FC35AE /* AGAnalytics.m in Sources */,
 				2F016F531921250800DDC252 /* TESetupAssistant.m in Sources */,
 				2F68850F1919340000C36852 /* AGMainWindow.m in Sources */,
+				2F45CA0E19251A5300FC35AE /* AGSettings.m in Sources */,
 				2F9D648C191A7A5C004B1F38 /* AGGif.m in Sources */,
 				2F6883EC1917EC4F00C36852 /* HTTPRequest.m in Sources */,
 				2F016F521921250800DDC252 /* TEInstallStepView.m in Sources */,
+				2F45C9EE1923D11E00FC35AE /* MASShortcutView+UserDefaults.m in Sources */,
 				2F016F511921250800DDC252 /* TEInstallStepCell.m in Sources */,
 				2F6D7FB6191FFC1300CDCEA6 /* ORImageView.m in Sources */,
+				2F45C9ED1923D11E00FC35AE /* MASShortcut.m in Sources */,
 				2F9D6485191A78E2004B1F38 /* AGDataStore.m in Sources */,
 				2F4F495718B5223800BCA590 /* MenubarController.m in Sources */,
 				2F016F57192125AA00DDC252 /* AGSetupAssistant.m in Sources */,
@@ -812,6 +858,7 @@
 				2F016F4E1921250800DDC252 /* NSBundle+TEAdditions.m in Sources */,
 				2F688590191945C300C36852 /* AGSearchResultViewItem.m in Sources */,
 				2F9D6447191896C0004B1F38 /* GRGlassAccessoryWindow.m in Sources */,
+				2F45C9EB1923D11E00FC35AE /* MASShortcut+Monitoring.m in Sources */,
 				2F9D6482191A7849004B1F38 /* AirGifs.xcdatamodeld in Sources */,
 				2F016F5F192126ED00DDC252 /* AGSetupDirectory.m in Sources */,
 				2F6885831919402800C36852 /* AGTagViewController.m in Sources */,
@@ -821,6 +868,7 @@
 				2F9D6491191FCB63004B1F38 /* AGGifTag.m in Sources */,
 				2F9D646819191F40004B1F38 /* ITSidebarItemCell.m in Sources */,
 				2F016F541921250800DDC252 /* TESetupAssistantBGView.m in Sources */,
+				2F45C9EF1923D11E00FC35AE /* MASShortcutView.m in Sources */,
 				2F4F495B18B5223800BCA590 /* StatusItemView.m in Sources */,
 				2F9D6449191896C0004B1F38 /* GRGlassWindow.m in Sources */,
 				2F9D6448191896C0004B1F38 /* GRGlassThemeWidget.m in Sources */,

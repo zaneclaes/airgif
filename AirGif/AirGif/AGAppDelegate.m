@@ -12,7 +12,9 @@
 #import "AGSetupAssistant.h"
 #import "TESetupAssistant.h"
 
-@implementation AGAppDelegate
+@implementation AGAppDelegate {
+  __weak id _constantShortcutMonitor;
+}
 
 - (void)checkSetup {
   if(!self.setupAssistant.directory.length) {
@@ -38,6 +40,5 @@
   }];
   return NSTerminateLater;
 }
-
 
 @end

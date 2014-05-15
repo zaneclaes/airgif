@@ -10,7 +10,7 @@
 #import "ITSideBar.h"
 #import "AGSearchViewController.h"
 #import "AGTagViewController.h"
-#import "AGAccountViewController.h"
+#import "AGSettingsViewController.h"
 #import <QuartzCore/QuartzCore.h>
 
 static NSInteger const kSideBarCellSize = 60;
@@ -23,7 +23,7 @@ static CGSize const kMainContentSize = {315,480};
 @property (nonatomic, readonly) AGContentViewController *currentViewController;
 @property (nonatomic, strong) AGSearchViewController *searchViewController;
 @property (nonatomic, strong) AGTagViewController *tagViewController;
-@property (nonatomic, strong) AGAccountViewController *accountViewController;
+@property (nonatomic, strong) AGSettingsViewController *settingsViewController;
 @end
 
 @implementation AGMainWindow
@@ -31,9 +31,9 @@ static CGSize const kMainContentSize = {315,480};
 - (void)onSidebarChanged {
   NSArray *titles = @[NSLocalizedString(@"Search", @""),
                       NSLocalizedString(@"Tag Game", @""),
-                      NSLocalizedString(@"Account", @"")];
+                      NSLocalizedString(@"Settings", @"")];
   self.title = [NSString stringWithFormat:@"%@ | AirGif",titles[self.sidebar.selectedIndex]];
-  NSArray *viewControllers = @[self.searchViewController,self.tagViewController,self.accountViewController];
+  NSArray *viewControllers = @[self.searchViewController,self.tagViewController,self.settingsViewController];
   AGContentViewController *viewController = viewControllers[self.sidebar.selectedIndex];
   [self.currentViewController viewWillDisappear];
   [viewController viewWillAppear];
@@ -61,7 +61,7 @@ static CGSize const kMainContentSize = {315,480};
   // Build the content views
   self.searchViewController = [[AGSearchViewController alloc] initWithNibName:@"AGSearchViewController" bundle:nil];
   self.tagViewController = [[AGTagViewController alloc] initWithNibName:@"AGTagViewController" bundle:nil];
-  self.accountViewController = [[AGAccountViewController alloc] initWithNibName:@"AGAccountViewController" bundle:nil];
+  self.settingsViewController = [[AGSettingsViewController alloc] initWithNibName:@"AGSettingsViewController" bundle:nil];
 
   self.sidebarWrapper = [[NSScrollView alloc] initWithFrame:NSMakeRect(0, 0, kSideBarCellSize, kMainContentSize.height)];
   [self.sidebarWrapper setBorderType:NSNoBorder];
@@ -78,12 +78,9 @@ static CGSize const kMainContentSize = {315,480};
   [self.sidebar addItemWithImage:[NSImage imageNamed:@"909-tags"]
                   alternateImage:[NSImage imageNamed:@"909-tags-selected"]
                           target:self action:@selector(onSidebarChanged)];
-  [self.sidebar addItemWithImage:[NSImage imageNamed:@"973-user"]
-                  alternateImage:[NSImage imageNamed:@"973-user-selected"]
+  [self.sidebar addItemWithImage:[NSImage imageNamed:@"912-gears"]
+                  alternateImage:[NSImage imageNamed:@"912-gears-selected"]
                           target:self action:@selector(onSidebarChanged)];
-  //[self.sidebar addItemWithImage:[NSImage imageNamed:@"912-gears"]
-  //                alternateImage:[NSImage imageNamed:@"912-gears-selected"]
-  //                        target:self action:@selector(onSidebarChanged)];
   self.sidebar.selectedIndex = 0;
   [self.sidebarWrapper addSubview:self.sidebar];
   [self.sidebar awakeFromNib];// Triggers setup manually...
