@@ -15,19 +15,51 @@
 
 static NSOperationQueue * _requests = nil;
 
+@interface AGGif ()
+@property (nonatomic, copy) HTTPRequestResponder nsfwBlock;
+@end
+
 @implementation AGGif
 
 @dynamic imageHash, name, type, uploadedAt, size, views, downloads, flags, isGifCached, isThumbnailCached, tags, purchaseDate, wasImported;
 
-- (void)flagNSFW:(HTTPRequestResponder)completion {
+@synthesize nsfwBlock = _nsfwBlock;
+
+- (void)_flagNSFW:(NSAlert*)a code:(NSInteger)code context:(NSObject*)cxt {
+  if(!code) {
+    if(self.nsfwBlock) {
+      self.nsfwBlock(nil);
+      self.nsfwBlock = nil;
+    }
+    return;
+  }
   NSMutableDictionary *params = [AGAnalytics trackedParams];
   params[@"hash"] = self.imageHash;
   params[@"flag"] = @(1);
-  [[HTTPRequest alloc] post:URL_API(@"tag") params:params completion:completion];
+  [[HTTPRequest alloc] post:URL_API(@"tag") params:params completion:self.nsfwBlock];
+  self.nsfwBlock = nil;
 
   self.flags = @([self.flags integerValue] + 1);
   [[AGDataStore sharedStore] saveContext];
   [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationGifThumbnailCached object:self.imageHash];
+}
+
+- (void)flagNSFW:(NSWindow*)presenter completion:(HTTPRequestResponder)completion {
+  self.nsfwBlock = completion;
+  if(!presenter) {
+    [self _flagNSFW:nil code:1 context:nil];
+    return;
+  }
+  NSAlert* confirmAlert = [NSAlert alertWithMessageText:@"NSFW?"
+                  defaultButton:NSLocalizedString(@"Yes",@"")
+                alternateButton:NSLocalizedString(@"No",@"")
+                    otherButton:nil
+      informativeTextWithFormat:NSLocalizedString(@"NSFWConfirm", @"")];
+  [confirmAlert beginSheetModalForWindow:presenter
+                           modalDelegate:self
+                          didEndSelector:@selector(_flagNSFW:code:context:)
+                             contextInfo:nil];
+
 }
 
 /*******************************************************************************

@@ -13,6 +13,7 @@
 #import "AGGifTag.h"
 #import "NSImage+AnimatedGif.h"
 #import "ORImageView.h"
+#import "AGWindowUtilities.h"
 #import <Quartz/Quartz.h>
 
 @interface AGTagViewController () <NSSharingServicePickerDelegate>
@@ -147,7 +148,8 @@
 
 - (IBAction)onPressedNSFW:(NSButton*)sender {
   __weak typeof(self) wself = self;
-  [self.currentGif flagNSFW:^(HTTPRequest *req) {
+  [self presentGif];
+  [self.currentGif flagNSFW:nil completion: ^(HTTPRequest *req) {
     [wself _onGotResponse:req];
   }];
   [AGAnalytics trackGifAction:@"game" label:@"flag" value:@(1)];

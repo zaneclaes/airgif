@@ -12,6 +12,11 @@
 
 @implementation AGWindowUtilities
 
++ (NSWindow*)mainWindow {
+  AGAppDelegate *app = ((AGAppDelegate*)[NSApplication sharedApplication].delegate);
+  return app.window;
+}
+
 + (void)activateMainWindow {
   [NSApp stopModal];
   AGAppDelegate *app = ((AGAppDelegate*)[NSApplication sharedApplication].delegate);

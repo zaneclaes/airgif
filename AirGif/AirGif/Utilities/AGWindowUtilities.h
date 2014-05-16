@@ -10,6 +10,7 @@
 
 @interface AGWindowUtilities : NSObject
 
++ (NSWindow*)mainWindow;
 + (void)activateMainWindow;
 
 @end

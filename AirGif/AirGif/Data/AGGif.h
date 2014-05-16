@@ -37,7 +37,7 @@ static NSString * const kNotificationGifCached              = @"NotificationGifC
 - (void)cache:(void (^)(BOOL))block;          // Thumnail and full image
 - (void)cacheThumbnail:(void (^)(BOOL))block; // Just the thumbnail
 
-- (void)flagNSFW:(HTTPRequestResponder)completion;
+- (void)flagNSFW:(NSWindow*)presenter completion:(HTTPRequestResponder)completion;
 
 + (AGGif*)gifWithServerDictionary:(NSDictionary*)dict;
 + (AGGif*)gifWithImageHash:(NSString*)imageHash;

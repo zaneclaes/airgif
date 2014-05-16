@@ -31,7 +31,7 @@
   [self.progressIndicator startAnimation:nil];
   [self.imageView setHidden:YES];
   __weak typeof(self) wself = self;
-  [self.gif flagNSFW:^(HTTPRequest *req) {
+  [self.gif flagNSFW:self.window completion:^(HTTPRequest *req) {
     [self.progressIndicator stopAnimation:nil];
     [wself close];
   }];
