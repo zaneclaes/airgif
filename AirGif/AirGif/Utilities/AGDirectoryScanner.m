@@ -25,6 +25,7 @@
   if(self.filesUploaded >= _changeSet.count) {
     [_delegate directoryScannerDidFinishUploadingFiles:self withError:nil];
     [AGAnalytics trackGifAction:@"upload" label:@"end" value:@(self.filesUploaded)];
+    [self.directory stopAccessingSecurityScopedResource];
     return;
   }
   [_delegate directoryScannerDidProgress:self];
@@ -97,8 +98,9 @@
 
 - (NSError*)scan {
   _animatedGifPaths = [NSMutableDictionary new];
+  [self.directory startAccessingSecurityScopedResource];
   NSError *err = [self scan:self.directory];
-  [self.directory stopAccessingSecurityScopedResource];
+  [self upload];
   return err;
 }
 
@@ -116,19 +118,20 @@
                                      relativeToURL:nil
                                bookmarkDataIsStale:&stale
                                              error:&err];
-    [self.directory startAccessingSecurityScopedResource];
     if(!self.directory) {
       return nil;
     }
     if(stale) {
       NSString *fp = [[NSUserDefaults standardUserDefaults] valueForKey:kKeyGifDirectory];
-      data = [[NSURL fileURLWithPath:fp] bookmarkDataWithOptions:NSURLBookmarkCreationWithSecurityScope
+      NSURL *dir = [NSURL fileURLWithPath:fp];
+      [dir startAccessingSecurityScopedResource];
+      data = [dir bookmarkDataWithOptions:NSURLBookmarkCreationWithSecurityScope
                                   includingResourceValuesForKeys:nil
                                                    relativeToURL:nil
                                                            error:nil];
-    }
-    if([self scan]) {
-      return nil;
+      [[NSUserDefaults standardUserDefaults] setObject:data forKey:kKeyGifBookmark];
+      [[NSUserDefaults standardUserDefaults] synchronize];
+      [dir stopAccessingSecurityScopedResource];
     }
   }
   return self;

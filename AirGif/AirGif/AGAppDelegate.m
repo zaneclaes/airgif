@@ -20,10 +20,8 @@
 
 - (void)checkSetup:(NSNotification*)n {
   AGDirectoryScanner *scanner = [[AGDirectoryScanner alloc] initWithBookmark];
-  if(scanner) {
-    [scanner upload];
-  }
-  else if(!n) {
+  if([scanner scan] && !n) {
+    // Error? Show the settings, but only if we're not doing so repeatedly.
     [self.window orderOut:nil];
     [self.setupAssistant run];
   }

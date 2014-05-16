@@ -27,6 +27,7 @@ static NSString * const kKeyGifBookmark = @"dir_gif_bookmark";
 @property (nonatomic, readonly) NSInteger filesUploaded;// The index within the changeSet that is being uploaded
 
 - (void)upload;
+- (NSError*)scan;
 
 - (id)initWithBookmark;
 
