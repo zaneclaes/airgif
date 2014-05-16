@@ -10,6 +10,10 @@
 
 @interface AGSettings : NSObject
 
+@property (nonatomic, readonly) NSInteger pointsGifDownload;
+@property (nonatomic, readonly) NSInteger pointsPerUSD;
+@property (nonatomic, readonly) NSInteger maxFlags;
+
 + (AGSettings*)sharedSettings;
 
 @end

@@ -10,11 +10,55 @@
 #import "AGWindowUtilities.h"
 #import "AGGif.h"
 
-@interface AGGifWindowController ()
+@interface AGGifWindowController () <NSSharingServicePickerDelegate>
 
 @end
 
 @implementation AGGifWindowController
+
+/*************************************************************************************************
+ * Buttons
+ ************************************************************************************************/
+- (IBAction)onPressedSave:(NSButton*)sender {
+
+}
+
+- (IBAction)onPressedCaption:(NSButton*)sender {
+
+}
+
+- (IBAction)onPressedNSFW:(NSButton*)sender {
+  [self.progressIndicator startAnimation:nil];
+  [self.imageView setHidden:YES];
+  __weak typeof(self) wself = self;
+  [self.gif flagNSFW:^(HTTPRequest *req) {
+    [self.progressIndicator stopAnimation:nil];
+    [wself close];
+  }];
+  [AGAnalytics trackGifAction:@"window" label:@"flag" value:@(1)];
+}
+
+- (IBAction)onPressedTag:(NSButton*)sender {
+  
+}
+
+- (IBAction)onPressedHelp:(NSButton*)sender {
+
+}
+
+- (IBAction)onPressedShare:(NSButton*)sender {
+  NSArray *urls = @[[NSURL URLWithString:URL_SHARE_GIF(self.gif)]];
+  NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:urls];
+  sharingServicePicker.delegate = self;
+
+  [sharingServicePicker showRelativeToRect:[sender bounds]
+                                    ofView:sender
+                             preferredEdge:NSMinYEdge];
+  [AGAnalytics trackGifAction:@"game" label:@"share" value:@(0)];
+}
+/*************************************************************************************************
+ * Lifecycle
+ ************************************************************************************************/
 
 - (id)initWithWindow:(NSWindow *)window {
   if ((self = [super initWithWindow:window])) {
@@ -22,14 +66,47 @@
   }
   return self;
 }
+
 - (void)windowWillClose:(NSNotification *)notification {
-  [NSApp stopModal];
   [AGWindowUtilities activateMainWindow];
+}
+
+static NSInteger const kPadding = 2;
+
+- (CGFloat)repositionButtons {
+  NSArray *buttons = @[self.helpButton, self.shareButton, self.nsfwButton, self.tagButton, self.captionButton, self.saveButton];
+  NSInteger minWidth = kPadding;
+  for(NSButton *button in buttons) {
+
+    button.frame = NSMakeRect(minWidth, (32 - button.frame.size.height) / 2,
+                              button.frame.size.width, button.frame.size.height);
+    minWidth += button.frame.size.width + kPadding;
+  }
+  return minWidth;
 }
 
 - (void)windowDidLoad {
   [super windowDidLoad];
+  [self.shareButton sendActionOn:NSLeftMouseDownMask];
   self.window.title = [self.gif.tagNames componentsJoinedByString:@", "];
+
+  [self.progressIndicator startAnimation:nil];
+  [self.gif cache:^(BOOL success) {
+    [self.progressIndicator stopAnimation:nil];
+    if(!success) {
+      [self close];
+      return;
+    }
+    NSImage *image = [[NSImage alloc] initWithContentsOfURL:self.gif.cachedGifUrl];
+    CGSize size = CGSizeMake(MAX(image.size.width, [self repositionButtons]), image.size.height);
+    NSRect frame = self.window.frame;
+    NSInteger bottomHeight = 32 + kPadding;
+    frame.size = CGSizeMake(size.width, size.height + bottomHeight + 20);
+    [self.window setFrame:frame display:YES];
+    self.imageView.image = image;
+    self.imageView.frame = NSMakeRect(0, bottomHeight, image.size.width, image.size.height);
+    [self repositionButtons];
+  }];
 }
 
 - (id)initWithGif:(AGGif*)gif {

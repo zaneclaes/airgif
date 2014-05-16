@@ -11,8 +11,12 @@
 @implementation AGAnalytics
 
 + (NSMutableDictionary*)trackedParams {
+  NSDictionary * sv = [NSDictionary dictionaryWithContentsOfFile:@"/System/Library/CoreServices/SystemVersion.plist"];
+
   NSMutableDictionary *p = [NSMutableDictionary new];
   p[@"udid"] = [AGAnalytics tracker].deviceIdentifier;
+  p[@"osx"] = [sv objectForKey:@"ProductVersion"] ?: @"";
+  p[@"version"] = [[NSBundle mainBundle] objectForInfoDictionaryKey:@"CFBundleShortVersionString"] ?: @"";
   return p;
 }
 

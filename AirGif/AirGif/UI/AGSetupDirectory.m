@@ -46,6 +46,10 @@
 }
 - (void)nextPressed:(id)sender {
   NSString *path = self.pathLabel.stringValue;
+  if(!path.length) {
+    [super nextPressed:sender];
+    return;
+  }
   NSError *err = nil;
   [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&err];
   // Check write permissions...?

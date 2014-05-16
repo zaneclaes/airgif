@@ -10,9 +10,9 @@
 #define AirGif_Defines_h
 
 #define URL_HOME @"http://AirGif.com"
-#define gURL_API(__page__) [NSString stringWithFormat:@"%@/api/%@.php",URL_HOME,__page__]
+#define URL_API(__page__) [NSString stringWithFormat:@"%@/api/%@.php",URL_HOME,__page__]
 #define URL_GIF(__hash__) [NSString stringWithFormat:@"%@/g/%@",URL_HOME,__hash__]
-#define URL_SHARE_GIF(__hash__) [NSString stringWithFormat:@"%@/%@",URL_HOME,__hash__]
+#define URL_SHARE_GIF(__gif__) [NSString stringWithFormat:@"%@/%@",URL_HOME,__gif__.imageHash]
 #define URL_THUMBNAIL(__hash__,__size__) [NSString stringWithFormat:@"%@/t/%@/%lu",URL_HOME,__hash__,__size__]
 
 #endif

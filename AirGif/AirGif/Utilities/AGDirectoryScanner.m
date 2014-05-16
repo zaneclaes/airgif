@@ -58,6 +58,7 @@
     NSArray *existing = [req.response[@"existing"] isKindOfClass:[NSArray class]] ? req.response[@"existing"] : @[];
     for(NSDictionary *data in existing) {
       AGGif *gif = [AGGif gifWithServerDictionary:data];
+      gif.wasImported = @YES;
       // Copy the file, so we have a cached version which does not reqquire downloading...
       if(![[NSFileManager defaultManager] fileExistsAtPath:gif.cachedGifUrl.path]) {
         [[NSFileManager defaultManager] copyItemAtURL:_animatedGifPaths[gif.imageHash] toURL:gif.cachedGifUrl error:nil];
@@ -91,6 +92,7 @@
       }
     }
   }
+  DLog(@"Scanning %@: %@",dir,err);
   return err;
 }
 
@@ -102,7 +104,9 @@
 - (id)initWithDirectory:(NSString*)dir {
   if((self = [super init])) {
     _directory = dir;
-    [self scan];
+    if([self scan]) {
+      return nil;
+    }
   }
   return self;
 }

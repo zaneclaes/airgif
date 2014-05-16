@@ -67,41 +67,44 @@
 //
 // Send any tagging data to the server
 //
+- (void)_onGotResponse:(HTTPRequest *)req {
+  NSArray *gifs = [req.response[@"gifs"] isKindOfClass:[NSArray class]] ? req.response[@"gifs"] : @[];
+  for(NSDictionary *data in gifs) {
+    AGGif *gif = [AGGif gifWithServerDictionary:data];
+    [gif cache:^(BOOL success) {
+      [self saveToQueue:gif];
+    }];
+  }
+  NSDictionary *saved = [req.response[@"tagged"] isKindOfClass:[NSDictionary class]] ? req.response[@"tagged"] : nil;
+  if(saved) {
+    [AGGif gifWithServerDictionary:saved];
+  }
+  [[AGDataStore sharedStore] saveContext];
+
+  // Points?
+  if(req.params) {
+    NSInteger points = [req.response[@"score"] integerValue];
+    NSString *str = [req.response[@"message"] isKindOfClass:[NSString class]] ? req.response[@"message"] : nil;
+    if(!str) {
+      if(points < 2) {
+        str = NSLocalizedString(([NSString stringWithFormat:@"points.%lu",points]), @"");
+      }
+      else {
+        str = [NSString stringWithFormat:NSLocalizedString(@"points.many", @""),points];
+      }
+    }
+    self.headerLabel.stringValue = str;
+  }
+
+  // New tags from server?
+  NSArray *tags = [req.response[@"tags"] isKindOfClass:[NSArray class]] ? req.response[@"tags"] :@[];
+  [self.allTags addObjectsFromArray:tags];
+}
 - (void)_submit:(NSDictionary*)params {
   [self presentGif];
   __weak typeof(self) wself = self;
   [[HTTPRequest alloc] post:URL_API(@"tag") params:params completion:^(HTTPRequest *req) {
-    NSArray *gifs = [req.response[@"gifs"] isKindOfClass:[NSArray class]] ? req.response[@"gifs"] : @[];
-    for(NSDictionary *data in gifs) {
-      AGGif *gif = [AGGif gifWithServerDictionary:data];
-      [gif cache:^(BOOL success) {
-        [wself saveToQueue:gif];
-      }];
-    }
-    NSDictionary *saved = [req.response[@"tagged"] isKindOfClass:[NSDictionary class]] ? req.response[@"tagged"] : nil;
-    if(saved) {
-      [AGGif gifWithServerDictionary:saved];
-    }
-    [[AGDataStore sharedStore] saveContext];
-    
-    // Points?
-    if(params) {
-      NSInteger points = [req.response[@"score"] integerValue];
-      NSString *str = [req.response[@"message"] isKindOfClass:[NSString class]] ? req.response[@"message"] : nil;
-      if(!str) {
-        if(points < 2) {
-          str = NSLocalizedString(([NSString stringWithFormat:@"points.%lu",points]), @"");
-        }
-        else {
-          str = [NSString stringWithFormat:NSLocalizedString(@"points.many", @""),points];
-        }
-      }
-      self.headerLabel.stringValue = str;
-    }
-    
-    // New tags from server?
-    NSArray *tags = [req.response[@"tags"] isKindOfClass:[NSArray class]] ? req.response[@"tags"] :@[];
-    [self.allTags addObjectsFromArray:tags];
+    [wself _onGotResponse:req];
   }];
   self.tagsField.objectValue = @[];
 }
@@ -143,9 +146,10 @@
 }
 
 - (IBAction)onPressedNSFW:(NSButton*)sender {
-  NSMutableDictionary *params = [AGAnalytics trackedParams];
-  params[@"flag"] = @(1);
-  [self _submit:params];
+  __weak typeof(self) wself = self;
+  [self.currentGif flagNSFW:^(HTTPRequest *req) {
+    [wself _onGotResponse:req];
+  }];
   [AGAnalytics trackGifAction:@"game" label:@"flag" value:@(1)];
 }
 
@@ -155,7 +159,7 @@
 }
 
 - (IBAction)onPressedShare:(NSButton*)sender {
-  NSArray *urls = @[[NSURL URLWithString:URL_SHARE_GIF(self.currentGif.imageHash)]];
+  NSArray *urls = @[[NSURL URLWithString:URL_SHARE_GIF(self.currentGif)]];
   NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:urls];
   sharingServicePicker.delegate = self;
   

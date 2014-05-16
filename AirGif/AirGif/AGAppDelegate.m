@@ -11,27 +11,31 @@
 #import "AGDirectoryScanner.h"
 #import "AGSetupAssistant.h"
 #import "TESetupAssistant.h"
+#import "AGSettings.h"
+#import "AGGif.h"
 
 @implementation AGAppDelegate {
   __weak id _constantShortcutMonitor;
 }
 
-- (void)checkSetup {
-  if(!self.setupAssistant.directory.length) {
+- (void)checkSetup:(NSNotification*)n {
+  if(![AGGif recentGifs:1].count && !n) {
     [self.window orderOut:nil];
     [self.setupAssistant run];
   }
-  else {
-    [[[AGDirectoryScanner alloc] initWithDirectory:self.setupAssistant.directory] upload];
+  else if(n && self.setupAssistant.directory.length) {
+    AGDirectoryScanner *scanner = [[AGDirectoryScanner alloc] initWithDirectory:self.setupAssistant.directory];
+    [scanner upload];
   }
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)notification {
   [self.window setHidesOnDeactivate:YES];
   self.setupAssistant = [[AGSetupAssistant alloc] init];
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkSetup)
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkSetup:)
                                                name:TESetupAssistantFinishedNotification object:nil];
-  [self checkSetup];
+  [self checkSetup:nil];
+  [AGSettings sharedSettings];
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {

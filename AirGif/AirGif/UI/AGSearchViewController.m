@@ -33,6 +33,7 @@ static CGFloat const kSearchDelay = 0.3;
   [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(setContent:) object:nil];
   //DLog(@"Content: %@",gifs);
   [self.resultsGrid setContent:[gifs allObjects]];
+  [[AGDataStore sharedStore] saveContext];
 }
 
 - (IBAction)search:(id)sender {
@@ -71,7 +72,6 @@ static CGFloat const kSearchDelay = 0.3;
         }];
       }
       downloading--;
-      [[AGDataStore sharedStore] saveContext];
       if(downloading <= 0) {
         [self setContent:gifs];
         [self.progressIndicator stopAnimation:nil];

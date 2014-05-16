@@ -13,10 +13,11 @@
 @implementation AGWindowUtilities
 
 + (void)activateMainWindow {
+  [NSApp stopModal];
   AGAppDelegate *app = ((AGAppDelegate*)[NSApplication sharedApplication].delegate);
   [NSApp activateIgnoringOtherApps:YES];
   [app.window setCollectionBehavior: NSWindowCollectionBehaviorCanJoinAllSpaces];
-  [app.window orderFront:nil];
+  [app.window makeKeyAndOrderFront:nil];
 }
 
 @end

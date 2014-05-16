@@ -10,12 +10,25 @@
 #import "AGDataStore.h"
 #import "AGGifTag.h"
 #import "HTTPRequest.h"
+#import "AGSettings.h"
+#import "HTTPRequest.h"
 
 static NSOperationQueue * _requests = nil;
 
 @implementation AGGif
 
-@dynamic imageHash, name, type, uploadedAt, size, views, downloads, flags, isGifCached, isThumbnailCached, tags;
+@dynamic imageHash, name, type, uploadedAt, size, views, downloads, flags, isGifCached, isThumbnailCached, tags, purchaseDate, wasImported;
+
+- (void)flagNSFW:(HTTPRequestResponder)completion {
+  NSMutableDictionary *params = [AGAnalytics trackedParams];
+  params[@"hash"] = self.imageHash;
+  params[@"flag"] = @(1);
+  [[HTTPRequest alloc] post:URL_API(@"tag") params:params completion:completion];
+
+  self.flags = @([self.flags integerValue] + 1);
+  [[AGDataStore sharedStore] saveContext];
+  [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationGifThumbnailCached object:self.imageHash];
+}
 
 /*******************************************************************************
  * Caching
@@ -45,19 +58,20 @@ static NSOperationQueue * _requests = nil;
   NSInteger thumbSize = kGifThumbnailSize * 2;//[[NSScreen mainScreen] backingScaleFactor];
   BOOL wasThumbnailCached = self.isThumbnailCached.boolValue;
   BOOL wasGifCached = self.isGifCached.boolValue;
-  self.isThumbnailCached = @([self _cacheImage:[NSURL URLWithString:URL_THUMBNAIL(self.imageHash, thumbSize)]
-                                            to:self.cachedThumbnailUrl]);
-  BOOL cached = self.isThumbnailCached.boolValue;
+  BOOL cached = [self _cacheImage:[NSURL URLWithString:URL_THUMBNAIL(self.imageHash, thumbSize)]
+                                            to:self.cachedThumbnailUrl];
   if(cached && !wasThumbnailCached) {
     dispatch_async(dispatch_get_main_queue(), ^{
+      self.isThumbnailCached = @YES;
       [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationGifThumbnailCached object:hash];
     });
   }
   if(full) {
-    self.isGifCached = @([self _cacheImage:[NSURL URLWithString:URL_GIF(self.imageHash)] to:self.cachedGifUrl]);
-    cached = cached && self.isGifCached.boolValue;
+    BOOL fullyCached = [self _cacheImage:[NSURL URLWithString:URL_GIF(self.imageHash)] to:self.cachedGifUrl];
+    cached = cached && fullyCached;
     if(self.isGifCached.boolValue && !wasGifCached) {
       dispatch_async(dispatch_get_main_queue(), ^{
+        self.isGifCached = @YES;
         [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationGifCached object:hash];
       });
     }
@@ -141,13 +155,19 @@ static NSOperationQueue * _requests = nil;
 + (NSArray*)recentGifs:(NSInteger)limit {
   NSSortDescriptor *sort = [[NSSortDescriptor alloc] initWithKey:@"uploadedAt" ascending:NO];
   NSRange range = NSMakeRange(0, limit);
-  NSPredicate *pred = [NSPredicate predicateWithFormat:@"isThumbnailCached == YES"];
+  NSPredicate *pred = [NSPredicate predicateWithFormat:@"(wasImported == YES OR purchaseDate != nil) AND \
+                       flags < %d AND \
+                       isThumbnailCached == YES",
+                       [AGSettings sharedSettings].maxFlags];
   return [self gifsWithPredicate:pred sort:@[sort] range:range];
 }
 
 + (NSArray*)searchGifs:(NSString*)query {
-  NSPredicate *pred = [NSPredicate predicateWithFormat:@"isThumbnailCached == YES AND \
-                       ((name CONTAINS[cd] %@) OR (SUBQUERY(tags, $x, $x.tag CONTAINS[cd] %@).@count > 0))",query,query];
+  NSPredicate *pred = [NSPredicate predicateWithFormat:@"(wasImported == YES OR purchaseDate != nil) AND \
+                       isThumbnailCached == YES AND \
+                       flags < %d AND \
+                       ((name CONTAINS[cd] %@) OR (SUBQUERY(tags, $x, $x.tag CONTAINS[cd] %@).@count > 0))",
+                       [AGSettings sharedSettings].maxFlags, query,query];
   return [self gifsWithPredicate:pred sort:nil range:NSMakeRange(0, 0)];
 }
 

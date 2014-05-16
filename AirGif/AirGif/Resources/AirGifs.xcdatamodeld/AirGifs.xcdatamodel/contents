@@ -7,10 +7,12 @@
         <attribute name="isGifCached" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="isThumbnailCached" optional="YES" attributeType="Boolean" syncable="YES"/>
         <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="purchaseDate" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="size" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
         <attribute name="type" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="uploadedAt" optional="YES" attributeType="Date" syncable="YES"/>
         <attribute name="views" optional="YES" attributeType="Integer 32" defaultValueString="0" syncable="YES"/>
+        <attribute name="wasImported" optional="YES" attributeType="Boolean" syncable="YES"/>
         <relationship name="tags" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="AGGifTag" inverseName="gif" inverseEntity="AGGifTag" syncable="YES"/>
     </entity>
     <entity name="AGGifTag" syncable="YES">
@@ -19,7 +21,7 @@
         <relationship name="gif" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AGGif" inverseName="tags" inverseEntity="AGGif" syncable="YES"/>
     </entity>
     <elements>
-        <element name="AGGif" positionX="-63" positionY="-18" width="128" height="208"/>
+        <element name="AGGif" positionX="-63" positionY="-18" width="128" height="240"/>
         <element name="AGGifTag" positionX="-54" positionY="63" width="128" height="88"/>
     </elements>
 </model>

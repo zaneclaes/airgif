@@ -7,6 +7,7 @@
 //
 
 #import "AGData.h"
+#import "HTTPRequest.h"
 
 static NSInteger const kGifThumbnailSize = 150;
 
@@ -26,6 +27,8 @@ static NSString * const kNotificationGifCached              = @"NotificationGifC
 @property (nonatomic, strong) NSNumber *downloads;
 @property (nonatomic, strong) NSNumber *flags;
 @property (nonatomic, strong) NSMutableOrderedSet *tags;
+@property (nonatomic, strong) NSDate *purchaseDate;
+@property (nonatomic, strong) NSNumber *wasImported;
 
 @property (nonatomic, readonly) NSArray *tagNames;
 @property (nonatomic, readonly) NSURL *cachedGifUrl;
@@ -33,6 +36,8 @@ static NSString * const kNotificationGifCached              = @"NotificationGifC
 
 - (void)cache:(void (^)(BOOL))block;          // Thumnail and full image
 - (void)cacheThumbnail:(void (^)(BOOL))block; // Just the thumbnail
+
+- (void)flagNSFW:(HTTPRequestResponder)completion;
 
 + (AGGif*)gifWithServerDictionary:(NSDictionary*)dict;
 + (AGGif*)gifWithImageHash:(NSString*)imageHash;
