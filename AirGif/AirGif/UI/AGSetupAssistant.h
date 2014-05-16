@@ -8,8 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-static NSString * const kKeyGifDirectory = @"dir_gif";
-
 @interface AGSetupAssistant : NSObject
 
 @property (nonatomic, readonly) NSString *directory;

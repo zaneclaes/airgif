@@ -8,9 +8,11 @@
 
 #import "AGSetupDirectory.h"
 #import "AGSetupAssistant.h"
+#import "AGDirectoryScanner.h"
 
 @interface AGSetupDirectory ()
-
+@property (nonatomic, strong) NSURL *directoryURL;
+@property (nonatomic, strong) NSData *directoryBookmark;
 @end
 
 @implementation AGSetupDirectory
@@ -28,6 +30,13 @@
     {
       NSURL* fp = [files objectAtIndex:i];
       self.pathLabel.stringValue = [fp path];
+
+      self.directoryURL = fp;
+      self.directoryBookmark = [self.directoryURL bookmarkDataWithOptions:NSURLBookmarkCreationWithSecurityScope
+                                           includingResourceValuesForKeys:nil
+                                                            relativeToURL:nil
+                                                                    error:nil];
+
       break;
     }
   }
@@ -53,13 +62,14 @@
   NSError *err = nil;
   [[NSFileManager defaultManager] contentsOfDirectoryAtPath:path error:&err];
   // Check write permissions...?
-  if(!path.length || err || ![[NSFileManager defaultManager] isWritableFileAtPath:path]) {
+  if(!self.directoryBookmark || !path.length || err || ![[NSFileManager defaultManager] isWritableFileAtPath:path]) {
     self.titleLabel.stringValue = NSLocalizedString(@"setup.directory.invalid", @"");
     [AGAnalytics trackSetupAction:@"error" label:err.localizedDescription value:nil];
     return;
   }
 
   [[NSUserDefaults standardUserDefaults] setObject:path forKey:kKeyGifDirectory];
+  [[NSUserDefaults standardUserDefaults] setObject:self.directoryBookmark forKey:kKeyGifBookmark];
   [[NSUserDefaults standardUserDefaults] synchronize];
   [AGAnalytics trackSetupAction:@"stop" label:nil value:nil];
   [super nextPressed:sender];

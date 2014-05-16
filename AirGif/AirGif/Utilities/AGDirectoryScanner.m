@@ -74,21 +74,20 @@
   }];
 }
 
-- (NSError*)scan:(NSString*)dir {
+- (NSError*)scan:(NSURL*)dir {
   NSError *err = nil;
-  NSArray *filenames = [[NSFileManager defaultManager] contentsOfDirectoryAtPath:dir error:&err];
-  for(NSString* fn in filenames) {
-    NSString *fp = [dir stringByAppendingPathComponent:fn];
+  NSArray *filenames = [[NSFileManager defaultManager] contentsOfDirectoryAtURL:dir includingPropertiesForKeys:nil  options:0 error:&err];
+  for(NSURL* fp in filenames) {
     BOOL isDir;
-    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:fp isDirectory:&isDir];
+    BOOL exists = [[NSFileManager defaultManager] fileExistsAtPath:[fp path] isDirectory:&isDir];
     if(exists && isDir) {
       [self scan:fp];
     }
     else {
-      NSImage *img = [[NSImage alloc] initWithContentsOfFile:fp];
+      NSImage *img = [[NSImage alloc] initWithContentsOfFile:[fp path]];
       if(img && img.isAnimatedGif) {
-        NSString *hash = [NSImage hashImagePath:fp];
-        _animatedGifPaths[hash] = [NSURL fileURLWithPath:fp];
+        NSString *hash = [NSImage hashImagePath:[fp path]];
+        _animatedGifPaths[hash] = fp;
       }
     }
   }
@@ -98,12 +97,36 @@
 
 - (NSError*)scan {
   _animatedGifPaths = [NSMutableDictionary new];
-  return [self scan:self.directory];
+  NSError *err = [self scan:self.directory];
+  [self.directory stopAccessingSecurityScopedResource];
+  return err;
 }
 
-- (id)initWithDirectory:(NSString*)dir {
+
+- (id)initWithBookmark {
   if((self = [super init])) {
-    _directory = dir;
+    NSData *data = [[NSUserDefaults standardUserDefaults] valueForKey:kKeyGifBookmark];
+    if(!data) {
+      return nil;
+    }
+    BOOL stale;
+    NSError *err;
+    _directory = [NSURL URLByResolvingBookmarkData:data
+                                           options:NSURLBookmarkResolutionWithSecurityScope
+                                     relativeToURL:nil
+                               bookmarkDataIsStale:&stale
+                                             error:&err];
+    [self.directory startAccessingSecurityScopedResource];
+    if(!self.directory) {
+      return nil;
+    }
+    if(stale) {
+      NSString *fp = [[NSUserDefaults standardUserDefaults] valueForKey:kKeyGifDirectory];
+      data = [[NSURL fileURLWithPath:fp] bookmarkDataWithOptions:NSURLBookmarkCreationWithSecurityScope
+                                  includingResourceValuesForKeys:nil
+                                                   relativeToURL:nil
+                                                           error:nil];
+    }
     if([self scan]) {
       return nil;
     }

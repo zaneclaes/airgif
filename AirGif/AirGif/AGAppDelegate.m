@@ -19,13 +19,13 @@
 }
 
 - (void)checkSetup:(NSNotification*)n {
-  if(![AGGif recentGifs:1].count && !n) {
+  AGDirectoryScanner *scanner = [[AGDirectoryScanner alloc] initWithBookmark];
+  if(scanner) {
+    [scanner upload];
+  }
+  else if(!n) {
     [self.window orderOut:nil];
     [self.setupAssistant run];
-  }
-  else if(n && self.setupAssistant.directory.length) {
-    AGDirectoryScanner *scanner = [[AGDirectoryScanner alloc] initWithDirectory:self.setupAssistant.directory];
-    [scanner upload];
   }
 }
 
