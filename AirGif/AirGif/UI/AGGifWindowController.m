@@ -10,13 +10,17 @@
 #import "AGWindowUtilities.h"
 #import "AGDraggableImageView.h"
 #import "AGTagViewController.h"
+#import "AGPointManager.h"
+#import "AGSettings.h"
 #import "AGGif.h"
+#import "AGDataStore.h"
 
 @interface AGGifWindowController () <NSSharingServicePickerDelegate>
 
 @end
 
 @implementation AGGifWindowController
+
 
 /*************************************************************************************************
  * Buttons
@@ -82,6 +86,9 @@ static NSInteger const kPadding = 2;
   NSArray *buttons = @[self.helpButton, self.shareButton, self.nsfwButton, self.tagButton, self.captionButton, self.saveButton];
   NSInteger minWidth = kPadding;
   for(NSButton *button in buttons) {
+    if(button.isHidden) {
+      continue;
+    }
 
     button.frame = NSMakeRect(minWidth, (32 - button.frame.size.height) / 2,
                               button.frame.size.width, button.frame.size.height);
@@ -108,7 +115,7 @@ static NSInteger const kPadding = 2;
     NSInteger bottomHeight = 32 + kPadding;
     frame.size = CGSizeMake(size.width, size.height + bottomHeight + 20);
     [self.window setFrame:frame display:YES];
-    self.imageView.fileUrl = self.gif.cachedGifUrl;
+    self.imageView.gif = self.gif;
     self.imageView.image = image;
     self.imageView.frame = NSMakeRect(0, bottomHeight, image.size.width, image.size.height);
     [self repositionButtons];

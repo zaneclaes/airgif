@@ -8,6 +8,12 @@
  */
 
 #import "AGDraggableImageView.h"
+#import "AGGif.h"
+#import "AGTagViewController.h"
+#import "AGSettings.h"
+#import "AGPointManager.h"
+#import "AGDataStore.h"
+#import "AGWindowUtilities.h"
 
 @implementation AGDraggableImageView
 
@@ -28,12 +34,74 @@ NSString *kPrivateDragUTI = @"com.inzania.airgif";
   return self;
 }
 
+- (void)_save {
+  NSSavePanel *tvarNSSavePanelObj	= [NSSavePanel savePanel];
+  NSInteger tvarInt	= [tvarNSSavePanelObj runModal];
+  if(tvarInt == NSOKButton){
+    [[NSFileManager defaultManager] copyItemAtURL:self.gif.cachedGifUrl toURL:[tvarNSSavePanelObj URL] error:nil];
+  } else if(tvarInt == NSCancelButton) {
+    return;
+  } else {
+    return;
+  } // end if
+}
+
+- (void)_purchase:(NSAlert*)a code:(NSInteger)code context:(NSObject*)cxt {
+  if(code == 0) {
+    // Alternate button: earn
+    [[NSNotificationCenter defaultCenter] postNotificationName:kTagGifNotification object:nil];
+  }
+  else {
+    // Main button: purchase
+    [[AGPointManager sharedManager] purchase];
+  }
+  [AGWindowUtilities activateMainWindow];
+  [AGAnalytics trackGifAction:@"purchase" label:@"response" value:@(code)];
+}
+
+- (void)purchase {
+  NSString *msg = [NSString stringWithFormat:NSLocalizedString(@"points.purchase.req",@""),[AGSettings sharedSettings].pointsGifDownload];
+  NSAlert* confirmAlert = [NSAlert alertWithMessageText:msg
+                                          defaultButton:NSLocalizedString(@"points.purchase.purchase",@"")
+                                        alternateButton:NSLocalizedString(@"points.purchase.earn",@"")
+                                            otherButton:nil
+                              informativeTextWithFormat:NSLocalizedString(@"points.purchase.body", @"")];
+  [confirmAlert beginSheetModalForWindow:nil
+                           modalDelegate:self
+                          didEndSelector:@selector(_purchase:code:context:)
+                             contextInfo:nil];
+  [AGAnalytics trackGifAction:@"purchase" label:@"prompt" value:nil];
+}
+
+- (BOOL)checkForSaveAction {
+  if(self.gif.wasImported.boolValue || self.gif.purchaseDate) {
+    return YES;
+  }
+  else {
+    if([[AGPointManager sharedManager] spend:[AGSettings sharedSettings].pointsGifDownload reason:@"download"]) {
+      self.gif.purchaseDate = [NSDate date];
+      [[AGDataStore sharedStore] saveContext];
+      return YES;
+    }
+    else {
+      [self purchase];
+    }
+  }
+  return NO;
+}
+
+- (void)save {
+  if([self checkForSaveAction]) {
+    [self _save];
+  }
+}
+
 
 #pragma mark - Source Operations
 
 - (void)mouseDown:(NSEvent*)event
 {
-  if (self.allowDrag) {
+  if (self.allowDrag && [self checkForSaveAction]) {
     NSPoint dragPosition;
     NSRect imageLocation;
     
@@ -51,7 +119,7 @@ NSString *kPrivateDragUTI = @"com.inzania.airgif";
     [pasteboard clearContents];
     
     [pasteboard declareTypes:@[NSURLPboardType] owner:self];
-    [pasteboard writeObjects:@[self.fileUrl]];
+    [pasteboard writeObjects:@[self.gif.cachedGifUrl]];
     
     dragPosition.x -= self.image.size.width/2;
     dragPosition.y -= self.image.size.height/2;

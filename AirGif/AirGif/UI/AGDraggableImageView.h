@@ -10,6 +10,7 @@
 #import <Foundation/Foundation.h>
 #import <AppKit/AppKit.h>
 
+@class AGGif;
 @protocol AGDraggableImageViewDelegate;
 
 @interface AGDraggableImageView : NSImageView <NSDraggingSource, NSDraggingDestination, NSPasteboardItemDataProvider>
@@ -19,7 +20,7 @@
 }
 
 @property (assign) BOOL allowDrag;
-@property (nonatomic, strong) NSURL *fileUrl;
+@property (nonatomic, strong) AGGif *gif;
 @property (assign) id<AGDraggableImageViewDelegate> delegate;
 
 - (id)initWithCoder:(NSCoder *)coder;
