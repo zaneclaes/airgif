@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>61AC4A32-06C7-4EAE-808B-31683D30D112</string>
+	<key>IDESourceControlProjectName</key>
+	<string>AirGif</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>0BF40D0A-6267-41FC-801B-77D7C1126DCA</key>
+		<string>ssh://github.com/zaneclaes/airgif.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>AirGif/AirGif.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>0BF40D0A-6267-41FC-801B-77D7C1126DCA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/zaneclaes/airgif.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>0BF40D0A-6267-41FC-801B-77D7C1126DCA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>0BF40D0A-6267-41FC-801B-77D7C1126DCA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>airgif</string>
+		</dict>
+	</array>
+</dict>
+</plist>

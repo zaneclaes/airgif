@@ -1,0 +1,499 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2FFFD8561927B8E800F4453C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFFD8551927B8E800F4453C /* Cocoa.framework */; };
+		2FFFD8601927B8E800F4453C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD85E1927B8E800F4453C /* InfoPlist.strings */; };
+		2FFFD8621927B8E800F4453C /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD8611927B8E800F4453C /* main.m */; };
+		2FFFD8661927B8E800F4453C /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD8641927B8E800F4453C /* Credits.rtf */; };
+		2FFFD8691927B8E800F4453C /* AGAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD8681927B8E800F4453C /* AGAppDelegate.m */; };
+		2FFFD86C1927B8E800F4453C /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD86A1927B8E800F4453C /* MainMenu.xib */; };
+		2FFFD86E1927B8E800F4453C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD86D1927B8E800F4453C /* Images.xcassets */; };
+		2FFFD8751927B8E800F4453C /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFFD8741927B8E800F4453C /* XCTest.framework */; };
+		2FFFD8761927B8E800F4453C /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFFD8551927B8E800F4453C /* Cocoa.framework */; };
+		2FFFD87E1927B8E800F4453C /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD87C1927B8E800F4453C /* InfoPlist.strings */; };
+		2FFFD8801927B8E800F4453C /* AirGifLauncherTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD87F1927B8E800F4453C /* AirGifLauncherTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		2FFFD8771927B8E800F4453C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 2FFFD84A1927B8E800F4453C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 2FFFD8511927B8E800F4453C;
+			remoteInfo = AirGifLauncher;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		2FFFD8521927B8E800F4453C /* AirGifLauncher.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AirGifLauncher.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FFFD8551927B8E800F4453C /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		2FFFD8581927B8E800F4453C /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		2FFFD8591927B8E800F4453C /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		2FFFD85A1927B8E800F4453C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		2FFFD85D1927B8E800F4453C /* AirGifLauncher-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AirGifLauncher-Info.plist"; sourceTree = "<group>"; };
+		2FFFD85F1927B8E800F4453C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2FFFD8611927B8E800F4453C /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		2FFFD8631927B8E800F4453C /* AirGifLauncher-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "AirGifLauncher-Prefix.pch"; sourceTree = "<group>"; };
+		2FFFD8651927B8E800F4453C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		2FFFD8671927B8E800F4453C /* AGAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AGAppDelegate.h; sourceTree = "<group>"; };
+		2FFFD8681927B8E800F4453C /* AGAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AGAppDelegate.m; sourceTree = "<group>"; };
+		2FFFD86B1927B8E800F4453C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		2FFFD86D1927B8E800F4453C /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		2FFFD8731927B8E800F4453C /* AirGifLauncherTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AirGifLauncherTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		2FFFD8741927B8E800F4453C /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		2FFFD87B1927B8E800F4453C /* AirGifLauncherTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "AirGifLauncherTests-Info.plist"; sourceTree = "<group>"; };
+		2FFFD87D1927B8E800F4453C /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		2FFFD87F1927B8E800F4453C /* AirGifLauncherTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AirGifLauncherTests.m; sourceTree = "<group>"; };
+		2FFFD8941927BA3000F4453C /* AirGifLauncher.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = AirGifLauncher.entitlements; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2FFFD84F1927B8E800F4453C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FFFD8561927B8E800F4453C /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FFFD8701927B8E800F4453C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FFFD8761927B8E800F4453C /* Cocoa.framework in Frameworks */,
+				2FFFD8751927B8E800F4453C /* XCTest.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2FFFD8491927B8E800F4453C = {
+			isa = PBXGroup;
+			children = (
+				2FFFD85B1927B8E800F4453C /* AirGifLauncher */,
+				2FFFD8791927B8E800F4453C /* AirGifLauncherTests */,
+				2FFFD8541927B8E800F4453C /* Frameworks */,
+				2FFFD8531927B8E800F4453C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2FFFD8531927B8E800F4453C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2FFFD8521927B8E800F4453C /* AirGifLauncher.app */,
+				2FFFD8731927B8E800F4453C /* AirGifLauncherTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2FFFD8541927B8E800F4453C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FFFD8551927B8E800F4453C /* Cocoa.framework */,
+				2FFFD8741927B8E800F4453C /* XCTest.framework */,
+				2FFFD8571927B8E800F4453C /* Other Frameworks */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2FFFD8571927B8E800F4453C /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2FFFD8581927B8E800F4453C /* AppKit.framework */,
+				2FFFD8591927B8E800F4453C /* CoreData.framework */,
+				2FFFD85A1927B8E800F4453C /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		2FFFD85B1927B8E800F4453C /* AirGifLauncher */ = {
+			isa = PBXGroup;
+			children = (
+				2FFFD8941927BA3000F4453C /* AirGifLauncher.entitlements */,
+				2FFFD8671927B8E800F4453C /* AGAppDelegate.h */,
+				2FFFD8681927B8E800F4453C /* AGAppDelegate.m */,
+				2FFFD86A1927B8E800F4453C /* MainMenu.xib */,
+				2FFFD86D1927B8E800F4453C /* Images.xcassets */,
+				2FFFD85C1927B8E800F4453C /* Supporting Files */,
+			);
+			path = AirGifLauncher;
+			sourceTree = "<group>";
+		};
+		2FFFD85C1927B8E800F4453C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2FFFD85D1927B8E800F4453C /* AirGifLauncher-Info.plist */,
+				2FFFD85E1927B8E800F4453C /* InfoPlist.strings */,
+				2FFFD8611927B8E800F4453C /* main.m */,
+				2FFFD8631927B8E800F4453C /* AirGifLauncher-Prefix.pch */,
+				2FFFD8641927B8E800F4453C /* Credits.rtf */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		2FFFD8791927B8E800F4453C /* AirGifLauncherTests */ = {
+			isa = PBXGroup;
+			children = (
+				2FFFD87F1927B8E800F4453C /* AirGifLauncherTests.m */,
+				2FFFD87A1927B8E800F4453C /* Supporting Files */,
+			);
+			path = AirGifLauncherTests;
+			sourceTree = "<group>";
+		};
+		2FFFD87A1927B8E800F4453C /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				2FFFD87B1927B8E800F4453C /* AirGifLauncherTests-Info.plist */,
+				2FFFD87C1927B8E800F4453C /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2FFFD8511927B8E800F4453C /* AirGifLauncher */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FFFD8831927B8E800F4453C /* Build configuration list for PBXNativeTarget "AirGifLauncher" */;
+			buildPhases = (
+				2FFFD84E1927B8E800F4453C /* Sources */,
+				2FFFD84F1927B8E800F4453C /* Frameworks */,
+				2FFFD8501927B8E800F4453C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = AirGifLauncher;
+			productName = AirGifLauncher;
+			productReference = 2FFFD8521927B8E800F4453C /* AirGifLauncher.app */;
+			productType = "com.apple.product-type.application";
+		};
+		2FFFD8721927B8E800F4453C /* AirGifLauncherTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2FFFD8861927B8E800F4453C /* Build configuration list for PBXNativeTarget "AirGifLauncherTests" */;
+			buildPhases = (
+				2FFFD86F1927B8E800F4453C /* Sources */,
+				2FFFD8701927B8E800F4453C /* Frameworks */,
+				2FFFD8711927B8E800F4453C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				2FFFD8781927B8E800F4453C /* PBXTargetDependency */,
+			);
+			name = AirGifLauncherTests;
+			productName = AirGifLauncherTests;
+			productReference = 2FFFD8731927B8E800F4453C /* AirGifLauncherTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2FFFD84A1927B8E800F4453C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				CLASSPREFIX = AG;
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "inZania LLC";
+				TargetAttributes = {
+					2FFFD8511927B8E800F4453C = {
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 1;
+							};
+						};
+					};
+					2FFFD8721927B8E800F4453C = {
+						TestTargetID = 2FFFD8511927B8E800F4453C;
+					};
+				};
+			};
+			buildConfigurationList = 2FFFD84D1927B8E800F4453C /* Build configuration list for PBXProject "AirGifLauncher" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 2FFFD8491927B8E800F4453C;
+			productRefGroup = 2FFFD8531927B8E800F4453C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2FFFD8511927B8E800F4453C /* AirGifLauncher */,
+				2FFFD8721927B8E800F4453C /* AirGifLauncherTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		2FFFD8501927B8E800F4453C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FFFD8601927B8E800F4453C /* InfoPlist.strings in Resources */,
+				2FFFD86E1927B8E800F4453C /* Images.xcassets in Resources */,
+				2FFFD8661927B8E800F4453C /* Credits.rtf in Resources */,
+				2FFFD86C1927B8E800F4453C /* MainMenu.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FFFD8711927B8E800F4453C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FFFD87E1927B8E800F4453C /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2FFFD84E1927B8E800F4453C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FFFD8691927B8E800F4453C /* AGAppDelegate.m in Sources */,
+				2FFFD8621927B8E800F4453C /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		2FFFD86F1927B8E800F4453C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2FFFD8801927B8E800F4453C /* AirGifLauncherTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		2FFFD8781927B8E800F4453C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 2FFFD8511927B8E800F4453C /* AirGifLauncher */;
+			targetProxy = 2FFFD8771927B8E800F4453C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		2FFFD85E1927B8E800F4453C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FFFD85F1927B8E800F4453C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		2FFFD8641927B8E800F4453C /* Credits.rtf */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FFFD8651927B8E800F4453C /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		2FFFD86A1927B8E800F4453C /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FFFD86B1927B8E800F4453C /* Base */,
+			);
+			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		2FFFD87C1927B8E800F4453C /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				2FFFD87D1927B8E800F4453C /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		2FFFD8811927B8E800F4453C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		2FFFD8821927B8E800F4453C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "3rd Party Mac Developer Application";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		2FFFD8841927B8E800F4453C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AirGifLauncher/AirGifLauncher.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AirGifLauncher/AirGifLauncher-Prefix.pch";
+				INFOPLIST_FILE = "AirGifLauncher/AirGifLauncher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		2FFFD8851927B8E800F4453C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = AirGifLauncher/AirGifLauncher.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AirGifLauncher/AirGifLauncher-Prefix.pch";
+				INFOPLIST_FILE = "AirGifLauncher/AirGifLauncher-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		2FFFD8871927B8E800F4453C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AirGifLauncher.app/Contents/MacOS/AirGifLauncher";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AirGifLauncher/AirGifLauncher-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "AirGifLauncherTests/AirGifLauncherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		2FFFD8881927B8E800F4453C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/AirGifLauncher.app/Contents/MacOS/AirGifLauncher";
+				COMBINE_HIDPI_IMAGES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "AirGifLauncher/AirGifLauncher-Prefix.pch";
+				INFOPLIST_FILE = "AirGifLauncherTests/AirGifLauncherTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2FFFD84D1927B8E800F4453C /* Build configuration list for PBXProject "AirGifLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FFFD8811927B8E800F4453C /* Debug */,
+				2FFFD8821927B8E800F4453C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FFFD8831927B8E800F4453C /* Build configuration list for PBXNativeTarget "AirGifLauncher" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FFFD8841927B8E800F4453C /* Debug */,
+				2FFFD8851927B8E800F4453C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2FFFD8861927B8E800F4453C /* Build configuration list for PBXNativeTarget "AirGifLauncherTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2FFFD8871927B8E800F4453C /* Debug */,
+				2FFFD8881927B8E800F4453C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2FFFD84A1927B8E800F4453C /* Project object */;
+}

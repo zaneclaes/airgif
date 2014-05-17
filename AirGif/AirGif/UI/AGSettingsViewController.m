@@ -14,12 +14,13 @@
 #import "MASShortcut+UserDefaults.h"
 #import "MASShortcut+Monitoring.h"
 #import "AGWindowUtilities.h"
+#import <ServiceManagement/ServiceManagement.h>
 
 NSString *const MASPreferenceKeyShortcut = @"AGShortcut";
 NSString *const MASPreferenceKeyShortcutEnabled = @"AGShortcutEnabled";
+NSString *const AGLaunchAtStartupEnabled = @"AGLaunchAtStartupEnabled";
 
 @interface AGSettingsViewController ()
-
 @end
 
 @implementation AGSettingsViewController
@@ -41,6 +42,19 @@ NSString *const MASPreferenceKeyShortcutEnabled = @"AGShortcutEnabled";
 
 - (void)dealloc {
   [self.shortcutView unbind:@"enabled"];
+}
+
+#pragma mark - Launch conttroller
+
+- (BOOL)launchAtLogin {
+  return [[NSUserDefaults standardUserDefaults] boolForKey:AGLaunchAtStartupEnabled];
+}
+
+- (void)setLaunchAtLogin:(BOOL)launchAtLogin {
+  Boolean res = SMLoginItemSetEnabled((__bridge CFStringRef)@"com.inzania.AirGifLauncher", launchAtLogin);
+  launchAtLogin = launchAtLogin && res;
+  [[NSUserDefaults standardUserDefaults] setBool:launchAtLogin forKey:AGLaunchAtStartupEnabled];
+  [[NSUserDefaults standardUserDefaults] synchronize];
 }
 
 #pragma mark - Custom shortcut

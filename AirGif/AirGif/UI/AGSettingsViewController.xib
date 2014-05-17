@@ -36,6 +36,17 @@
                         <binding destination="-2" name="value" keyPath="shortcutEnabled" id="N5t-BE-eTs"/>
                     </connections>
                 </button>
+                <button horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eBt-HA-qpj">
+                    <rect key="frame" x="18" y="390" width="279" height="18"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="check" title="Launch at login?" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="EiP-3W-mPK">
+                        <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <binding destination="-2" name="value" keyPath="launchAtLogin" id="aIf-0M-iB6"/>
+                    </connections>
+                </button>
             </subviews>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="E5v-It-PPs"/>

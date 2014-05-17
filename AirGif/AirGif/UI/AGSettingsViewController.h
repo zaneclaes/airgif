@@ -14,5 +14,6 @@
 
 @property (nonatomic, strong) IBOutlet MASShortcutView *shortcutView;
 @property (nonatomic, getter = isShortcutEnabled) BOOL shortcutEnabled;
+@property (nonatomic, readwrite) BOOL launchAtLogin;
 
 @end
