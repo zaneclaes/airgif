@@ -24,6 +24,7 @@
 @property (assign) id<AGDraggableImageViewDelegate> delegate;
 
 - (id)initWithCoder:(NSCoder *)coder;
+- (void)save;
 
 @end
 

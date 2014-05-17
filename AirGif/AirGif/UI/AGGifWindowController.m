@@ -26,6 +26,7 @@
  * Buttons
  ************************************************************************************************/
 - (IBAction)onPressedSave:(NSButton*)sender {
+  [self.imageView save];
   [AGAnalytics trackGifAction:@"window" label:@"save" value:nil];
 }
 
@@ -120,6 +121,7 @@ static NSInteger const kPadding = 2;
     self.imageView.frame = NSMakeRect(0, bottomHeight, image.size.width, image.size.height);
     [self repositionButtons];
   }];
+  [self.iconView setHidden:self.gif.purchaseDate || self.gif.wasImported.boolValue];
   [AGAnalytics view:@"gif"];
 }
 

@@ -21,7 +21,7 @@
 
 - (void)setGif:(AGGif *)gif {
   _gif = gif;
-  self.image = [[NSImage alloc] initWithContentsOfURL:gif.cachedThumbnailUrl];;
+  self.image = [[NSImage alloc] initWithContentsOfURL:gif.cachedThumbnailUrl];
 }
 
 - (void)mouseDown:(NSEvent *)theEvent
@@ -36,21 +36,33 @@
 @end
 
 @interface AGSearchResultViewItem ()
+@property (nonatomic, strong) AGSearchResultImage *searchImageView;
+@property (nonatomic, strong) NSImageView *iconView;
 @end
 
 @implementation AGSearchResultViewItem
 
 - (void)loadView {
   NSRect rect = CGRectMake(0, 0, kGifThumbnailSize, kGifThumbnailSize);
-  AGSearchResultImage *iv = [[AGSearchResultImage alloc] initWithFrame:rect];
+  NSView *wrap = [[NSView alloc] initWithFrame:rect];
+  [self setView:wrap];
+
+  self.searchImageView = [[AGSearchResultImage alloc] initWithFrame:rect];
   //iv.animates = YES;
-  iv.imageScaling = NSImageScaleProportionallyDown;
-  [self setView:iv];
+  [wrap addSubview:self.searchImageView];
+  self.searchImageView.imageScaling = NSImageScaleProportionallyDown;
+  
+  self.iconView = [[NSImageView alloc] initWithFrame:NSMakeRect(0,0, 35, 35)];
+  self.iconView.image = [NSImage imageNamed:@"cloud-import"];
+  [wrap addSubview:self.iconView];
 }
 
 - (void)setRepresentedObject:(id)representedObject {
   [super setRepresentedObject:representedObject];
-  ((AGSearchResultImage*)self.view).gif = representedObject;
+  AGGif *gif = representedObject;
+  self.searchImageView.gif = representedObject;
+  BOOL has = gif.purchaseDate || gif.wasImported.boolValue;
+  [self.iconView setHidden:has];
 }
 
 @end

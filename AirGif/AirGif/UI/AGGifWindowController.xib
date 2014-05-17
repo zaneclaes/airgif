@@ -9,6 +9,7 @@
             <connections>
                 <outlet property="captionButton" destination="NQw-f6-y3y" id="llJ-6O-oxl"/>
                 <outlet property="helpButton" destination="LDN-8d-PJV" id="N5n-Da-kad"/>
+                <outlet property="iconView" destination="a6Z-gK-kYF" id="vhh-Ea-pyj"/>
                 <outlet property="imageView" destination="LgJ-T5-Lhy" id="dap-55-ngd"/>
                 <outlet property="nsfwButton" destination="GK9-Pr-YPc" id="NvY-FX-qUR"/>
                 <outlet property="progressIndicator" destination="OrU-Db-gB0" id="HHe-QS-DKg"/>
@@ -104,6 +105,11 @@
                         <rect key="frame" x="0.0" y="251" width="480" height="20"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     </progressIndicator>
+                    <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a6Z-gK-kYF">
+                        <rect key="frame" x="20" y="208" width="42" height="42"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <imageCell key="cell" refusesFirstResponder="YES" alignment="left" image="cloud-import" id="u3A-UO-jtU"/>
+                    </imageView>
                 </subviews>
             </view>
             <connections>
@@ -116,5 +122,6 @@
         <image name="909-tags-grey" width="28" height="28"/>
         <image name="924-inbox-download-grey" width="28" height="28"/>
         <image name="NSShareTemplate" width="18" height="16"/>
+        <image name="cloud-import" width="35" height="35"/>
     </resources>
 </document>

@@ -115,6 +115,8 @@
 		2FFFD8C51927D3BC00F4453C /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD8BF1927D3BC00F4453C /* LICENSE.txt */; };
 		2FFFD8C61927D3BC00F4453C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD8C01927D3BC00F4453C /* README.md */; };
 		2FFFD8CB1927D42700F4453C /* HockeySDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2FFFD8BD1927D3BC00F4453C /* HockeySDK.framework */; };
+		2FFFD8CE1927E25200F4453C /* cloud-import.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD8CC1927E25200F4453C /* cloud-import.png */; };
+		2FFFD8CF1927E25200F4453C /* cloud-import@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD8CD1927E25200F4453C /* cloud-import@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -326,6 +328,8 @@
 		2FFFD8BE1927D3BC00F4453C /* HockeySDK.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = HockeySDK.framework.dSYM; sourceTree = "<group>"; };
 		2FFFD8BF1927D3BC00F4453C /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
 		2FFFD8C01927D3BC00F4453C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
+		2FFFD8CC1927E25200F4453C /* cloud-import.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-import.png"; sourceTree = "<group>"; };
+		2FFFD8CD1927E25200F4453C /* cloud-import@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-import@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -605,6 +609,8 @@
 				2F68854F19193D9D00C36852 /* 912-gears-selected.png */,
 				2F68855019193D9D00C36852 /* 912-gears-selected@2x.png */,
 				2F68855119193D9D00C36852 /* 912-gears.png */,
+				2FFFD8CC1927E25200F4453C /* cloud-import.png */,
+				2FFFD8CD1927E25200F4453C /* cloud-import@2x.png */,
 				2F68855219193D9D00C36852 /* 912-gears@2x.png */,
 				2F68855319193D9D00C36852 /* 973-user-selected.png */,
 				2F68855419193D9D00C36852 /* 973-user-selected@2x.png */,
@@ -903,6 +909,7 @@
 				2F68856A19193D9D00C36852 /* 912-gears-selected.png in Resources */,
 				2FFFD8C21927D3BC00F4453C /* de.bitstadium.HockeySDK-Mac-2.1.0.docset in Resources */,
 				2FE20AF21926718B0019FBD0 /* 909-tags-grey@2x.png in Resources */,
+				2FFFD8CF1927E25200F4453C /* cloud-import@2x.png in Resources */,
 				2F68856319193D9D00C36852 /* 708-search-selected@2x.png in Resources */,
 				2FFFD8C61927D3BC00F4453C /* README.md in Resources */,
 				2F68857119193D9D00C36852 /* 973-user@2x.png in Resources */,
@@ -946,6 +953,7 @@
 				2FE20AEF1926718B0019FBD0 /* 906-chat-3-grey.png in Resources */,
 				2F68856919193D9D00C36852 /* 909-tags@2x.png in Resources */,
 				2FFFD8C11927D3BC00F4453C /* Changelog.md in Resources */,
+				2FFFD8CE1927E25200F4453C /* cloud-import.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

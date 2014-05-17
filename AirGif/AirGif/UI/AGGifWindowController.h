@@ -14,6 +14,7 @@
 @interface AGGifWindowController : NSWindowController
 
 @property (nonatomic, strong) IBOutlet AGDraggableImageView *imageView;
+@property (nonatomic, strong) IBOutlet NSImageView *iconView;
 @property (nonatomic, strong) IBOutlet NSButton *helpButton;
 @property (nonatomic, strong) IBOutlet NSButton *shareButton;
 @property (nonatomic, strong) IBOutlet NSButton *nsfwButton;
