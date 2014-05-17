@@ -8,6 +8,7 @@
 
 #import "AGGifWindowController.h"
 #import "AGWindowUtilities.h"
+#import "AGTagViewController.h"
 #import "AGGif.h"
 
 @interface AGGifWindowController () <NSSharingServicePickerDelegate>
@@ -20,11 +21,11 @@
  * Buttons
  ************************************************************************************************/
 - (IBAction)onPressedSave:(NSButton*)sender {
-
+  [AGAnalytics trackGifAction:@"window" label:@"save" value:nil];
 }
 
 - (IBAction)onPressedCaption:(NSButton*)sender {
-
+  [AGAnalytics trackGifAction:@"window" label:@"caption" value:nil];
 }
 
 - (IBAction)onPressedNSFW:(NSButton*)sender {
@@ -39,11 +40,13 @@
 }
 
 - (IBAction)onPressedTag:(NSButton*)sender {
-  
+  [[NSNotificationCenter defaultCenter] postNotificationName:kTagGifNotification object:self.gif userInfo:nil];
+  [self close];
+  [AGAnalytics trackGifAction:@"window" label:@"tag" value:nil];
 }
 
 - (IBAction)onPressedHelp:(NSButton*)sender {
-
+  [AGAnalytics trackGifAction:@"window" label:@"help" value:nil];
 }
 
 - (IBAction)onPressedShare:(NSButton*)sender {
@@ -54,7 +57,7 @@
   [sharingServicePicker showRelativeToRect:[sender bounds]
                                     ofView:sender
                              preferredEdge:NSMinYEdge];
-  [AGAnalytics trackGifAction:@"game" label:@"share" value:@(0)];
+  [AGAnalytics trackGifAction:@"window" label:@"share" value:nil];
 }
 /*************************************************************************************************
  * Lifecycle
@@ -107,6 +110,7 @@ static NSInteger const kPadding = 2;
     self.imageView.frame = NSMakeRect(0, bottomHeight, image.size.width, image.size.height);
     [self repositionButtons];
   }];
+  [AGAnalytics view:@"gif"];
 }
 
 - (id)initWithGif:(AGGif*)gif {

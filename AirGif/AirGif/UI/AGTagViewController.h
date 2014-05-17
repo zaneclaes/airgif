@@ -9,6 +9,10 @@
 #import "AGContentViewController.h"
 #import <WebKit/WebKit.h>
 
+static NSString * const kTagGifNotification = @"TagGifNotification";
+
+@class AGGif;
+
 @interface AGTagViewController : AGContentViewController <NSTokenFieldDelegate>
 
 @property (nonatomic, strong) IBOutlet NSTextField *headerLabel;
@@ -22,5 +26,7 @@
 - (IBAction)onPressedNSFW:(NSButton*)sender;
 - (IBAction)onPressedHelp:(NSButton*)sender;
 - (IBAction)onPressedShare:(NSButton*)sender;
+
+- (void)presentGif:(AGGif*)gif;
 
 @end

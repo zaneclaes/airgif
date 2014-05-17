@@ -32,6 +32,7 @@ static CGSize const kMainContentSize = {315,480};
   NSArray *titles = @[NSLocalizedString(@"Search", @""),
                       NSLocalizedString(@"Tag Game", @""),
                       NSLocalizedString(@"Settings", @"")];
+  NSArray *pages = @[@"search",@"tag-game",@"settings"];
   self.title = [NSString stringWithFormat:@"%@ | AirGif",titles[self.sidebar.selectedIndex]];
   NSArray *viewControllers = @[self.searchViewController,self.tagViewController,self.settingsViewController];
   AGContentViewController *viewController = viewControllers[self.sidebar.selectedIndex];
@@ -46,7 +47,13 @@ static CGSize const kMainContentSize = {315,480};
   _currentViewController = viewController;
   [viewController viewDidAppear];
 
-  [AGAnalytics view:titles[self.sidebar.selectedIndex]];
+  [AGAnalytics view:pages[self.sidebar.selectedIndex]];
+}
+
+- (void)onTagGifNotification:(NSNotification*)n {
+  self.sidebar.selectedIndex = 1;
+  [self onSidebarChanged];
+  [self.tagViewController presentGif:(AGGif*)[n object]];
 }
 
 - (void)awakeFromNib {
@@ -85,6 +92,12 @@ static CGSize const kMainContentSize = {315,480};
   [self.sidebarWrapper addSubview:self.sidebar];
   [self.sidebar awakeFromNib];// Triggers setup manually...
   [self onSidebarChanged];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onTagGifNotification:) name:kTagGifNotification object:nil];
+}
+
+- (void)dealloc {
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 - (id)initWithContentRect:(NSRect)contentRect styleMask:(NSUInteger)aStyle backing:(NSBackingStoreType)bufferingType defer:(BOOL)flag {

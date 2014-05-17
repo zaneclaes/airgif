@@ -103,6 +103,7 @@
 		2FE20AF21926718B0019FBD0 /* 909-tags-grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE20AEC1926718B0019FBD0 /* 909-tags-grey@2x.png */; };
 		2FE20AF31926718B0019FBD0 /* 924-inbox-download-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE20AED1926718B0019FBD0 /* 924-inbox-download-grey.png */; };
 		2FE20AF41926718B0019FBD0 /* 924-inbox-download-grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE20AEE1926718B0019FBD0 /* 924-inbox-download-grey@2x.png */; };
+		2FFFD842192709B000F4453C /* AGDraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD841192709B000F4453C /* AGDraggableImageView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -264,6 +265,8 @@
 		2FE20AEC1926718B0019FBD0 /* 909-tags-grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "909-tags-grey@2x.png"; sourceTree = "<group>"; };
 		2FE20AED1926718B0019FBD0 /* 924-inbox-download-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "924-inbox-download-grey.png"; sourceTree = "<group>"; };
 		2FE20AEE1926718B0019FBD0 /* 924-inbox-download-grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "924-inbox-download-grey@2x.png"; sourceTree = "<group>"; };
+		2FFFD840192709B000F4453C /* AGDraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGDraggableImageView.h; sourceTree = "<group>"; };
+		2FFFD841192709B000F4453C /* AGDraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGDraggableImageView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -333,6 +336,8 @@
 				2F016F631921327800DDC252 /* AGGifWindowController.h */,
 				2F016F641921327800DDC252 /* AGGifWindowController.m */,
 				2F016F651921327800DDC252 /* AGGifWindowController.xib */,
+				2FFFD840192709B000F4453C /* AGDraggableImageView.h */,
+				2FFFD841192709B000F4453C /* AGDraggableImageView.m */,
 			);
 			name = Gif;
 			sourceTree = "<group>";
@@ -863,6 +868,7 @@
 				2F9D6448191896C0004B1F38 /* GRGlassThemeWidget.m in Sources */,
 				2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */,
 				2F68857D19193EC600C36852 /* AGSearchViewController.m in Sources */,
+				2FFFD842192709B000F4453C /* AGDraggableImageView.m in Sources */,
 				2F45C9DC1923C3B100FC35AE /* GAReporting.m in Sources */,
 				2F4F48FB18B51C0E00BCA590 /* main.m in Sources */,
 				2F9D644D191896C0004B1F38 /* OBMenuBarWindow.m in Sources */,

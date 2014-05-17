@@ -27,7 +27,9 @@
   [[AGAnalytics tracker] sendEventWithCategory:@"setup" withAction:action withLabel:label withValue:val];
 }
 + (void)view:(NSString*)screen {
-  [[AGAnalytics tracker] sendView:[NSString stringWithFormat:@"osx/%@",[screen lowercaseString]]];
+  NSMutableString *str = [[screen lowercaseString] mutableCopy];
+  [str replaceOccurrencesOfString:@" " withString:@"-" options:0 range:NSMakeRange(0, str.length)];
+  [[AGAnalytics tracker] sendView:[NSString stringWithFormat:@"osx/%@",str]];
 }
 
 + (GAReporting*)tracker {

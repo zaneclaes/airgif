@@ -28,19 +28,20 @@
 //
 // Show the next gif. Turns off loader.
 //
-- (void)presentGif {
-  if(!self.queue.allKeys.count) {
-    [self.progressBar startAnimation:nil];
+- (void)presentGif:(AGGif*)gif {
+  if(!gif || !gif.imageHash) {
     return;
   }
-  NSString *imageHash = self.queue.allKeys[0];
-  self.currentGif = self.queue[imageHash];
+  if(!self.queue[gif.imageHash]) {
+    self.queue[gif.imageHash] = gif;
+  }
+  self.currentGif = gif;
   [self.progressBar stopAnimation:nil];
   [self.tagsField becomeFirstResponder];
   
   NSImage *image = [[NSImage alloc] initWithContentsOfURL:self.currentGif.cachedGifUrl];
   if(image.size.width == 0 || image.size.height == 0) {
-    [self.queue removeObjectForKey:imageHash];
+    [self.queue removeObjectForKey:gif.imageHash];
     [self presentGif];
     return;
   }
@@ -51,6 +52,17 @@
   self.scale = MIN(scaleX, scaleY);
   [[[[[self.webView mainFrame] frameView] documentView] superview] scaleUnitSquareToSize:NSMakeSize(self.scale, self.scale)];
   [[self.webView mainFrame] loadRequest:[NSURLRequest requestWithURL:self.currentGif.cachedGifUrl]];
+  
+  [AGAnalytics view:@"tag-game"];
+}
+
+- (void)presentGif {
+  if(!self.queue.allKeys.count) {
+    [self.progressBar startAnimation:nil];
+    return;
+  }
+  NSString *imageHash = self.queue.allKeys[0];
+  [self presentGif:self.queue[imageHash]];
 }
 //
 // Refill the queue
@@ -169,6 +181,10 @@
                                     ofView:sender
                              preferredEdge:NSMinYEdge];
   [AGAnalytics trackGifAction:@"game" label:@"share" value:@(0)];
+}
+
+- (void)onTagGifNotification:(NSNotification*)n {
+  [self presentGif:(AGGif*)[n object]];
 }
 /*************************************************************************************************
  * Tokens
