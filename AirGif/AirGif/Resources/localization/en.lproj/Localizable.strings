@@ -11,4 +11,8 @@
 "points.display" = "You have %d point(s)";
 "points.getmore" = "Get More";
 
+"points.purchase.body" = "You can earn points by tagging gifs, or purchase more...";
+"points.purchase.earn" = "Earn";
+"points.purchase.purchase" = "Purchase";
+
 "NSFWConfirm" = "Are you sure you want to flag this image? It will be removed from all searches.";

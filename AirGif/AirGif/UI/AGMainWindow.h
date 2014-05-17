@@ -8,6 +8,10 @@
 
 #import "OBMenuBarWindow.h"
 
+@class AGContentViewController;
+
 @interface AGMainWindow : OBMenuBarWindow
+
+@property (nonatomic, readonly) AGContentViewController *currentViewController;
 
 @end

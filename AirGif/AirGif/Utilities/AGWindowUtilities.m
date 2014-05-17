@@ -9,6 +9,7 @@
 #import "AGWindowUtilities.h"
 #import "AGAppDelegate.h"
 #import "AGMainWindow.h"
+#import "AGContentViewController.h"
 
 @implementation AGWindowUtilities
 
@@ -18,11 +19,13 @@
 }
 
 + (void)activateMainWindow {
-  [NSApp stopModal];
   AGAppDelegate *app = ((AGAppDelegate*)[NSApplication sharedApplication].delegate);
+  [app.window.currentViewController viewWillAppear];
+  [NSApp stopModal];
   [NSApp activateIgnoringOtherApps:YES];
   [app.window setCollectionBehavior: NSWindowCollectionBehaviorCanJoinAllSpaces];
   [app.window makeKeyAndOrderFront:nil];
+  [app.window.currentViewController viewDidAppear];
 }
 
 @end

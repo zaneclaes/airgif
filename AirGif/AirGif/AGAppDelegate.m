@@ -13,6 +13,7 @@
 #import "TESetupAssistant.h"
 #import "AGSettings.h"
 #import "AGGif.h"
+#import "AGPointManager.h"
 
 @implementation AGAppDelegate {
   __weak id _constantShortcutMonitor;
@@ -33,6 +34,7 @@
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(checkSetup:)
                                                name:TESetupAssistantFinishedNotification object:nil];
   [self checkSetup:nil];
+  [AGPointManager sharedManager];
   [AGSettings sharedSettings];
 }
 

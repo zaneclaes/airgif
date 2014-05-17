@@ -9,6 +9,7 @@
 #import "AGSettings.h"
 #import "AGDataStore.h"
 #import "HTTPRequest.h"
+#import "AGPointManager.h"
 
 @interface AGSettings ()
 @property (nonatomic, readonly) NSMutableDictionary *settings;
@@ -70,10 +71,15 @@
 
 - (void)reload {
   NSMutableDictionary *params = [AGAnalytics trackedParams];
+  NSArray *oldProducts = [self.products copy];
+  __weak typeof(self) wself = self;
   [[HTTPRequest alloc] post:URL_API(@"settings") params:params completion:^(HTTPRequest *req) {
     if([req.response[@"settings"] isKindOfClass:[NSDictionary class]]) {
       _settings = [req.response[@"settings"] mutableCopy];
-      [self save];
+      [wself save];
+      if(![oldProducts isEqualTo:wself.products]) {
+        [[AGPointManager sharedManager] loadProducts];
+      }
     }
   }];
 }

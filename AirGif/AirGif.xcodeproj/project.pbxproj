@@ -107,6 +107,7 @@
 		2FFFD8AF1927BBE100F4453C /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD8AD1927BBE100F4453C /* HTTPRequest.m */; };
 		2FFFD8B21927BE7600F4453C /* AGAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD8B11927BE7600F4453C /* AGAnalytics.m */; };
 		2FFFD8B51927BEDD00F4453C /* AGPointManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD8B41927BEDD00F4453C /* AGPointManager.m */; };
+		2FFFD8B91927CADF00F4453C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFFD8B81927CADF00F4453C /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -301,6 +302,7 @@
 		2FFFD8B11927BE7600F4453C /* AGAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGAnalytics.m; sourceTree = "<group>"; };
 		2FFFD8B31927BEDD00F4453C /* AGPointManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGPointManager.h; sourceTree = "<group>"; };
 		2FFFD8B41927BEDD00F4453C /* AGPointManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPointManager.m; sourceTree = "<group>"; };
+		2FFFD8B81927CADF00F4453C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -308,6 +310,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2FFFD8B91927CADF00F4453C /* StoreKit.framework in Frameworks */,
 				2FFFD8481927B76500F4453C /* ServiceManagement.framework in Frameworks */,
 				2F45C9F11923D14D00FC35AE /* Carbon.framework in Frameworks */,
 				2F6D7FBA191FFDF900CDCEA6 /* WebKit.framework in Frameworks */,
@@ -427,6 +430,7 @@
 		2F4F48ED18B51C0E00BCA590 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2FFFD8B81927CADF00F4453C /* StoreKit.framework */,
 				2FFFD8471927B76500F4453C /* ServiceManagement.framework */,
 				2F45C9F01923D14D00FC35AE /* Carbon.framework */,
 				2F6D7FB9191FFDF900CDCEA6 /* WebKit.framework */,

@@ -92,9 +92,10 @@ static NSOperationQueue * _requests = nil;
   BOOL wasGifCached = self.isGifCached.boolValue;
   BOOL cached = [self _cacheImage:[NSURL URLWithString:URL_THUMBNAIL(self.imageHash, thumbSize)]
                                             to:self.cachedThumbnailUrl];
+  __weak typeof(self) wself = self;
   if(cached && !wasThumbnailCached) {
     dispatch_async(dispatch_get_main_queue(), ^{
-      self.isThumbnailCached = @YES;
+      wself.isThumbnailCached = @YES;
       [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationGifThumbnailCached object:hash];
     });
   }
@@ -103,7 +104,7 @@ static NSOperationQueue * _requests = nil;
     cached = cached && fullyCached;
     if(self.isGifCached.boolValue && !wasGifCached) {
       dispatch_async(dispatch_get_main_queue(), ^{
-        self.isGifCached = @YES;
+        wself.isGifCached = @YES;
         [[NSNotificationCenter defaultCenter] postNotificationName:kNotificationGifCached object:hash];
       });
     }

@@ -11,6 +11,9 @@
 #import "AGSearchViewController.h"
 #import "AGTagViewController.h"
 #import "AGSettingsViewController.h"
+#import "AGGif.h"
+#import "AGWindowUtilities.h"
+#import "AGPointManager.h"
 #import <QuartzCore/QuartzCore.h>
 
 static NSInteger const kSideBarCellSize = 60;
@@ -20,7 +23,6 @@ static CGSize const kMainContentSize = {315,480};
 @property (nonatomic, strong) NSScrollView *sidebarWrapper;       // Scroll wrapper
 @property (nonatomic, strong) ITSidebar *sidebar;                 // Left-side bar.
 @property (nonatomic, strong) NSView *mainContentView;            // The wrapper for all content.
-@property (nonatomic, readonly) AGContentViewController *currentViewController;
 @property (nonatomic, strong) AGSearchViewController *searchViewController;
 @property (nonatomic, strong) AGTagViewController *tagViewController;
 @property (nonatomic, strong) AGSettingsViewController *settingsViewController;
@@ -50,10 +52,16 @@ static CGSize const kMainContentSize = {315,480};
   [AGAnalytics view:pages[self.sidebar.selectedIndex]];
 }
 
+- (void)onPurchaseComplete:(NSNotification*)n {
+  [AGWindowUtilities activateMainWindow];
+}
+
 - (void)onTagGifNotification:(NSNotification*)n {
   self.sidebar.selectedIndex = 1;
   [self onSidebarChanged];
-  [self.tagViewController presentGif:(AGGif*)[n object]];
+  if([[n object] isKindOfClass:[AGGif class]]) {
+    [self.tagViewController presentGif:(AGGif*)[n object]];
+  }
 }
 
 - (void)awakeFromNib {
@@ -94,6 +102,7 @@ static CGSize const kMainContentSize = {315,480};
   [self onSidebarChanged];
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onTagGifNotification:) name:kTagGifNotification object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onPurchaseComplete:) name:kPurchaseCompleteNotification object:nil];
 }
 
 - (void)dealloc {
