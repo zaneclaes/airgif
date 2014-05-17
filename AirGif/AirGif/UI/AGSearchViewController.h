@@ -10,10 +10,10 @@
 
 @interface AGSearchViewController : AGContentViewController <NSTextFieldDelegate>
 
-@property (nonatomic, weak) IBOutlet NSSearchField *searchField;
-@property (nonatomic, weak) IBOutlet NSCollectionView *resultsGrid;
-@property (nonatomic, weak) IBOutlet NSSegmentedControl *searchStyleSegment;
-@property (nonatomic, weak) IBOutlet NSProgressIndicator *progressIndicator;
+@property (nonatomic, strong) IBOutlet NSSearchField *searchField;
+@property (nonatomic, strong) IBOutlet NSCollectionView *resultsGrid;
+@property (nonatomic, strong) IBOutlet NSSegmentedControl *searchStyleSegment;
+@property (nonatomic, strong) IBOutlet NSProgressIndicator *progressIndicator;
 
 @property (nonatomic, readonly) BOOL searchOnline;
 

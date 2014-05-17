@@ -12,7 +12,7 @@
 
 @interface AGSettingsViewController : AGContentViewController
 
-@property (nonatomic, weak) IBOutlet MASShortcutView *shortcutView;
+@property (nonatomic, strong) IBOutlet MASShortcutView *shortcutView;
 @property (nonatomic, getter = isShortcutEnabled) BOOL shortcutEnabled;
 
 @end

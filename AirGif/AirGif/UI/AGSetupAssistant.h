@@ -10,7 +10,7 @@
 
 @interface AGSetupAssistant : NSObject
 
-@property (nonatomic, readonly) NSString *directory;
+@property (nonatomic, strong) NSString *directory;
 
 - (void)run;
 

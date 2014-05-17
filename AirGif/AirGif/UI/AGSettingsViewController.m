@@ -15,8 +15,8 @@
 #import "MASShortcut+Monitoring.h"
 #import "AGWindowUtilities.h"
 
-NSString *const MASPreferenceKeyShortcut = @"MASDemoShortcut";
-NSString *const MASPreferenceKeyShortcutEnabled = @"MASDemoShortcutEnabled";
+NSString *const MASPreferenceKeyShortcut = @"AGShortcut";
+NSString *const MASPreferenceKeyShortcutEnabled = @"AGShortcutEnabled";
 
 @interface AGSettingsViewController ()
 
@@ -28,7 +28,6 @@ NSString *const MASPreferenceKeyShortcutEnabled = @"MASDemoShortcutEnabled";
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil {
   if((self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil])) {
-    self.shortcutView.associatedUserDefaultsKey = MASPreferenceKeyShortcut;
     [self resetShortcutRegistration];
   }
   return self;
@@ -36,15 +35,14 @@ NSString *const MASPreferenceKeyShortcutEnabled = @"MASDemoShortcutEnabled";
 
 - (void)awakeFromNib {
   [super awakeFromNib];
-
-  // Checkbox will enable and disable the shortcut view
+  self.shortcutView.associatedUserDefaultsKey = MASPreferenceKeyShortcut;
   [self.shortcutView bind:@"enabled" toObject:self withKeyPath:@"shortcutEnabled" options:nil];
 }
 
 - (void)dealloc {
-  // Cleanup
   [self.shortcutView unbind:@"enabled"];
 }
+
 #pragma mark - Custom shortcut
 
 - (BOOL)isShortcutEnabled

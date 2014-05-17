@@ -11,12 +11,12 @@
 
 @interface AGTagViewController : AGContentViewController <NSTokenFieldDelegate>
 
-@property (nonatomic, weak) IBOutlet NSTextField *headerLabel;
-@property (nonatomic, weak) IBOutlet WebView *webView;
-@property (nonatomic, weak) IBOutlet NSTokenField *tagsField;
-@property (nonatomic, weak) IBOutlet NSButton *nextButton;
-@property (nonatomic, weak) IBOutlet NSButton *shareButton;
-@property (nonatomic, weak) IBOutlet NSProgressIndicator *progressBar;
+@property (nonatomic, strong) IBOutlet NSTextField *headerLabel;
+@property (nonatomic, strong) IBOutlet WebView *webView;
+@property (nonatomic, strong) IBOutlet NSTokenField *tagsField;
+@property (nonatomic, strong) IBOutlet NSButton *nextButton;
+@property (nonatomic, strong) IBOutlet NSButton *shareButton;
+@property (nonatomic, strong) IBOutlet NSProgressIndicator *progressBar;
 
 - (IBAction)onPressedNext:(NSButton*)sender;
 - (IBAction)onPressedNSFW:(NSButton*)sender;

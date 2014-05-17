@@ -12,14 +12,14 @@
 
 @interface AGGifWindowController : NSWindowController
 
-@property (nonatomic, weak) IBOutlet NSImageView *imageView;
-@property (nonatomic, weak) IBOutlet NSButton *helpButton;
-@property (nonatomic, weak) IBOutlet NSButton *shareButton;
-@property (nonatomic, weak) IBOutlet NSButton *nsfwButton;
-@property (nonatomic, weak) IBOutlet NSButton *tagButton;
-@property (nonatomic, weak) IBOutlet NSButton *captionButton;
-@property (nonatomic, weak) IBOutlet NSButton *saveButton;
-@property (nonatomic, weak) IBOutlet NSProgressIndicator *progressIndicator;
+@property (nonatomic, strong) IBOutlet NSImageView *imageView;
+@property (nonatomic, strong) IBOutlet NSButton *helpButton;
+@property (nonatomic, strong) IBOutlet NSButton *shareButton;
+@property (nonatomic, strong) IBOutlet NSButton *nsfwButton;
+@property (nonatomic, strong) IBOutlet NSButton *tagButton;
+@property (nonatomic, strong) IBOutlet NSButton *captionButton;
+@property (nonatomic, strong) IBOutlet NSButton *saveButton;
+@property (nonatomic, strong) IBOutlet NSProgressIndicator *progressIndicator;
 @property (nonatomic, strong) AGGif *gif;
 
 - (id)initWithGif:(AGGif*)gif;

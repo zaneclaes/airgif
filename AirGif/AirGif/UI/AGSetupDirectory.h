@@ -10,8 +10,8 @@
 
 @interface AGSetupDirectory : TEBaseAssistant
 
-@property (nonatomic, weak) IBOutlet NSTextField *titleLabel;
-@property (nonatomic, weak) IBOutlet NSTextField *pathLabel;
+@property (nonatomic, strong) IBOutlet NSTextField *titleLabel;
+@property (nonatomic, strong) IBOutlet NSTextField *pathLabel;
 
 - (IBAction)chooseDirectory:(id)sender;
 
