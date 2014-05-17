@@ -7,6 +7,7 @@
     <objects>
         <customObject id="-2" userLabel="File's Owner" customClass="AGSettingsViewController">
             <connections>
+                <outlet property="folderButton" destination="L9G-i4-XJc" id="bb6-i0-SM9"/>
                 <outlet property="shortcutView" destination="WA3-js-P8L" id="a62-dr-Mbv"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -18,7 +19,7 @@
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
             <subviews>
                 <customView ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="WA3-js-P8L" customClass="MASShortcutView">
-                    <rect key="frame" x="100" y="425" width="195" height="19"/>
+                    <rect key="frame" x="100" y="407" width="215" height="19"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="19" id="Mem-yz-CZk"/>
@@ -26,7 +27,7 @@
                     </constraints>
                 </customView>
                 <button horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s2F-o7-nxp">
-                    <rect key="frame" x="18" y="427" width="77" height="18"/>
+                    <rect key="frame" x="18" y="409" width="77" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Hotkey:" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="hSU-r7-OOb">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -37,7 +38,7 @@
                     </connections>
                 </button>
                 <button horizontalHuggingPriority="1000" verticalHuggingPriority="1000" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="eBt-HA-qpj">
-                    <rect key="frame" x="18" y="390" width="279" height="18"/>
+                    <rect key="frame" x="18" y="372" width="279" height="18"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="check" title="Launch at login?" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="EiP-3W-mPK">
                         <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
@@ -45,6 +46,17 @@
                     </buttonCell>
                     <connections>
                         <binding destination="-2" name="value" keyPath="launchAtLogin" id="aIf-0M-iB6"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="L9G-i4-XJc">
+                    <rect key="frame" x="20" y="441" width="275" height="19"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="roundRect" title="Configure Gif Folder" bezelStyle="roundedRect" alignment="center" state="on" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="jVT-aO-zNS">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="controlContent"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onPressedFolderButton:" target="-2" id="G9V-4Q-dQO"/>
                     </connections>
                 </button>
             </subviews>

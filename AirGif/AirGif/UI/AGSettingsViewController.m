@@ -14,6 +14,9 @@
 #import "MASShortcut+UserDefaults.h"
 #import "MASShortcut+Monitoring.h"
 #import "AGWindowUtilities.h"
+#import "AGDirectoryScanner.h"
+#import "AGSetupAssistant.h"
+#import "TESetupAssistant.h"
 #import <ServiceManagement/ServiceManagement.h>
 
 NSString *const MASPreferenceKeyShortcut = @"AGShortcut";
@@ -38,13 +41,29 @@ NSString *const AGLaunchAtStartupEnabled = @"AGLaunchAtStartupEnabled";
   [super awakeFromNib];
   self.shortcutView.associatedUserDefaultsKey = MASPreferenceKeyShortcut;
   [self.shortcutView bind:@"enabled" toObject:self withKeyPath:@"shortcutEnabled" options:nil];
+  [self updateFolderButton];
+  
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateFolderButton)
+                                               name:TESetupAssistantFinishedNotification object:nil];
 }
 
 - (void)dealloc {
   [self.shortcutView unbind:@"enabled"];
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
-#pragma mark - Launch conttroller
+- (void)updateFolderButton {
+  NSString *path = [[NSUserDefaults standardUserDefaults] objectForKey:kKeyGifDirectory];
+  [self.folderButton setTitle:path.length ? path : NSLocalizedString(@"setup.directory", @"")];
+  [AGWindowUtilities activateMainWindow];
+}
+
+- (IBAction)onPressedFolderButton:(id)sender {
+  AGSetupAssistant *setupAssistant = [[AGSetupAssistant alloc] init];
+  [setupAssistant run];
+}
+
+#pragma mark - Launch controller
 
 - (BOOL)launchAtLogin {
   return [[NSUserDefaults standardUserDefaults] boolForKey:AGLaunchAtStartupEnabled];

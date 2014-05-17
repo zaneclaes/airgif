@@ -13,7 +13,10 @@
 @interface AGSettingsViewController : AGContentViewController
 
 @property (nonatomic, strong) IBOutlet MASShortcutView *shortcutView;
+@property (nonatomic, strong) IBOutlet NSButton *folderButton;
 @property (nonatomic, getter = isShortcutEnabled) BOOL shortcutEnabled;
 @property (nonatomic, readwrite) BOOL launchAtLogin;
+
+- (IBAction)onPressedFolderButton:(id)sender;
 
 @end
