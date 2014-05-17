@@ -19,7 +19,7 @@
 }
 
 @property (assign) BOOL allowDrag;
-@property (assign) BOOL allowDrop;
+@property (nonatomic, strong) NSURL *fileUrl;
 @property (assign) id<AGDraggableImageViewDelegate> delegate;
 
 - (id)initWithCoder:(NSCoder *)coder;

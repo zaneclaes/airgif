@@ -8,6 +8,7 @@
 
 #import "AGGifWindowController.h"
 #import "AGWindowUtilities.h"
+#import "AGDraggableImageView.h"
 #import "AGTagViewController.h"
 #import "AGGif.h"
 
@@ -107,6 +108,7 @@ static NSInteger const kPadding = 2;
     NSInteger bottomHeight = 32 + kPadding;
     frame.size = CGSizeMake(size.width, size.height + bottomHeight + 20);
     [self.window setFrame:frame display:YES];
+    self.imageView.fileUrl = self.gif.cachedGifUrl;
     self.imageView.image = image;
     self.imageView.frame = NSMakeRect(0, bottomHeight, image.size.width, image.size.height);
     [self repositionButtons];
