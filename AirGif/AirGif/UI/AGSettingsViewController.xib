@@ -8,6 +8,10 @@
         <customObject id="-2" userLabel="File's Owner" customClass="AGSettingsViewController">
             <connections>
                 <outlet property="folderButton" destination="L9G-i4-XJc" id="bb6-i0-SM9"/>
+                <outlet property="homepageButton" destination="h6o-ZO-ZRQ" id="1c0-hk-aEg"/>
+                <outlet property="pointsButton" destination="LgE-zT-Kwh" id="UiM-x0-zHt"/>
+                <outlet property="pointsLabel" destination="W4Y-Lz-drE" id="rAX-fS-yGm"/>
+                <outlet property="shareButton" destination="8Pp-Lz-d4S" id="Nql-QQ-ZC4"/>
                 <outlet property="shortcutView" destination="WA3-js-P8L" id="a62-dr-Mbv"/>
                 <outlet property="view" destination="Hz6-mo-xeY" id="0bl-1N-x8E"/>
             </connections>
@@ -59,8 +63,64 @@
                         <action selector="onPressedFolderButton:" target="-2" id="G9V-4Q-dQO"/>
                     </connections>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W4Y-Lz-drE">
+                    <rect key="frame" x="18" y="340" width="154" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="You have 0 points." id="qWY-ZI-I3E">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LgE-zT-Kwh">
+                    <rect key="frame" x="191" y="331" width="110" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Get More" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kX8-iA-BnE">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onPressedPoints:" target="-2" id="ZQK-GU-3P8"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h6o-ZO-ZRQ">
+                    <rect key="frame" x="14" y="298" width="287" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" title="Visit AirGif.com" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K5T-ec-OtJ">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onPressedHomepage:" target="-2" id="tp0-pu-Ubn"/>
+                    </connections>
+                </button>
+                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Pp-Lz-d4S">
+                    <rect key="frame" x="251" y="265" width="50" height="32"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSShareTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AIv-Ty-q3q">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="titleBar" size="12"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onPressedShare:" target="-2" id="Mrc-iC-Jxz"/>
+                    </connections>
+                </button>
+                <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XpH-v8-L0U">
+                    <rect key="frame" x="18" y="269" width="25" height="25"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="92Y-Ih-BNx">
+                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                        <font key="font" metaFont="system"/>
+                    </buttonCell>
+                    <connections>
+                        <action selector="onPressedHelp:" target="-2" id="G5z-ff-bpj"/>
+                    </connections>
+                </button>
             </subviews>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="E5v-It-PPs"/>
     </objects>
+    <resources>
+        <image name="NSShareTemplate" width="18" height="16"/>
+    </resources>
 </document>

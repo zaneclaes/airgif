@@ -17,6 +17,8 @@
 #import "AGDirectoryScanner.h"
 #import "AGSetupAssistant.h"
 #import "TESetupAssistant.h"
+#import "AGPointManager.h"
+#import "AGAnalytics.h"
 #import <ServiceManagement/ServiceManagement.h>
 
 NSString *const MASPreferenceKeyShortcut = @"AGShortcut";
@@ -39,12 +41,18 @@ NSString *const AGLaunchAtStartupEnabled = @"AGLaunchAtStartupEnabled";
 
 - (void)awakeFromNib {
   [super awakeFromNib];
+  [self.shareButton sendActionOn:NSLeftMouseDownMask];
   self.shortcutView.associatedUserDefaultsKey = MASPreferenceKeyShortcut;
   [self.shortcutView bind:@"enabled" toObject:self withKeyPath:@"shortcutEnabled" options:nil];
   [self updateFolderButton];
   
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(updateFolderButton)
                                                name:TESetupAssistantFinishedNotification object:nil];
+}
+
+- (void)viewDidAppear {
+  [super viewDidAppear];
+  self.pointsLabel.stringValue = [NSString stringWithFormat:NSLocalizedString(@"points.display", @""),[AGPointManager sharedManager].points];
 }
 
 - (void)dealloc {
@@ -61,6 +69,31 @@ NSString *const AGLaunchAtStartupEnabled = @"AGLaunchAtStartupEnabled";
 - (IBAction)onPressedFolderButton:(id)sender {
   AGSetupAssistant *setupAssistant = [[AGSetupAssistant alloc] init];
   [setupAssistant run];
+  [AGAnalytics trackSetupAction:@"settings" label:@"folder" value:nil];
+}
+
+- (IBAction)onPressedHelp:(NSButton*)sender {
+  OPEN_HELP(@"");
+  [AGAnalytics trackSetupAction:@"game" label:@"help" value:@(0)];
+}
+
+- (IBAction)onPressedPoints:(id)sender {
+  
+  [AGAnalytics trackSetupAction:@"settings" label:@"points" value:nil];
+}
+
+- (IBAction)onPressedHomepage:(id)sender {
+  [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:@"http://AirGif.com"]];
+  [AGAnalytics trackSetupAction:@"settings" label:@"homepage" value:nil];
+}
+
+- (IBAction)onPressedShare:(NSButton*)sender {
+  NSArray *urls = @[[NSURL URLWithString:@"http://AirGif.com"]];
+  NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:urls];
+  [sharingServicePicker showRelativeToRect:[sender bounds]
+                                    ofView:sender
+                             preferredEdge:NSMinYEdge];
+  [AGAnalytics trackSetupAction:@"settings" label:@"share" value:nil];
 }
 
 #pragma mark - Launch controller
@@ -71,6 +104,7 @@ NSString *const AGLaunchAtStartupEnabled = @"AGLaunchAtStartupEnabled";
 
 - (void)setLaunchAtLogin:(BOOL)launchAtLogin {
   Boolean res = SMLoginItemSetEnabled((__bridge CFStringRef)@"com.inzania.AirGifLauncher", launchAtLogin);
+  [AGAnalytics trackSetupAction:@"launch" label:launchAtLogin ? @"enable" : @"disable" value:@(res ? 1 : 0)];
   launchAtLogin = launchAtLogin && res;
   [[NSUserDefaults standardUserDefaults] setBool:launchAtLogin forKey:AGLaunchAtStartupEnabled];
   [[NSUserDefaults standardUserDefaults] synchronize];

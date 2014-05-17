@@ -14,5 +14,6 @@
 #define URL_GIF(__hash__) [NSString stringWithFormat:@"%@/g/%@",URL_HOME,__hash__]
 #define URL_SHARE_GIF(__gif__) [NSString stringWithFormat:@"%@/%@",URL_HOME,__gif__.imageHash]
 #define URL_THUMBNAIL(__hash__,__size__) [NSString stringWithFormat:@"%@/t/%@/%lu",URL_HOME,__hash__,__size__]
+#define OPEN_HELP(__page__) [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:[NSString stringWithFormat:@"http://AirGif.com/help%@",__page__]]]
 
 #endif

@@ -24,15 +24,23 @@
 }
 
 - (NSInteger)pointsPerUSD {
-  return [self integerValueForKey:@"pointsPerUSD" orDefault:10];
+  return [self integerValueForKey:@"pointsPerUSD" orDefault:1000];
 }
 
 - (NSInteger)pointsGifDownload {
-  return [self integerValueForKey:@"pointsGifDownload" orDefault:1];
+  return [self integerValueForKey:@"pointsGifDownload" orDefault:10];
+}
+
+- (NSInteger)pointsUploadGif {
+  return [self integerValueForKey:@"pointsUploadGif" orDefault:10];
 }
 
 - (NSInteger)maxFlags {
   return [self integerValueForKey:@"maxFlags" orDefault:1];
+}
+
+- (NSArray*)products {
+  return self.settings[@"products"] ?: @[@"com.inzania.AirGif.points.2"];
 }
 
 - (void)save {

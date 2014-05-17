@@ -46,6 +46,7 @@
 }
 
 - (IBAction)onPressedHelp:(NSButton*)sender {
+  OPEN_HELP(@"/gif");
   [AGAnalytics trackGifAction:@"window" label:@"help" value:nil];
 }
 

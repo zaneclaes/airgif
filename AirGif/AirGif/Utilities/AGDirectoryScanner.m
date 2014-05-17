@@ -12,6 +12,9 @@
 #import "HTTPRequest.h"
 #import "AGGif.h"
 #import "AGDataStore.h"
+#import "AGAnalytics.h"
+#import "AGPointManager.h"
+#import "AGSettings.h"
 
 @implementation AGDirectoryScanner {
   NSMutableDictionary *_animatedGifPaths;
@@ -36,6 +39,7 @@
   params[@"hash"] = hash;
   [[HTTPRequest alloc] post:URL_API(@"upload") params:params completion:^(HTTPRequest *req) {
     _filesUploaded++;
+    [[AGPointManager sharedManager] earn:[AGSettings sharedSettings].pointsUploadGif reason:@"upload"];
     [self uploadNextFile];
   }];
 }
@@ -92,7 +96,6 @@
       }
     }
   }
-  DLog(@"Scanning %@: %@",dir,err);
   return err;
 }
 

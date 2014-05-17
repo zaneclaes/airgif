@@ -26,6 +26,9 @@
 + (void)trackSetupAction:(NSString*)action label:(NSString*)label value:(NSNumber*)val {
   [[AGAnalytics tracker] sendEventWithCategory:@"setup" withAction:action withLabel:label withValue:val];
 }
++ (void)trackTransaction:(NSString*)action label:(NSString*)label value:(NSNumber*)val {
+  [[AGAnalytics tracker] sendEventWithCategory:@"transaction" withAction:action withLabel:label withValue:val];
+}
 + (void)view:(NSString*)screen {
   NSMutableString *str = [[screen lowercaseString] mutableCopy];
   [str replaceOccurrencesOfString:@" " withString:@"-" options:0 range:NSMakeRange(0, str.length)];

@@ -8,5 +8,7 @@
 "points.0" = "No points for that one. Try again?";
 "points.1" = "BOOM! one point!";
 "points.many" = "Woah! %d points!";
+"points.display" = "You have %d point(s)";
+"points.getmore" = "Get More";
 
 "NSFWConfirm" = "Are you sure you want to flag this image? It will be removed from all searches.";

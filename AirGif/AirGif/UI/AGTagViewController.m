@@ -14,6 +14,8 @@
 #import "NSImage+AnimatedGif.h"
 #import "ORImageView.h"
 #import "AGWindowUtilities.h"
+#import "AGAnalytics.h"
+#import "AGPointManager.h"
 #import <Quartz/Quartz.h>
 
 @interface AGTagViewController () <NSSharingServicePickerDelegate>
@@ -97,6 +99,9 @@
   // Points?
   if(req.params) {
     NSInteger points = [req.response[@"score"] integerValue];
+    if(points > 0) {
+      [[AGPointManager sharedManager] earn:points reason:@"tag"];
+    }
     NSString *str = [req.response[@"message"] isKindOfClass:[NSString class]] ? req.response[@"message"] : nil;
     if(!str) {
       if(points < 2) {
@@ -104,6 +109,10 @@
       }
       else {
         str = [NSString stringWithFormat:NSLocalizedString(@"points.many", @""),points];
+      }
+      if(points > 0) {
+        NSString *amount = [NSString stringWithFormat:NSLocalizedString(@"points.display", @""),[AGPointManager sharedManager].points];
+        str = [NSString stringWithFormat:@"%@ %@",str,amount];
       }
     }
     self.headerLabel.stringValue = str;
@@ -168,7 +177,7 @@
 }
 
 - (IBAction)onPressedHelp:(NSButton*)sender {
-
+  OPEN_HELP(@"/tag");
   [AGAnalytics trackGifAction:@"game" label:@"help" value:@(0)];
 }
 
@@ -180,7 +189,7 @@
   [sharingServicePicker showRelativeToRect:[sender bounds]
                                     ofView:sender
                              preferredEdge:NSMinYEdge];
-  [AGAnalytics trackGifAction:@"game" label:@"share" value:@(0)];
+  [AGAnalytics trackGifAction:@"game" label:@"share" value:nil];
 }
 
 - (void)onTagGifNotification:(NSNotification*)n {

@@ -24,7 +24,6 @@
 		2F016F661921327800DDC252 /* AGGifWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F016F641921327800DDC252 /* AGGifWindowController.m */; };
 		2F016F671921327800DDC252 /* AGGifWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F016F651921327800DDC252 /* AGGifWindowController.xib */; };
 		2F45C9DC1923C3B100FC35AE /* GAReporting.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9DB1923C3B100FC35AE /* GAReporting.m */; };
-		2F45C9DF1923C6A300FC35AE /* AGAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9DE1923C6A300FC35AE /* AGAnalytics.m */; };
 		2F45C9EB1923D11E00FC35AE /* MASShortcut+Monitoring.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9E21923D11E00FC35AE /* MASShortcut+Monitoring.m */; };
 		2F45C9EC1923D11E00FC35AE /* MASShortcut+UserDefaults.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9E41923D11E00FC35AE /* MASShortcut+UserDefaults.m */; };
 		2F45C9ED1923D11E00FC35AE /* MASShortcut.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F45C9E61923D11E00FC35AE /* MASShortcut.m */; };
@@ -106,6 +105,8 @@
 		2FFFD8A81927BBA300F4453C /* AGGifTag.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD8A31927BBA300F4453C /* AGGifTag.m */; };
 		2FFFD8AE1927BBE100F4453C /* AGSettings.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD8AB1927BBE100F4453C /* AGSettings.m */; };
 		2FFFD8AF1927BBE100F4453C /* HTTPRequest.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD8AD1927BBE100F4453C /* HTTPRequest.m */; };
+		2FFFD8B21927BE7600F4453C /* AGAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD8B11927BE7600F4453C /* AGAnalytics.m */; };
+		2FFFD8B51927BEDD00F4453C /* AGPointManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD8B41927BEDD00F4453C /* AGPointManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -174,8 +175,6 @@
 		2F016F651921327800DDC252 /* AGGifWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGGifWindowController.xib; sourceTree = "<group>"; };
 		2F45C9DA1923C3B100FC35AE /* GAReporting.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GAReporting.h; sourceTree = "<group>"; };
 		2F45C9DB1923C3B100FC35AE /* GAReporting.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GAReporting.m; sourceTree = "<group>"; };
-		2F45C9DD1923C6A300FC35AE /* AGAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGAnalytics.h; sourceTree = "<group>"; };
-		2F45C9DE1923C6A300FC35AE /* AGAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGAnalytics.m; sourceTree = "<group>"; };
 		2F45C9E11923D11E00FC35AE /* MASShortcut+Monitoring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcut+Monitoring.h"; sourceTree = "<group>"; };
 		2F45C9E21923D11E00FC35AE /* MASShortcut+Monitoring.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MASShortcut+Monitoring.m"; sourceTree = "<group>"; };
 		2F45C9E31923D11E00FC35AE /* MASShortcut+UserDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MASShortcut+UserDefaults.h"; sourceTree = "<group>"; };
@@ -298,6 +297,10 @@
 		2FFFD8AB1927BBE100F4453C /* AGSettings.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSettings.m; sourceTree = "<group>"; };
 		2FFFD8AC1927BBE100F4453C /* HTTPRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTTPRequest.h; sourceTree = "<group>"; };
 		2FFFD8AD1927BBE100F4453C /* HTTPRequest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HTTPRequest.m; sourceTree = "<group>"; };
+		2FFFD8B01927BE7600F4453C /* AGAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGAnalytics.h; sourceTree = "<group>"; };
+		2FFFD8B11927BE7600F4453C /* AGAnalytics.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGAnalytics.m; sourceTree = "<group>"; };
+		2FFFD8B31927BEDD00F4453C /* AGPointManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGPointManager.h; sourceTree = "<group>"; };
+		2FFFD8B41927BEDD00F4453C /* AGPointManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPointManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -519,8 +522,6 @@
 			children = (
 				2F6883F81917F21800C36852 /* AGDirectoryScanner.h */,
 				2F6883F91917F21800C36852 /* AGDirectoryScanner.m */,
-				2F45C9DD1923C6A300FC35AE /* AGAnalytics.h */,
-				2F45C9DE1923C6A300FC35AE /* AGAnalytics.m */,
 				2F45CA1C192528E600FC35AE /* AGWindowUtilities.h */,
 				2F45CA1D192528E600FC35AE /* AGWindowUtilities.m */,
 			);
@@ -734,10 +735,14 @@
 		2FFFD8A91927BBE100F4453C /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				2FFFD8B01927BE7600F4453C /* AGAnalytics.h */,
+				2FFFD8B11927BE7600F4453C /* AGAnalytics.m */,
 				2FFFD8AA1927BBE100F4453C /* AGSettings.h */,
 				2FFFD8AB1927BBE100F4453C /* AGSettings.m */,
 				2FFFD8AC1927BBE100F4453C /* HTTPRequest.h */,
 				2FFFD8AD1927BBE100F4453C /* HTTPRequest.m */,
+				2FFFD8B31927BEDD00F4453C /* AGPointManager.h */,
+				2FFFD8B41927BEDD00F4453C /* AGPointManager.m */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -920,7 +925,6 @@
 				2F68858D1919428500C36852 /* AGContentViewController.m in Sources */,
 				2F6883FA1917F21800C36852 /* AGDirectoryScanner.m in Sources */,
 				2F6885931919491700C36852 /* NSImage+Manipulation.m in Sources */,
-				2F45C9DF1923C6A300FC35AE /* AGAnalytics.m in Sources */,
 				2F016F531921250800DDC252 /* TESetupAssistant.m in Sources */,
 				2F68850F1919340000C36852 /* AGMainWindow.m in Sources */,
 				2FFFD8A81927BBA300F4453C /* AGGifTag.m in Sources */,
@@ -931,6 +935,7 @@
 				2F6D7FB6191FFC1300CDCEA6 /* ORImageView.m in Sources */,
 				2F45C9ED1923D11E00FC35AE /* MASShortcut.m in Sources */,
 				2FFFD8A41927BBA300F4453C /* AirGifs.xcdatamodeld in Sources */,
+				2FFFD8B21927BE7600F4453C /* AGAnalytics.m in Sources */,
 				2F016F57192125AA00DDC252 /* AGSetupAssistant.m in Sources */,
 				2F6883EF1917EC5A00C36852 /* NSImage+Hash.m in Sources */,
 				2F016F4E1921250800DDC252 /* NSBundle+TEAdditions.m in Sources */,
@@ -947,6 +952,7 @@
 				2F016F541921250800DDC252 /* TESetupAssistantBGView.m in Sources */,
 				2F45C9EF1923D11E00FC35AE /* MASShortcutView.m in Sources */,
 				2F9D6449191896C0004B1F38 /* GRGlassWindow.m in Sources */,
+				2FFFD8B51927BEDD00F4453C /* AGPointManager.m in Sources */,
 				2F9D6448191896C0004B1F38 /* GRGlassThemeWidget.m in Sources */,
 				2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */,
 				2FFFD8A51927BBA300F4453C /* AGData.m in Sources */,
@@ -1046,6 +1052,7 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				ONLY_ACTIVE_ARCH = YES;
+				PROVISIONING_PROFILE = "B62CF0E4-5803-4A52-998D-E862E1BF2AB0";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -1078,6 +1085,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				PROVISIONING_PROFILE = "6A2AB2FF-B14B-4986-BCBE-E5D348865FB4";
 				SDKROOT = macosx;
 			};
 			name = Release;
