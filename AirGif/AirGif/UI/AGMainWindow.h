@@ -12,6 +12,8 @@
 
 @interface AGMainWindow : OBMenuBarWindow
 
+- (void)purchase:(NSAlert*)a code:(NSInteger)code context:(NSObject*)cxt;
+
 @property (nonatomic, readonly) AGContentViewController *currentViewController;
 
 @end

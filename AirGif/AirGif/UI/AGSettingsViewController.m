@@ -79,21 +79,9 @@ NSString *const AGLaunchAtStartupEnabled = @"AGLaunchAtStartupEnabled";
   [AGAnalytics trackSetupAction:@"game" label:@"help" value:@(0)];
 }
 
-- (void)_purchase:(NSAlert*)a code:(NSInteger)code context:(NSObject*)cxt {
-  if(code == 0) {
-    // Alternate button: earn
-    [[NSNotificationCenter defaultCenter] postNotificationName:kTagGifNotification object:nil];
-  }
-  else {
-    // Main button: purchase
-    [[AGPointManager sharedManager] purchase];
-  }
-  [AGWindowUtilities activateMainWindow];
-}
-
 - (IBAction)onPressedPoints:(id)sender {
   if(![AGPointManager sharedManager].hasProducts) {
-    [self _purchase:nil code:0 context:nil];
+    [[AGWindowUtilities mainWindow] purchase:nil code:0 context:nil];
     return;
   }
   
@@ -103,8 +91,8 @@ NSString *const AGLaunchAtStartupEnabled = @"AGLaunchAtStartupEnabled";
                                             otherButton:nil
                               informativeTextWithFormat:NSLocalizedString(@"points.purchase.body", @"")];
   [confirmAlert beginSheetModalForWindow:nil
-                           modalDelegate:self
-                          didEndSelector:@selector(_purchase:code:context:)
+                           modalDelegate:[AGWindowUtilities mainWindow]
+                          didEndSelector:@selector(purchase:code:context:)
                              contextInfo:nil];
   [AGAnalytics trackSetupAction:@"settings" label:@"points" value:nil];
 }

@@ -45,6 +45,7 @@
 }
 
 - (void)upload {
+  return;
   _filesUploaded = 0;
   _changeSet = nil;
   [AGAnalytics trackGifAction:@"upload" label:@"begin" value:@(_animatedGifPaths.allKeys.count)];

@@ -46,20 +46,8 @@ NSString *kPrivateDragUTI = @"com.inzania.airgif";
   } // end if
 }
 
-- (void)_purchase:(NSAlert*)a code:(NSInteger)code context:(NSObject*)cxt {
-  if(code == 0) {
-    // Alternate button: earn
-    [[NSNotificationCenter defaultCenter] postNotificationName:kTagGifNotification object:nil];
-  }
-  else {
-    // Main button: purchase
-    [[AGPointManager sharedManager] purchase];
-  }
-  [AGWindowUtilities activateMainWindow];
-  [AGAnalytics trackGifAction:@"purchase" label:@"response" value:@(code)];
-}
-
 - (void)purchase {
+  [NSApp stopModal];
   NSString *msg = [NSString stringWithFormat:NSLocalizedString(@"points.purchase.req",@""),[AGSettings sharedSettings].pointsGifDownload];
   NSAlert* confirmAlert = [NSAlert alertWithMessageText:msg
                                           defaultButton:NSLocalizedString(@"points.purchase.purchase",@"")
@@ -67,8 +55,8 @@ NSString *kPrivateDragUTI = @"com.inzania.airgif";
                                             otherButton:nil
                               informativeTextWithFormat:NSLocalizedString(@"points.purchase.body", @"")];
   [confirmAlert beginSheetModalForWindow:nil
-                           modalDelegate:self
-                          didEndSelector:@selector(_purchase:code:context:)
+                           modalDelegate:[AGWindowUtilities mainWindow]
+                          didEndSelector:@selector(purchase:code:context:)
                              contextInfo:nil];
   [AGAnalytics trackGifAction:@"purchase" label:@"prompt" value:nil];
 }

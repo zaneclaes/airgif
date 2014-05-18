@@ -13,7 +13,7 @@
 
 @implementation AGWindowUtilities
 
-+ (NSWindow*)mainWindow {
++ (AGMainWindow*)mainWindow {
   AGAppDelegate *app = ((AGAppDelegate*)[NSApplication sharedApplication].delegate);
   return app.window;
 }

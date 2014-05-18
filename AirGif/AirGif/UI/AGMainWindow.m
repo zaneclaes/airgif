@@ -52,6 +52,20 @@ static CGSize const kMainContentSize = {315,480};
   [AGAnalytics view:pages[self.sidebar.selectedIndex]];
 }
 
+
+- (void)purchase:(NSAlert*)a code:(NSInteger)code context:(NSObject*)cxt {
+  if(code == 0) {
+    // Alternate button: earn
+    [[NSNotificationCenter defaultCenter] postNotificationName:kTagGifNotification object:nil];
+  }
+  else {
+    // Main button: purchase
+    [[AGPointManager sharedManager] purchase];
+  }
+  [AGWindowUtilities activateMainWindow];
+  [AGAnalytics trackGifAction:@"purchase" label:@"response" value:@(code)];
+}
+
 - (void)onPurchaseComplete:(NSNotification*)n {
   [AGWindowUtilities activateMainWindow];
 }

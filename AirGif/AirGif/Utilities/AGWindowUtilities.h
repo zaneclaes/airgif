@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AGMainWindow.h"
 
 @interface AGWindowUtilities : NSObject
 
-+ (NSWindow*)mainWindow;
++ (AGMainWindow*)mainWindow;
 + (void)activateMainWindow;
 
 @end
