@@ -14,7 +14,7 @@
 #import "AGSettings.h"
 #import "AGGif.h"
 #import "AGPointManager.h"
-#import <HockeySDK/HockeySDK.h>
+//#import <HockeySDK/HockeySDK.h>
 
 @implementation AGAppDelegate {
   __weak id _constantShortcutMonitor;
@@ -38,9 +38,10 @@
   [AGPointManager sharedManager];
   [AGSettings sharedSettings];
   
+  /*
   [[BITHockeyManager sharedHockeyManager] configureWithIdentifier:@"c7e037f8a02bae77c6f70245f37ee405"];
   [[BITHockeyManager sharedHockeyManager].crashManager setAutoSubmitCrashReport:YES];
-  [[BITHockeyManager sharedHockeyManager] startManager];
+  [[BITHockeyManager sharedHockeyManager] startManager];*/
 }
 
 - (NSApplicationTerminateReply)applicationShouldTerminate:(NSApplication *)sender {

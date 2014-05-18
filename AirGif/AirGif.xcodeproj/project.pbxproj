@@ -97,7 +97,6 @@
 		2FE20AF41926718B0019FBD0 /* 924-inbox-download-grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE20AEE1926718B0019FBD0 /* 924-inbox-download-grey@2x.png */; };
 		2FFFD842192709B000F4453C /* AGDraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD841192709B000F4453C /* AGDraggableImageView.m */; };
 		2FFFD8481927B76500F4453C /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFFD8471927B76500F4453C /* ServiceManagement.framework */; };
-		2FFFD8931927B93A00F4453C /* AirGifLauncher.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2FFFD88F1927B8F500F4453C /* AirGifLauncher.app */; };
 		2FFFD8A41927BBA300F4453C /* AirGifs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD8991927BBA300F4453C /* AirGifs.xcdatamodeld */; };
 		2FFFD8A51927BBA300F4453C /* AGData.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD89D1927BBA300F4453C /* AGData.m */; };
 		2FFFD8A61927BBA300F4453C /* AGDataStore.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD89F1927BBA300F4453C /* AGDataStore.m */; };
@@ -108,13 +107,6 @@
 		2FFFD8B21927BE7600F4453C /* AGAnalytics.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD8B11927BE7600F4453C /* AGAnalytics.m */; };
 		2FFFD8B51927BEDD00F4453C /* AGPointManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD8B41927BEDD00F4453C /* AGPointManager.m */; };
 		2FFFD8B91927CADF00F4453C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFFD8B81927CADF00F4453C /* StoreKit.framework */; };
-		2FFFD8C11927D3BC00F4453C /* Changelog.md in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD8BB1927D3BC00F4453C /* Changelog.md */; };
-		2FFFD8C21927D3BC00F4453C /* de.bitstadium.HockeySDK-Mac-2.1.0.docset in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD8BC1927D3BC00F4453C /* de.bitstadium.HockeySDK-Mac-2.1.0.docset */; };
-		2FFFD8C31927D3BC00F4453C /* HockeySDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFFD8BD1927D3BC00F4453C /* HockeySDK.framework */; };
-		2FFFD8C41927D3BC00F4453C /* HockeySDK.framework.dSYM in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD8BE1927D3BC00F4453C /* HockeySDK.framework.dSYM */; };
-		2FFFD8C51927D3BC00F4453C /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD8BF1927D3BC00F4453C /* LICENSE.txt */; };
-		2FFFD8C61927D3BC00F4453C /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD8C01927D3BC00F4453C /* README.md */; };
-		2FFFD8CB1927D42700F4453C /* HockeySDK.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = 2FFFD8BD1927D3BC00F4453C /* HockeySDK.framework */; };
 		2FFFD8CE1927E25200F4453C /* cloud-import.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD8CC1927E25200F4453C /* cloud-import.png */; };
 		2FFFD8CF1927E25200F4453C /* cloud-import@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FFFD8CD1927E25200F4453C /* cloud-import@2x.png */; };
 /* End PBXBuildFile section */
@@ -127,44 +119,7 @@
 			remoteGlobalIDString = 2F4F48EA18B51C0E00BCA590;
 			remoteInfo = AirGif;
 		};
-		2FFFD88E1927B8F500F4453C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2FFFD8891927B8F500F4453C /* AirGifLauncher.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2FFFD8521927B8E800F4453C;
-			remoteInfo = AirGifLauncher;
-		};
-		2FFFD8901927B8F500F4453C /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 2FFFD8891927B8F500F4453C /* AirGifLauncher.xcodeproj */;
-			proxyType = 2;
-			remoteGlobalIDString = 2FFFD8731927B8E800F4453C;
-			remoteInfo = AirGifLauncherTests;
-		};
 /* End PBXContainerItemProxy section */
-
-/* Begin PBXCopyFilesBuildPhase section */
-		2FFFD8921927B93300F4453C /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = Contents/Library/LoginItems;
-			dstSubfolderSpec = 1;
-			files = (
-				2FFFD8931927B93A00F4453C /* AirGifLauncher.app in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		2FFFD8C81927D3FB00F4453C /* CopyFiles */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				2FFFD8CB1927D42700F4453C /* HockeySDK.framework in CopyFiles */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		2F016D58191C2EA000DDC252 /* MainMenu.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
@@ -303,7 +258,6 @@
 		2FFFD840192709B000F4453C /* AGDraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGDraggableImageView.h; sourceTree = "<group>"; };
 		2FFFD841192709B000F4453C /* AGDraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGDraggableImageView.m; sourceTree = "<group>"; };
 		2FFFD8471927B76500F4453C /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
-		2FFFD8891927B8F500F4453C /* AirGifLauncher.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AirGifLauncher.xcodeproj; path = AirGifLauncher/AirGifLauncher.xcodeproj; sourceTree = "<group>"; };
 		2FFFD89A1927BBA300F4453C /* AirGifs.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AirGifs.xcdatamodel; sourceTree = "<group>"; };
 		2FFFD89C1927BBA300F4453C /* AGData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGData.h; sourceTree = "<group>"; };
 		2FFFD89D1927BBA300F4453C /* AGData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGData.m; sourceTree = "<group>"; };
@@ -322,12 +276,6 @@
 		2FFFD8B31927BEDD00F4453C /* AGPointManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGPointManager.h; sourceTree = "<group>"; };
 		2FFFD8B41927BEDD00F4453C /* AGPointManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGPointManager.m; sourceTree = "<group>"; };
 		2FFFD8B81927CADF00F4453C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
-		2FFFD8BB1927D3BC00F4453C /* Changelog.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Changelog.md; sourceTree = "<group>"; };
-		2FFFD8BC1927D3BC00F4453C /* de.bitstadium.HockeySDK-Mac-2.1.0.docset */ = {isa = PBXFileReference; lastKnownFileType = wrapper; path = "de.bitstadium.HockeySDK-Mac-2.1.0.docset"; sourceTree = "<group>"; };
-		2FFFD8BD1927D3BC00F4453C /* HockeySDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = HockeySDK.framework; sourceTree = "<group>"; };
-		2FFFD8BE1927D3BC00F4453C /* HockeySDK.framework.dSYM */ = {isa = PBXFileReference; lastKnownFileType = wrapper.dsym; path = HockeySDK.framework.dSYM; sourceTree = "<group>"; };
-		2FFFD8BF1927D3BC00F4453C /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
-		2FFFD8C01927D3BC00F4453C /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
 		2FFFD8CC1927E25200F4453C /* cloud-import.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-import.png"; sourceTree = "<group>"; };
 		2FFFD8CD1927E25200F4453C /* cloud-import@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "cloud-import@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -337,7 +285,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2FFFD8C31927D3BC00F4453C /* HockeySDK.framework in Frameworks */,
 				2FFFD8B91927CADF00F4453C /* StoreKit.framework in Frameworks */,
 				2FFFD8481927B76500F4453C /* ServiceManagement.framework in Frameworks */,
 				2F45C9F11923D14D00FC35AE /* Carbon.framework in Frameworks */,
@@ -437,7 +384,6 @@
 		2F4F48E218B51C0E00BCA590 = {
 			isa = PBXGroup;
 			children = (
-				2FFFD8891927B8F500F4453C /* AirGifLauncher.xcodeproj */,
 				2FFFD8981927BBA300F4453C /* Universal */,
 				2F4F48F418B51C0E00BCA590 /* AirGif */,
 				2F4F491218B51C0E00BCA590 /* AirGifTests */,
@@ -674,7 +620,6 @@
 		2F9D6436191896C0004B1F38 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
-				2FFFD8BA1927D3BC00F4453C /* HockeySDK-Mac */,
 				2F45C9E01923D11E00FC35AE /* MASShortcut */,
 				2F45C9D91923C38A00FC35AE /* GAN */,
 				2F016F3A1921250800DDC252 /* TESetupAssistant */,
@@ -733,15 +678,6 @@
 			path = ITSidebar;
 			sourceTree = "<group>";
 		};
-		2FFFD88A1927B8F500F4453C /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				2FFFD88F1927B8F500F4453C /* AirGifLauncher.app */,
-				2FFFD8911927B8F500F4453C /* AirGifLauncherTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		2FFFD8981927BBA300F4453C /* Universal */ = {
 			isa = PBXGroup;
 			children = (
@@ -782,19 +718,6 @@
 			path = Utilities;
 			sourceTree = "<group>";
 		};
-		2FFFD8BA1927D3BC00F4453C /* HockeySDK-Mac */ = {
-			isa = PBXGroup;
-			children = (
-				2FFFD8BB1927D3BC00F4453C /* Changelog.md */,
-				2FFFD8BC1927D3BC00F4453C /* de.bitstadium.HockeySDK-Mac-2.1.0.docset */,
-				2FFFD8BD1927D3BC00F4453C /* HockeySDK.framework */,
-				2FFFD8BE1927D3BC00F4453C /* HockeySDK.framework.dSYM */,
-				2FFFD8BF1927D3BC00F4453C /* LICENSE.txt */,
-				2FFFD8C01927D3BC00F4453C /* README.md */,
-			);
-			path = "HockeySDK-Mac";
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -805,8 +728,6 @@
 				2F4F48E718B51C0E00BCA590 /* Sources */,
 				2F4F48E818B51C0E00BCA590 /* Frameworks */,
 				2F4F48E918B51C0E00BCA590 /* Resources */,
-				2FFFD8921927B93300F4453C /* CopyFiles */,
-				2FFFD8C81927D3FB00F4453C /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -868,12 +789,6 @@
 			mainGroup = 2F4F48E218B51C0E00BCA590;
 			productRefGroup = 2F4F48EC18B51C0E00BCA590 /* Products */;
 			projectDirPath = "";
-			projectReferences = (
-				{
-					ProductGroup = 2FFFD88A1927B8F500F4453C /* Products */;
-					ProjectRef = 2FFFD8891927B8F500F4453C /* AirGifLauncher.xcodeproj */;
-				},
-			);
 			projectRoot = "";
 			targets = (
 				2F4F48EA18B51C0E00BCA590 /* AirGif */,
@@ -881,23 +796,6 @@
 			);
 		};
 /* End PBXProject section */
-
-/* Begin PBXReferenceProxy section */
-		2FFFD88F1927B8F500F4453C /* AirGifLauncher.app */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.application;
-			path = AirGifLauncher.app;
-			remoteRef = 2FFFD88E1927B8F500F4453C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-		2FFFD8911927B8F500F4453C /* AirGifLauncherTests.xctest */ = {
-			isa = PBXReferenceProxy;
-			fileType = wrapper.cfbundle;
-			path = AirGifLauncherTests.xctest;
-			remoteRef = 2FFFD8901927B8F500F4453C /* PBXContainerItemProxy */;
-			sourceTree = BUILT_PRODUCTS_DIR;
-		};
-/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		2F4F48E918B51C0E00BCA590 /* Resources */ = {
@@ -907,11 +805,9 @@
 				2F016F4C1921250800DDC252 /* DisabledGrayDot.png in Resources */,
 				2F68856B19193D9D00C36852 /* 912-gears-selected@2x.png in Resources */,
 				2F68856A19193D9D00C36852 /* 912-gears-selected.png in Resources */,
-				2FFFD8C21927D3BC00F4453C /* de.bitstadium.HockeySDK-Mac-2.1.0.docset in Resources */,
 				2FE20AF21926718B0019FBD0 /* 909-tags-grey@2x.png in Resources */,
 				2FFFD8CF1927E25200F4453C /* cloud-import@2x.png in Resources */,
 				2F68856319193D9D00C36852 /* 708-search-selected@2x.png in Resources */,
-				2FFFD8C61927D3BC00F4453C /* README.md in Resources */,
 				2F68857119193D9D00C36852 /* 973-user@2x.png in Resources */,
 				2F016F4F1921250800DDC252 /* SetupAssistant.xib in Resources */,
 				2FE20AF41926718B0019FBD0 /* 924-inbox-download-grey@2x.png in Resources */,
@@ -936,7 +832,6 @@
 				2F016F501921250800DDC252 /* SetupAssistantMini.xib in Resources */,
 				2F016D59191C2EA000DDC252 /* MainMenu.xib in Resources */,
 				2F016F671921327800DDC252 /* AGGifWindowController.xib in Resources */,
-				2FFFD8C41927D3BC00F4453C /* HockeySDK.framework.dSYM in Resources */,
 				2FE20AF01926718B0019FBD0 /* 906-chat-3-grey@2x.png in Resources */,
 				2F016F4D1921250800DDC252 /* GrayDot.png in Resources */,
 				2F016F60192126ED00DDC252 /* AGSetupDirectory.xib in Resources */,
@@ -945,14 +840,12 @@
 				2F68856819193D9D00C36852 /* 909-tags.png in Resources */,
 				2F4F490718B51C0E00BCA590 /* Images.xcassets in Resources */,
 				2F68856D19193D9D00C36852 /* 912-gears@2x.png in Resources */,
-				2FFFD8C51927D3BC00F4453C /* LICENSE.txt in Resources */,
 				2F68857E19193EC600C36852 /* AGSearchViewController.xib in Resources */,
 				2FE20AF31926718B0019FBD0 /* 924-inbox-download-grey.png in Resources */,
 				2F68857419193D9D00C36852 /* StatusHighlighted.png in Resources */,
 				2F68857019193D9D00C36852 /* 973-user.png in Resources */,
 				2FE20AEF1926718B0019FBD0 /* 906-chat-3-grey.png in Resources */,
 				2F68856919193D9D00C36852 /* 909-tags@2x.png in Resources */,
-				2FFFD8C11927D3BC00F4453C /* Changelog.md in Resources */,
 				2FFFD8CE1927E25200F4453C /* cloud-import.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1183,6 +1076,7 @@
 				INFOPLIST_FILE = "AirGif/AirGif-Info.plist";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "C3125D4E-54EE-4458-9C7E-07CA56F738F1";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
