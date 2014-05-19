@@ -59,6 +59,10 @@ NSString *kPrivateDragUTI = @"com.inzania.airgif";
                           didEndSelector:@selector(purchase:code:context:)
                              contextInfo:nil];
   [AGAnalytics trackGifAction:@"purchase" label:@"prompt" value:nil];
+  
+  NSMutableDictionary *params = [AGAnalytics trackedParams];
+  params[@"hash"] = self.gif.imageHash;
+  [[HTTPRequest alloc] post:URL_API(@"purchase") params:params completion:nil];
 }
 
 - (BOOL)checkForSaveAction {
