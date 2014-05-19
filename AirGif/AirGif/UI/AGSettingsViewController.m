@@ -86,7 +86,7 @@ NSString *const AGLaunchAtStartupEnabled = @"AGLaunchAtStartupEnabled";
   }
   
   NSAlert* confirmAlert = [NSAlert alertWithMessageText:@"Points"
-                                          defaultButton:NSLocalizedString(@"points.purchase.purchase",@"")
+                                          defaultButton:[AGPointManager sharedManager].purchaseString
                                         alternateButton:NSLocalizedString(@"points.purchase.earn",@"")
                                             otherButton:nil
                               informativeTextWithFormat:NSLocalizedString(@"points.purchase.body", @"")];

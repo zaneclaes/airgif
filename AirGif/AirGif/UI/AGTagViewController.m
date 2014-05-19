@@ -234,6 +234,7 @@
  ************************************************************************************************/
 - (void)viewDidAppear {
   [super viewDidAppear];
+  self.headerLabel.stringValue = NSLocalizedString(@"points.tag.instructions", @"");
   self.allTags = [[AGGifTag allTags] mutableCopy];
   [self.tagsField becomeFirstResponder];
   if(!self.queue.count) {

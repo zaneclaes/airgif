@@ -13,6 +13,7 @@ static NSInteger const kGifThumbnailSize = 150;
 
 static NSString * const kNotificationGifThumbnailCached     = @"NotificationGifThumbnailCached";
 static NSString * const kNotificationGifCached              = @"NotificationGifCached";
+static NSString * const kGifPurchasedNotification           = @"AGGifPurchasedPurchaseNotification";
 
 @interface AGGif : AGData
 
@@ -36,6 +37,7 @@ static NSString * const kNotificationGifCached              = @"NotificationGifC
 
 - (void)cache:(void (^)(BOOL))block;          // Thumnail and full image
 - (void)cacheThumbnail:(void (^)(BOOL))block; // Just the thumbnail
+- (void)purchase;
 
 - (void)flagNSFW:(NSWindow*)presenter completion:(HTTPRequestResponder)completion;
 

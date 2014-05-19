@@ -67,7 +67,20 @@ static CGSize const kMainContentSize = {315,480};
 }
 
 - (void)onPurchaseComplete:(NSNotification*)n {
-  [AGWindowUtilities activateMainWindow];
+  [self.currentViewController viewWillAppear];
+  [NSApp stopModal];
+  [self.currentViewController viewDidAppear];
+  //[AGWindowUtilities activateMainWindow];
+
+  NSAlert* confirmAlert = [NSAlert alertWithMessageText:NSLocalizedString(@"Thanks", @"")
+                                          defaultButton:NSLocalizedString(@"OK", @"")
+                                        alternateButton:nil
+                                            otherButton:nil
+                              informativeTextWithFormat:NSLocalizedString(@"points.display", @""),[AGPointManager sharedManager].points];
+  [confirmAlert beginSheetModalForWindow:nil
+                           modalDelegate:nil
+                          didEndSelector:nil
+                             contextInfo:nil];
 }
 
 - (void)onTagGifNotification:(NSNotification*)n {
