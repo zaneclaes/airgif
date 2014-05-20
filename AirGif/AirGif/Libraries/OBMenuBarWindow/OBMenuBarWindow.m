@@ -34,14 +34,21 @@
 NSString * const OBMenuBarWindowDidAttachToMenuBar = @"OBMenuBarWindowDidAttachToMenuBar";
 NSString * const OBMenuBarWindowDidDetachFromMenuBar = @"OBMenuBarWindowDidDetachFromMenuBar";
 
+@protocol OBMenuBarWindowIconViewDelegate <NSObject>
+
+- (void)didRightClickWindowIcon;
+
+@end
+
 @interface OBMenuBarWindowIconView : NSView
 
 @property (nonatomic, assign) OBMenuBarWindow *menuBarWindow;
 @property (nonatomic, assign) BOOL highlighted;
+@property (nonatomic, weak) id<OBMenuBarWindowIconViewDelegate> delegate;
 
 @end
 
-@interface OBMenuBarWindow ()
+@interface OBMenuBarWindow () <OBMenuBarWindowIconViewDelegate, NSMenuDelegate>
 
 @property (nonatomic, assign) BOOL isDragging;
 @property (nonatomic, assign) BOOL resizeRight;
@@ -219,6 +226,26 @@ NSString * const OBMenuBarWindowDidDetachFromMenuBar = @"OBMenuBarWindowDidDetac
 
 #pragma mark - Menu bar icon
 
+- (void)quit {
+  [[NSApplication sharedApplication] terminate:nil];
+}
+
+- (void)open {
+  [NSApp activateIgnoringOtherApps:YES];
+  [self.window makeKeyAndOrderFront:self];
+}
+
+- (void)didRightClickWindowIcon {
+  NSMenu *fileMenu = [[NSMenu alloc] initWithTitle:@"Main"];
+  NSMenuItem *openMenu = [[NSMenuItem alloc] initWithTitle:@"Open" action:@selector(open) keyEquivalent:@""];
+  openMenu.target = self;
+  [fileMenu addItem: openMenu];
+  NSMenuItem *quitMenu = [[NSMenuItem alloc] initWithTitle:@"Quit" action:@selector(quit) keyEquivalent:@""];
+  quitMenu.target = self;
+  [fileMenu addItem: quitMenu];
+  [self.statusItem popUpStatusItemMenu:fileMenu];
+}
+
 - (void)setHasMenuBarIcon:(BOOL)flag
 {
     if (self.hasMenuBarIcon == flag)
@@ -233,6 +260,7 @@ NSString * const OBMenuBarWindowDidDetachFromMenuBar = @"OBMenuBarWindowDidDetac
         CGFloat thickness = [[NSStatusBar systemStatusBar] thickness];
         self.statusItemView = [[OBMenuBarWindowIconView alloc] initWithFrame:NSMakeRect(0, 0, (self.menuBarIcon ? self.menuBarIcon.size.width : thickness) + 6, thickness)];
         self.statusItemView.menuBarWindow = self;
+        self.statusItemView.delegate = self;
         _statusItem.view = self.statusItemView;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(statusItemViewDidMove:) name:NSWindowDidMoveNotification object:_statusItem.view.window];
     }
@@ -879,7 +907,12 @@ NSString * const OBMenuBarWindowDidDetachFromMenuBar = @"OBMenuBarWindowDidDetac
 - (void)mouseDown:(NSEvent *)theEvent
 {
     self.highlighted = YES;
-    if ([self.menuBarWindow isMainWindow] || (self.menuBarWindow.isVisible && self.menuBarWindow.attachedToMenuBar))
+  if ([theEvent modifierFlags] & NSCommandKeyMask){
+    if([self.delegate respondsToSelector:@selector(didRightClickWindowIcon)]) {
+      [self.delegate didRightClickWindowIcon];
+    }
+    }
+    else if ([self.menuBarWindow isMainWindow] || (self.menuBarWindow.isVisible && self.menuBarWindow.attachedToMenuBar))
     {
         [self.menuBarWindow orderOut:self];
     }
@@ -888,6 +921,13 @@ NSString * const OBMenuBarWindowDidDetachFromMenuBar = @"OBMenuBarWindowDidDetac
         [NSApp activateIgnoringOtherApps:YES];
         [self.menuBarWindow makeKeyAndOrderFront:self];
     }
+}
+
+- (void)rightMouseDown:(NSEvent *)theEvent{
+  [super rightMouseDown:theEvent];
+  if([self.delegate respondsToSelector:@selector(didRightClickWindowIcon)]) {
+    [self.delegate didRightClickWindowIcon];
+  }
 }
 
 - (void)mouseUp:(NSEvent *)theEvent
