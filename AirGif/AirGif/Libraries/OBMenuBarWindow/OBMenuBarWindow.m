@@ -237,10 +237,12 @@ NSString * const OBMenuBarWindowDidDetachFromMenuBar = @"OBMenuBarWindowDidDetac
 
 - (void)didRightClickWindowIcon {
   NSMenu *fileMenu = [[NSMenu alloc] initWithTitle:@"Main"];
-  NSMenuItem *openMenu = [[NSMenuItem alloc] initWithTitle:@"Open" action:@selector(open) keyEquivalent:@""];
+  NSMenuItem *openMenu = [[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"Open",@"")
+                                                    action:@selector(open) keyEquivalent:@""];
   openMenu.target = self;
   [fileMenu addItem: openMenu];
-  NSMenuItem *quitMenu = [[NSMenuItem alloc] initWithTitle:@"Quit" action:@selector(quit) keyEquivalent:@""];
+  NSMenuItem *quitMenu = [[NSMenuItem alloc] initWithTitle:NSLocalizedString(@"Quit",@"")
+                                                    action:@selector(quit) keyEquivalent:@""];
   quitMenu.target = self;
   [fileMenu addItem: quitMenu];
   [self.statusItem popUpStatusItemMenu:fileMenu];
