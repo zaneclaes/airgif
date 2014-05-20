@@ -66,14 +66,15 @@ storage = _storage;
 
 - (void) onDone
 {
-  if(self.unthread) {
-    dispatch_async(dispatch_get_main_queue(), ^{
-      _completion(self);
-    });
-    return;
-  }
   if(_completion) {
-    _completion(self);
+    if(self.unthread) {
+      dispatch_async(dispatch_get_main_queue(), ^{
+        _completion(self);
+      });
+    }
+    else {
+      _completion(self);
+    }
   }
 }
 - (void) parseJSON

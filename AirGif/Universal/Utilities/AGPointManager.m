@@ -9,6 +9,7 @@
 #import "AGPointManager.h"
 #import "AGAnalytics.h"
 #import "AGSettings.h"
+#import "HTTPRequest.h"
 #import "SKProduct+Pricing.h"
 #import <StoreKit/StoreKit.h>
 
@@ -65,6 +66,14 @@ static NSString * const kKeyPoints = @"points";
   [self earn:points reason:@"iap"];
   [[SKPaymentQueue defaultQueue] finishTransaction: transaction];
   [[NSNotificationCenter defaultCenter] postNotificationName:kPurchaseCompleteNotification object:@(points) userInfo:nil];
+  
+  NSData *receipt = [NSData dataWithContentsOfURL:[[NSBundle mainBundle] appStoreReceiptURL]];
+  NSMutableDictionary *params = [AGAnalytics trackedParams];
+  params[@"receipt"] = [receipt base64Encoding]?:@"";
+  params[@"created_at"] = @(transaction.transactionDate.timeIntervalSince1970);
+  params[@"product_id"] = transaction.payment.productIdentifier ?: @"";
+  params[@"transaction_id"] = transaction.transactionIdentifier;
+  [[HTTPRequest alloc] post:URL_API(@"purchase") params:params completion:nil];
 }
 
 - (void)failedTransaction:(SKPaymentTransaction*)transaction {
