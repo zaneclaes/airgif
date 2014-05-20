@@ -908,21 +908,22 @@ NSString * const OBMenuBarWindowDidDetachFromMenuBar = @"OBMenuBarWindowDidDetac
 
 - (void)mouseDown:(NSEvent *)theEvent
 {
-    self.highlighted = YES;
   if ([theEvent modifierFlags] & NSCommandKeyMask){
     if([self.delegate respondsToSelector:@selector(didRightClickWindowIcon)]) {
       [self.delegate didRightClickWindowIcon];
     }
-    }
-    else if ([self.menuBarWindow isMainWindow] || (self.menuBarWindow.isVisible && self.menuBarWindow.attachedToMenuBar))
-    {
-        [self.menuBarWindow orderOut:self];
-    }
-    else
-    {
-        [NSApp activateIgnoringOtherApps:YES];
-        [self.menuBarWindow makeKeyAndOrderFront:self];
-    }
+  }
+  else if ([self.menuBarWindow isMainWindow] || (self.menuBarWindow.isVisible && self.menuBarWindow.attachedToMenuBar))
+  {
+    self.highlighted = YES;
+    [self.menuBarWindow orderOut:self];
+  }
+  else
+  {
+    self.highlighted = YES;
+    [NSApp activateIgnoringOtherApps:YES];
+    [self.menuBarWindow makeKeyAndOrderFront:self];
+  }
 }
 
 - (void)rightMouseDown:(NSEvent *)theEvent{
