@@ -12,6 +12,7 @@
 #import "AGGif.h"
 #import "HTTPRequest.h"
 #import "AGDataStore.h"
+#import "AGPointManager.h"
 
 static CGFloat const kSearchDelay = 0.3;
 
@@ -100,6 +101,10 @@ static CGFloat const kSearchDelay = 0.3;
   [super awakeFromNib];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(search:)
                                                name:kNotificationGifThumbnailCached object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(search:)
+                                               name:kPurchaseCompleteNotification object:nil];
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(search:)
+                                               name:kGifPurchasedNotification object:nil];
   [self.resultsGrid setItemPrototype:[AGSearchResultViewItem new]];
   [self search:nil];
 }

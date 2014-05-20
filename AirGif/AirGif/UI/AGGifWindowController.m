@@ -98,6 +98,10 @@ static NSInteger const kPadding = 2;
   return minWidth;
 }
 
+- (void)reloadIcon {
+  [self.iconView setHidden:self.gif.purchaseDate || self.gif.wasImported.boolValue];
+}
+
 - (void)windowDidLoad {
   [super windowDidLoad];
   [self.shareButton sendActionOn:NSLeftMouseDownMask];
@@ -121,15 +125,22 @@ static NSInteger const kPadding = 2;
     self.imageView.frame = NSMakeRect(0, bottomHeight, image.size.width, image.size.height);
     [self repositionButtons];
   }];
-  [self.iconView setHidden:self.gif.purchaseDate || self.gif.wasImported.boolValue];
+  [self reloadIcon];
   [AGAnalytics view:@"gif"];
 }
 
 - (id)initWithGif:(AGGif*)gif {
   if((self = [super initWithWindowNibName:@"AGGifWindowController"])) {
     self.gif = gif;
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reloadIcon)
+                                                 name:kGifPurchasedNotification object:nil];
   }
   return self;
+}
+
+- (void)dealloc {
+  [[NSNotificationCenter defaultCenter] removeObserver:self];
 }
 
 @end

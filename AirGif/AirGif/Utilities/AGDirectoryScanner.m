@@ -29,6 +29,7 @@
     [_delegate directoryScannerDidFinishUploadingFiles:self withError:nil];
     [AGAnalytics trackGifAction:@"upload" label:@"end" value:@(self.filesUploaded)];
     [self.directory stopAccessingSecurityScopedResource];
+    [[AGDataStore sharedStore] saveContext];
     return;
   }
   [_delegate directoryScannerDidProgress:self];
@@ -39,9 +40,23 @@
   params[@"hash"] = hash;
   [[HTTPRequest alloc] post:URL_API(@"upload") params:params completion:^(HTTPRequest *req) {
     _filesUploaded++;
+    [self import:req.response[@"gif"]];
     [[AGPointManager sharedManager] earn:[AGSettings sharedSettings].pointsUploadGif reason:@"upload"];
     [self uploadNextFile];
   }];
+}
+
+- (void)import:(NSDictionary*)data {
+  if(![data isKindOfClass:[NSDictionary class]]) {
+    return;
+  }
+  AGGif *gif = [AGGif gifWithServerDictionary:data];
+  gif.wasImported = @YES;
+  // Copy the file, so we have a cached version which does not reqquire downloading...
+  if(![[NSFileManager defaultManager] fileExistsAtPath:gif.cachedGifUrl.path]) {
+    [[NSFileManager defaultManager] copyItemAtURL:_animatedGifPaths[gif.imageHash] toURL:gif.cachedGifUrl error:nil];
+  }
+  [gif cacheThumbnail:nil];
 }
 
 - (void)upload {
@@ -62,13 +77,7 @@
     NSArray *new_hashes = [req.response[@"new_hashes"] isKindOfClass:[NSArray class]] ? req.response[@"new_hashes"] : @[];
     NSArray *existing = [req.response[@"existing"] isKindOfClass:[NSArray class]] ? req.response[@"existing"] : @[];
     for(NSDictionary *data in existing) {
-      AGGif *gif = [AGGif gifWithServerDictionary:data];
-      gif.wasImported = @YES;
-      // Copy the file, so we have a cached version which does not reqquire downloading...
-      if(![[NSFileManager defaultManager] fileExistsAtPath:gif.cachedGifUrl.path]) {
-        [[NSFileManager defaultManager] copyItemAtURL:_animatedGifPaths[gif.imageHash] toURL:gif.cachedGifUrl error:nil];
-      }
-      [gif cacheThumbnail:nil];
+      [self import:data];
     }
     [[AGDataStore sharedStore] saveContext];
     _changeSet = [[NSOrderedSet alloc] initWithArray:new_hashes];

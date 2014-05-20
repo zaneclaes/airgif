@@ -14,6 +14,7 @@ static NSString * const kPurchaseCompleteNotification = @"AGPurchaseCompleteNoti
 
 @property (nonatomic, readonly) NSInteger points;
 @property (nonatomic, readonly) BOOL hasProducts;
+@property (nonatomic, readonly) NSString *purchaseString;
 
 - (void)earn:(NSInteger)amount reason:(NSString*)reason;
 - (BOOL)spend:(NSInteger)amount reason:(NSString*)reason;

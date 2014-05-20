@@ -39,8 +39,10 @@
   }
   self.currentGif = gif;
   [self.progressBar stopAnimation:nil];
-  [self.tagsField becomeFirstResponder];
-  
+  if(self.view.superview) {
+    [self.tagsField becomeFirstResponder];
+  }
+
   NSImage *image = [[NSImage alloc] initWithContentsOfURL:self.currentGif.cachedGifUrl];
   if(image.size.width == 0 || image.size.height == 0) {
     [self.queue removeObjectForKey:gif.imageHash];
@@ -234,8 +236,11 @@
  ************************************************************************************************/
 - (void)viewDidAppear {
   [super viewDidAppear];
+  self.headerLabel.stringValue = NSLocalizedString(@"points.tag.instructions", @"");
   self.allTags = [[AGGifTag allTags] mutableCopy];
-  [self.tagsField becomeFirstResponder];
+  if(self.view.superview) {
+    [self.tagsField becomeFirstResponder];
+  }
   if(!self.queue.count) {
     [self _submit:nil];
   }

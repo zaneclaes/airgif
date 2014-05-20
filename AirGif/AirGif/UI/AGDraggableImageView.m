@@ -50,7 +50,7 @@ NSString *kPrivateDragUTI = @"com.inzania.airgif";
   [NSApp stopModal];
   NSString *msg = [NSString stringWithFormat:NSLocalizedString(@"points.purchase.req",@""),[AGSettings sharedSettings].pointsGifDownload];
   NSAlert* confirmAlert = [NSAlert alertWithMessageText:msg
-                                          defaultButton:NSLocalizedString(@"points.purchase.purchase",@"")
+                                          defaultButton:[AGPointManager sharedManager].purchaseString
                                         alternateButton:NSLocalizedString(@"points.purchase.earn",@"")
                                             otherButton:nil
                               informativeTextWithFormat:NSLocalizedString(@"points.purchase.body", @"")];
@@ -71,8 +71,7 @@ NSString *kPrivateDragUTI = @"com.inzania.airgif";
   }
   else {
     if([[AGPointManager sharedManager] spend:[AGSettings sharedSettings].pointsGifDownload reason:@"download"]) {
-      self.gif.purchaseDate = [NSDate date];
-      [[AGDataStore sharedStore] saveContext];
+      [self.gif purchase];
       return YES;
     }
     else {

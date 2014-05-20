@@ -79,12 +79,6 @@
 		2F6D7FB6191FFC1300CDCEA6 /* ORImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D7FB5191FFC1300CDCEA6 /* ORImageView.m */; };
 		2F6D7FB8191FFC3800CDCEA6 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6D7FB7191FFC3800CDCEA6 /* Quartz.framework */; };
 		2F6D7FBA191FFDF900CDCEA6 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6D7FB9191FFDF900CDCEA6 /* WebKit.framework */; };
-		2F9D6447191896C0004B1F38 /* GRGlassAccessoryWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6439191896C0004B1F38 /* GRGlassAccessoryWindow.m */; };
-		2F9D6448191896C0004B1F38 /* GRGlassThemeWidget.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D643B191896C0004B1F38 /* GRGlassThemeWidget.m */; };
-		2F9D6449191896C0004B1F38 /* GRGlassWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D643D191896C0004B1F38 /* GRGlassWindow.m */; };
-		2F9D644A191896C0004B1F38 /* NSWindow+Screenshot.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D643F191896C0004B1F38 /* NSWindow+Screenshot.m */; };
-		2F9D644B191896C0004B1F38 /* Roboto-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D6442191896C0004B1F38 /* Roboto-Medium.ttf */; };
-		2F9D644C191896C0004B1F38 /* Roboto-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2F9D6443191896C0004B1F38 /* Roboto-Regular.ttf */; };
 		2F9D644D191896C0004B1F38 /* OBMenuBarWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6446191896C0004B1F38 /* OBMenuBarWindow.m */; };
 		2F9D646719191F40004B1F38 /* ITSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D645019191F40004B1F38 /* ITSidebar.m */; };
 		2F9D646819191F40004B1F38 /* ITSidebarItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D645219191F40004B1F38 /* ITSidebarItemCell.m */; };
@@ -95,6 +89,7 @@
 		2FE20AF21926718B0019FBD0 /* 909-tags-grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE20AEC1926718B0019FBD0 /* 909-tags-grey@2x.png */; };
 		2FE20AF31926718B0019FBD0 /* 924-inbox-download-grey.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE20AED1926718B0019FBD0 /* 924-inbox-download-grey.png */; };
 		2FE20AF41926718B0019FBD0 /* 924-inbox-download-grey@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2FE20AEE1926718B0019FBD0 /* 924-inbox-download-grey@2x.png */; };
+		2FE84DBB192A989B00DBCA36 /* SKProduct+Pricing.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FE84DBA192A989B00DBCA36 /* SKProduct+Pricing.m */; };
 		2FFFD842192709B000F4453C /* AGDraggableImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD841192709B000F4453C /* AGDraggableImageView.m */; };
 		2FFFD8481927B76500F4453C /* ServiceManagement.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2FFFD8471927B76500F4453C /* ServiceManagement.framework */; };
 		2FFFD8A41927BBA300F4453C /* AirGifs.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2FFFD8991927BBA300F4453C /* AirGifs.xcdatamodeld */; };
@@ -231,17 +226,6 @@
 		2F6D7FB5191FFC1300CDCEA6 /* ORImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORImageView.m; sourceTree = "<group>"; };
 		2F6D7FB7191FFC3800CDCEA6 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		2F6D7FB9191FFDF900CDCEA6 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
-		2F9D6438191896C0004B1F38 /* GRGlassAccessoryWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRGlassAccessoryWindow.h; sourceTree = "<group>"; };
-		2F9D6439191896C0004B1F38 /* GRGlassAccessoryWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRGlassAccessoryWindow.m; sourceTree = "<group>"; };
-		2F9D643A191896C0004B1F38 /* GRGlassThemeWidget.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRGlassThemeWidget.h; sourceTree = "<group>"; };
-		2F9D643B191896C0004B1F38 /* GRGlassThemeWidget.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRGlassThemeWidget.m; sourceTree = "<group>"; };
-		2F9D643C191896C0004B1F38 /* GRGlassWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GRGlassWindow.h; sourceTree = "<group>"; };
-		2F9D643D191896C0004B1F38 /* GRGlassWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GRGlassWindow.m; sourceTree = "<group>"; };
-		2F9D643E191896C0004B1F38 /* NSWindow+Screenshot.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSWindow+Screenshot.h"; sourceTree = "<group>"; };
-		2F9D643F191896C0004B1F38 /* NSWindow+Screenshot.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSWindow+Screenshot.m"; sourceTree = "<group>"; };
-		2F9D6440191896C0004B1F38 /* PrivateStuff.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrivateStuff.h; sourceTree = "<group>"; };
-		2F9D6442191896C0004B1F38 /* Roboto-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Medium.ttf"; sourceTree = "<group>"; };
-		2F9D6443191896C0004B1F38 /* Roboto-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Roboto-Regular.ttf"; sourceTree = "<group>"; };
 		2F9D6445191896C0004B1F38 /* OBMenuBarWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBMenuBarWindow.h; sourceTree = "<group>"; };
 		2F9D6446191896C0004B1F38 /* OBMenuBarWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBMenuBarWindow.m; sourceTree = "<group>"; };
 		2F9D644F19191F40004B1F38 /* ITSidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSidebar.h; sourceTree = "<group>"; };
@@ -255,6 +239,8 @@
 		2FE20AEC1926718B0019FBD0 /* 909-tags-grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "909-tags-grey@2x.png"; sourceTree = "<group>"; };
 		2FE20AED1926718B0019FBD0 /* 924-inbox-download-grey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "924-inbox-download-grey.png"; sourceTree = "<group>"; };
 		2FE20AEE1926718B0019FBD0 /* 924-inbox-download-grey@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "924-inbox-download-grey@2x.png"; sourceTree = "<group>"; };
+		2FE84DB9192A989B00DBCA36 /* SKProduct+Pricing.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SKProduct+Pricing.h"; sourceTree = "<group>"; };
+		2FE84DBA192A989B00DBCA36 /* SKProduct+Pricing.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "SKProduct+Pricing.m"; sourceTree = "<group>"; };
 		2FFFD840192709B000F4453C /* AGDraggableImageView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGDraggableImageView.h; sourceTree = "<group>"; };
 		2FFFD841192709B000F4453C /* AGDraggableImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGDraggableImageView.m; sourceTree = "<group>"; };
 		2FFFD8471927B76500F4453C /* ServiceManagement.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ServiceManagement.framework; path = System/Library/Frameworks/ServiceManagement.framework; sourceTree = SDKROOT; };
@@ -491,6 +477,8 @@
 				2F6883EE1917EC5A00C36852 /* NSImage+Hash.m */,
 				2F6885911919491700C36852 /* NSImage+Manipulation.h */,
 				2F6885921919491700C36852 /* NSImage+Manipulation.m */,
+				2FE84DB9192A989B00DBCA36 /* SKProduct+Pricing.h */,
+				2FE84DBA192A989B00DBCA36 /* SKProduct+Pricing.m */,
 			);
 			path = Categories;
 			sourceTree = "<group>";
@@ -625,36 +613,9 @@
 				2F016F3A1921250800DDC252 /* TESetupAssistant */,
 				2F6D7FB3191FFC0400CDCEA6 /* ORImageView */,
 				2F9D644E19191F40004B1F38 /* ITSidebar */,
-				2F9D6437191896C0004B1F38 /* GRGlassWindow */,
 				2F9D6444191896C0004B1F38 /* OBMenuBarWindow */,
 			);
 			path = Libraries;
-			sourceTree = "<group>";
-		};
-		2F9D6437191896C0004B1F38 /* GRGlassWindow */ = {
-			isa = PBXGroup;
-			children = (
-				2F9D6438191896C0004B1F38 /* GRGlassAccessoryWindow.h */,
-				2F9D6439191896C0004B1F38 /* GRGlassAccessoryWindow.m */,
-				2F9D643A191896C0004B1F38 /* GRGlassThemeWidget.h */,
-				2F9D643B191896C0004B1F38 /* GRGlassThemeWidget.m */,
-				2F9D643C191896C0004B1F38 /* GRGlassWindow.h */,
-				2F9D643D191896C0004B1F38 /* GRGlassWindow.m */,
-				2F9D643E191896C0004B1F38 /* NSWindow+Screenshot.h */,
-				2F9D643F191896C0004B1F38 /* NSWindow+Screenshot.m */,
-				2F9D6440191896C0004B1F38 /* PrivateStuff.h */,
-				2F9D6441191896C0004B1F38 /* Resources */,
-			);
-			path = GRGlassWindow;
-			sourceTree = "<group>";
-		};
-		2F9D6441191896C0004B1F38 /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				2F9D6442191896C0004B1F38 /* Roboto-Medium.ttf */,
-				2F9D6443191896C0004B1F38 /* Roboto-Regular.ttf */,
-			);
-			path = Resources;
 			sourceTree = "<group>";
 		};
 		2F9D6444191896C0004B1F38 /* OBMenuBarWindow */ = {
@@ -821,10 +782,8 @@
 				2F68858A191940DD00C36852 /* AGSettingsViewController.xib in Resources */,
 				2F68857319193D9D00C36852 /* Status@2x.png in Resources */,
 				2F016F4B1921250800DDC252 /* BlueDot.png in Resources */,
-				2F9D644B191896C0004B1F38 /* Roboto-Medium.ttf in Resources */,
 				2F68856719193D9D00C36852 /* 909-tags-selected@2x.png in Resources */,
 				2F68856419193D9D00C36852 /* 708-search.png in Resources */,
-				2F9D644C191896C0004B1F38 /* Roboto-Regular.ttf in Resources */,
 				2F68857519193D9D00C36852 /* StatusHighlighted@2x.png in Resources */,
 				2F68857719193D9D00C36852 /* InfoPlist.strings in Resources */,
 				2FE20AF11926718B0019FBD0 /* 909-tags-grey.png in Resources */,
@@ -890,19 +849,16 @@
 				2F016F4E1921250800DDC252 /* NSBundle+TEAdditions.m in Sources */,
 				2FFFD8AE1927BBE100F4453C /* AGSettings.m in Sources */,
 				2F688590191945C300C36852 /* AGSearchResultViewItem.m in Sources */,
-				2F9D6447191896C0004B1F38 /* GRGlassAccessoryWindow.m in Sources */,
 				2F45C9EB1923D11E00FC35AE /* MASShortcut+Monitoring.m in Sources */,
 				2F016F5F192126ED00DDC252 /* AGSetupDirectory.m in Sources */,
 				2F6885831919402800C36852 /* AGTagViewController.m in Sources */,
 				2F016F661921327800DDC252 /* AGGifWindowController.m in Sources */,
-				2F9D644A191896C0004B1F38 /* NSWindow+Screenshot.m in Sources */,
 				2F45CA1E192528E600FC35AE /* AGWindowUtilities.m in Sources */,
 				2F9D646819191F40004B1F38 /* ITSidebarItemCell.m in Sources */,
 				2F016F541921250800DDC252 /* TESetupAssistantBGView.m in Sources */,
+				2FE84DBB192A989B00DBCA36 /* SKProduct+Pricing.m in Sources */,
 				2F45C9EF1923D11E00FC35AE /* MASShortcutView.m in Sources */,
-				2F9D6449191896C0004B1F38 /* GRGlassWindow.m in Sources */,
 				2FFFD8B51927BEDD00F4453C /* AGPointManager.m in Sources */,
-				2F9D6448191896C0004B1F38 /* GRGlassThemeWidget.m in Sources */,
 				2F4F490218B51C0E00BCA590 /* AGAppDelegate.m in Sources */,
 				2FFFD8A51927BBA300F4453C /* AGData.m in Sources */,
 				2F68857D19193EC600C36852 /* AGSearchViewController.m in Sources */,

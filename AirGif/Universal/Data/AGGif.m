@@ -62,6 +62,13 @@ static NSOperationQueue * _requests = nil;
 
 }
 
+- (void)purchase {
+  self.purchaseDate = [NSDate date];
+  [[AGDataStore sharedStore] saveContext];
+  [[NSNotificationCenter defaultCenter] postNotificationName:kGifPurchasedNotification object:self];
+  [AGAnalytics trackGifAction:@"purchase" label:@"download" value:nil];
+}
+
 /*******************************************************************************
  * Caching
  ******************************************************************************/

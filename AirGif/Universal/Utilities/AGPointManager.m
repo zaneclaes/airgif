@@ -9,6 +9,7 @@
 #import "AGPointManager.h"
 #import "AGAnalytics.h"
 #import "AGSettings.h"
+#import "SKProduct+Pricing.h"
 #import <StoreKit/StoreKit.h>
 
 static NSString * const kKeyPoints = @"points";
@@ -19,6 +20,13 @@ static NSString * const kKeyPoints = @"points";
 @end
 
 @implementation AGPointManager
+
+- (NSString*)purchaseString {
+  SKProduct *product = [[self.products allValues] firstObject];
+  NSInteger dollars = [[[product.productIdentifier componentsSeparatedByString:@"."] lastObject] integerValue];
+  NSInteger points = [AGSettings sharedSettings].pointsPerUSD * dollars;
+  return [NSString stringWithFormat:NSLocalizedString(@"points.purchase.purchase",@""),points,[product priceAsString]];
+}
 
 /************************************************************************************************
  * Credits
