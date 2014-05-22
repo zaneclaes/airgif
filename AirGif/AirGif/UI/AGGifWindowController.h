@@ -18,6 +18,7 @@
 @property (nonatomic, strong) IBOutlet NSButton *helpButton;
 @property (nonatomic, strong) IBOutlet NSButton *shareButton;
 @property (nonatomic, strong) IBOutlet NSButton *nsfwButton;
+@property (nonatomic, strong) IBOutlet NSButton *openButton;
 @property (nonatomic, strong) IBOutlet NSButton *tagButton;
 @property (nonatomic, strong) IBOutlet NSButton *captionButton;
 @property (nonatomic, strong) IBOutlet NSButton *saveButton;
@@ -28,6 +29,7 @@
 
 - (IBAction)onPressedSave:(NSButton*)sender;
 - (IBAction)onPressedCaption:(NSButton*)sender;
+- (IBAction)onPressedOpen:(NSButton*)sender;
 - (IBAction)onPressedNSFW:(NSButton*)sender;
 - (IBAction)onPressedTag:(NSButton*)sender;
 - (IBAction)onPressedHelp:(NSButton*)sender;

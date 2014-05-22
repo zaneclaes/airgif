@@ -12,6 +12,7 @@
                 <outlet property="iconView" destination="a6Z-gK-kYF" id="vhh-Ea-pyj"/>
                 <outlet property="imageView" destination="LgJ-T5-Lhy" id="dap-55-ngd"/>
                 <outlet property="nsfwButton" destination="GK9-Pr-YPc" id="NvY-FX-qUR"/>
+                <outlet property="openButton" destination="wZL-WB-5Sn" id="Hju-Ox-1eD"/>
                 <outlet property="progressIndicator" destination="OrU-Db-gB0" id="HHe-QS-DKg"/>
                 <outlet property="saveButton" destination="Btn-Xc-Xl0" id="sKd-yi-0lR"/>
                 <outlet property="shareButton" destination="tMK-iY-jpU" id="LXz-rn-Hjr"/>
@@ -25,7 +26,7 @@
             <windowStyleMask key="styleMask" titled="YES" closable="YES"/>
             <windowPositionMask key="initialPositionMask" leftStrut="YES" rightStrut="YES" topStrut="YES" bottomStrut="YES"/>
             <rect key="contentRect" x="196" y="240" width="480" height="270"/>
-            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1418"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="1440" height="878"/>
             <view key="contentView" autoresizesSubviews="NO" id="se5-gp-TjO">
                 <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
                 <autoresizingMask key="autoresizingMask"/>
@@ -90,6 +91,17 @@
                             <action selector="onPressedTag:" target="-2" id="rV3-nI-c79"/>
                         </connections>
                     </button>
+                    <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="wZL-WB-5Sn">
+                        <rect key="frame" x="183" y="1" width="44" height="32"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                        <buttonCell key="cell" type="push" bezelStyle="rounded" image="782-compass" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="r7h-nn-Uf3">
+                            <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                            <font key="font" metaFont="system"/>
+                        </buttonCell>
+                        <connections>
+                            <action selector="onPressedOpen:" target="-2" id="YPP-bN-EJ6"/>
+                        </connections>
+                    </button>
                     <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Btn-Xc-Xl0">
                         <rect key="frame" x="410" y="0.0" width="44" height="32"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
@@ -118,6 +130,7 @@
         </window>
     </objects>
     <resources>
+        <image name="782-compass" width="28" height="28"/>
         <image name="906-chat-3-grey" width="28" height="26"/>
         <image name="909-tags-grey" width="28" height="28"/>
         <image name="924-inbox-download-grey" width="28" height="28"/>

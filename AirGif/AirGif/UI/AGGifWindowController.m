@@ -56,6 +56,12 @@
   [AGAnalytics trackGifAction:@"window" label:@"help" value:nil];
 }
 
+- (IBAction)onPressedOpen:(NSButton*)sender {
+  [[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:URL_SHARE_GIF(self.gif)]];
+  [self close];
+  [AGAnalytics trackGifAction:@"window" label:@"open" value:nil];
+}
+
 - (IBAction)onPressedShare:(NSButton*)sender {
   NSArray *urls = @[[NSURL URLWithString:URL_SHARE_GIF(self.gif)]];
   NSSharingServicePicker *sharingServicePicker = [[NSSharingServicePicker alloc] initWithItems:urls];
@@ -72,7 +78,7 @@
 
 - (id)initWithWindow:(NSWindow *)window {
   if ((self = [super initWithWindow:window])) {
-    self.windowFrameAutosaveName = @"GifPreview";
+    //self.windowFrameAutosaveName = @"GifPreview";
   }
   return self;
 }
@@ -84,7 +90,7 @@
 static NSInteger const kPadding = 2;
 
 - (CGFloat)repositionButtons {
-  NSArray *buttons = @[self.helpButton, self.shareButton, self.nsfwButton, self.tagButton, self.captionButton, self.saveButton];
+  NSArray *buttons = @[self.helpButton, self.shareButton, self.openButton, self.nsfwButton, self.tagButton, self.captionButton, self.saveButton];
   NSInteger minWidth = kPadding;
   for(NSButton *button in buttons) {
     if(button.isHidden) {
@@ -100,6 +106,16 @@ static NSInteger const kPadding = 2;
 
 - (void)reloadIcon {
   [self.iconView setHidden:self.gif.purchaseDate || self.gif.wasImported.boolValue];
+}
+
+- (void)reposition:(NSRect)frame {
+  CGSize screenSize = [NSScreen mainScreen].frame.size;
+  NSRect mainFrame = [AGWindowUtilities mainWindow].frame;
+  NSInteger maxX = screenSize.width - frame.size.width;
+
+  frame.origin.y = screenSize.height - frame.size.height - 20;
+  frame.origin.x = MIN(maxX, (mainFrame.origin.x + mainFrame.size.width/2) - (frame.size.width/2));
+  [self.window setFrame:frame display:YES];
 }
 
 - (void)windowDidLoad {
@@ -119,7 +135,7 @@ static NSInteger const kPadding = 2;
     NSRect frame = self.window.frame;
     NSInteger bottomHeight = 32 + kPadding;
     frame.size = CGSizeMake(size.width, size.height + bottomHeight + 20);
-    [self.window setFrame:frame display:YES];
+    [self reposition:frame];
     self.imageView.gif = self.gif;
     self.imageView.image = image;
     self.imageView.frame = NSMakeRect(0, bottomHeight, image.size.width, image.size.height);
@@ -127,6 +143,7 @@ static NSInteger const kPadding = 2;
   }];
   [self reloadIcon];
   [AGAnalytics view:@"gif"];
+  [self reposition:self.window.frame];
 }
 
 - (id)initWithGif:(AGGif*)gif {

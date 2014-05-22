@@ -83,6 +83,8 @@
 		2F71023C192E503000271CB1 /* menubar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F71023A192E503000271CB1 /* menubar@2x.png */; };
 		2F71023F192E509D00271CB1 /* AGSetupFTUE.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F71023E192E509D00271CB1 /* AGSetupFTUE.m */; };
 		2F710241192E50AE00271CB1 /* AGSetupFTUE.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F710240192E50AE00271CB1 /* AGSetupFTUE.xib */; };
+		2F710244192E53B200271CB1 /* 782-compass.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F710242192E53B200271CB1 /* 782-compass.png */; };
+		2F710245192E53B200271CB1 /* 782-compass@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F710243192E53B200271CB1 /* 782-compass@2x.png */; };
 		2F9D644D191896C0004B1F38 /* OBMenuBarWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6446191896C0004B1F38 /* OBMenuBarWindow.m */; };
 		2F9D646719191F40004B1F38 /* ITSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D645019191F40004B1F38 /* ITSidebar.m */; };
 		2F9D646819191F40004B1F38 /* ITSidebarItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D645219191F40004B1F38 /* ITSidebarItemCell.m */; };
@@ -235,6 +237,8 @@
 		2F71023D192E509D00271CB1 /* AGSetupFTUE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSetupFTUE.h; sourceTree = "<group>"; };
 		2F71023E192E509D00271CB1 /* AGSetupFTUE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSetupFTUE.m; sourceTree = "<group>"; };
 		2F710240192E50AE00271CB1 /* AGSetupFTUE.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGSetupFTUE.xib; sourceTree = "<group>"; };
+		2F710242192E53B200271CB1 /* 782-compass.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "782-compass.png"; path = "AirGif/Resources/images/glyphish/782-compass.png"; sourceTree = SOURCE_ROOT; };
+		2F710243192E53B200271CB1 /* 782-compass@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "782-compass@2x.png"; path = "AirGif/Resources/images/glyphish/782-compass@2x.png"; sourceTree = SOURCE_ROOT; };
 		2F9D6445191896C0004B1F38 /* OBMenuBarWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBMenuBarWindow.h; sourceTree = "<group>"; };
 		2F9D6446191896C0004B1F38 /* OBMenuBarWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBMenuBarWindow.m; sourceTree = "<group>"; };
 		2F9D644F19191F40004B1F38 /* ITSidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSidebar.h; sourceTree = "<group>"; };
@@ -540,6 +544,8 @@
 		2F68854619193D9D00C36852 /* glyphish */ = {
 			isa = PBXGroup;
 			children = (
+				2F710242192E53B200271CB1 /* 782-compass.png */,
+				2F710243192E53B200271CB1 /* 782-compass@2x.png */,
 				2FE20AE91926718B0019FBD0 /* 906-chat-3-grey.png */,
 				2FE20AEA1926718B0019FBD0 /* 906-chat-3-grey@2x.png */,
 				2FE20AEB1926718B0019FBD0 /* 909-tags-grey.png */,
@@ -811,6 +817,8 @@
 				2F016F4D1921250800DDC252 /* GrayDot.png in Resources */,
 				2F016F60192126ED00DDC252 /* AGSetupDirectory.xib in Resources */,
 				2F68856519193D9D00C36852 /* 708-search@2x.png in Resources */,
+				2F710244192E53B200271CB1 /* 782-compass.png in Resources */,
+				2F710245192E53B200271CB1 /* 782-compass@2x.png in Resources */,
 				2F68856C19193D9D00C36852 /* 912-gears.png in Resources */,
 				2F68856819193D9D00C36852 /* 909-tags.png in Resources */,
 				2F4F490718B51C0E00BCA590 /* Images.xcassets in Resources */,
