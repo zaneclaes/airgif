@@ -16,6 +16,8 @@
 #import "AGPointManager.h"
 #import "AGSettings.h"
 
+static NSString * const kLastScanKey = @"last_scan";
+
 @implementation AGDirectoryScanner {
   NSMutableDictionary *_animatedGifPaths;
 }
@@ -109,6 +111,8 @@
 }
 
 - (NSError*)scan {
+  [[NSUserDefaults standardUserDefaults] setDouble:[[NSDate date] timeIntervalSince1970] forKey:kLastScanKey];
+  [[NSUserDefaults standardUserDefaults] synchronize];
   _animatedGifPaths = [NSMutableDictionary new];
   [self.directory startAccessingSecurityScopedResource];
   NSError *err = [self scan:self.directory];
@@ -147,6 +151,11 @@
     }
   }
   return self;
+}
+
++ (NSTimeInterval)timeSinceLastScan {
+  NSTimeInterval lastScan = [[NSUserDefaults standardUserDefaults] doubleForKey:kLastScanKey];
+  return [[NSDate date] timeIntervalSince1970] - lastScan;
 }
 
 @end

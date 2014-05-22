@@ -14,6 +14,8 @@
 #import "AGGif.h"
 #import "AGWindowUtilities.h"
 #import "AGPointManager.h"
+#import "AGDirectoryScanner.h"
+#import "AGSettings.h"
 #import <QuartzCore/QuartzCore.h>
 
 static NSInteger const kSideBarCellSize = 60;
@@ -29,6 +31,15 @@ static CGSize const kMainContentSize = {315,480};
 @end
 
 @implementation AGMainWindow
+
+- (void)rescan {
+  NSTimeInterval elapsed = [AGDirectoryScanner timeSinceLastScan];
+  if(elapsed < [AGSettings sharedSettings].scanFrequency) {
+    return;
+  }
+  AGDirectoryScanner *scanner = [[AGDirectoryScanner alloc] initWithBookmark];
+  [scanner scan];
+}
 
 - (void)onSidebarChanged {
   NSArray *titles = @[NSLocalizedString(@"Search", @""),
@@ -50,6 +61,7 @@ static CGSize const kMainContentSize = {315,480};
   [viewController viewDidAppear];
 
   [AGAnalytics view:pages[self.sidebar.selectedIndex]];
+  [self performSelector:@selector(rescan) withObject:nil afterDelay:2];
 }
 
 

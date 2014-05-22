@@ -29,6 +29,8 @@ static NSString * const kKeyGifBookmark = @"dir_gif_bookmark";
 - (void)upload;
 - (NSError*)scan;
 
++ (NSTimeInterval)timeSinceLastScan;
+
 - (id)initWithBookmark;
 
 @end

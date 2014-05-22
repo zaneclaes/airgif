@@ -24,6 +24,11 @@
   return [val respondsToSelector:@selector(integerValue)] ? [val integerValue] : def;
 }
 
+- (NSInteger)doubleValueForKey:(NSString*)key orDefault:(NSInteger)def {
+  NSNumber *val = self.settings[key];
+  return [val respondsToSelector:@selector(doubleValue)] ? [val doubleValue] : def;
+}
+
 - (NSInteger)pointsPerUSD {
   return [self integerValueForKey:@"pointsPerUSD" orDefault:1000];
 }
@@ -38,6 +43,10 @@
 
 - (NSInteger)maxFlags {
   return [self integerValueForKey:@"maxFlags" orDefault:1];
+}
+
+- (NSTimeInterval)scanFrequency {
+  return [self doubleValueForKey:@"scanFrequency" orDefault:(60 * 5)];
 }
 
 - (NSArray*)products {

@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) NSInteger pointsUploadGif;
 @property (nonatomic, readonly) NSInteger pointsPerUSD;
 @property (nonatomic, readonly) NSInteger maxFlags;
+@property (nonatomic, readonly) NSTimeInterval scanFrequency;
 @property (nonatomic, readonly) NSArray *products;
 
 + (AGSettings*)sharedSettings;
