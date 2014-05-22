@@ -26,10 +26,6 @@ static CGFloat const kSearchDelay = 0.3;
   return self.searchStyleSegment.selectedSegment == 1;
 }
 
-- (void)delayedSetContent {
-
-}
-
 - (void)setContent:(NSSet*)gifs {
   [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(setContent:) object:nil];
   //DLog(@"Content: %@",gifs);
@@ -47,7 +43,7 @@ static CGFloat const kSearchDelay = 0.3;
   [AGAnalytics trackGifAction:@"searchLocal" label:q value:@(gifs.count)];
 
   // Search Online
-  if(self.searchOnline && q.length) {
+  if(self.searchOnline) {
     __block NSInteger downloading = 1;
     [self.progressIndicator startAnimation:nil];
     NSMutableDictionary *params = [AGAnalytics trackedParams];
@@ -68,7 +64,7 @@ static CGFloat const kSearchDelay = 0.3;
           }
           else {
             [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(setContent:) object:nil];
-            [self performSelector:@selector(setContent:) withObject:gifs afterDelay:0.1];
+            [self performSelector:@selector(setContent:) withObject:gifs afterDelay:0.5];
           }
         }];
       }
