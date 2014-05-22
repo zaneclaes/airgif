@@ -79,6 +79,10 @@
 		2F6D7FB6191FFC1300CDCEA6 /* ORImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F6D7FB5191FFC1300CDCEA6 /* ORImageView.m */; };
 		2F6D7FB8191FFC3800CDCEA6 /* Quartz.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6D7FB7191FFC3800CDCEA6 /* Quartz.framework */; };
 		2F6D7FBA191FFDF900CDCEA6 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2F6D7FB9191FFDF900CDCEA6 /* WebKit.framework */; };
+		2F71023B192E503000271CB1 /* menubar.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F710239192E503000271CB1 /* menubar.png */; };
+		2F71023C192E503000271CB1 /* menubar@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 2F71023A192E503000271CB1 /* menubar@2x.png */; };
+		2F71023F192E509D00271CB1 /* AGSetupFTUE.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F71023E192E509D00271CB1 /* AGSetupFTUE.m */; };
+		2F710241192E50AE00271CB1 /* AGSetupFTUE.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2F710240192E50AE00271CB1 /* AGSetupFTUE.xib */; };
 		2F9D644D191896C0004B1F38 /* OBMenuBarWindow.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D6446191896C0004B1F38 /* OBMenuBarWindow.m */; };
 		2F9D646719191F40004B1F38 /* ITSidebar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D645019191F40004B1F38 /* ITSidebar.m */; };
 		2F9D646819191F40004B1F38 /* ITSidebarItemCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 2F9D645219191F40004B1F38 /* ITSidebarItemCell.m */; };
@@ -226,6 +230,11 @@
 		2F6D7FB5191FFC1300CDCEA6 /* ORImageView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ORImageView.m; sourceTree = "<group>"; };
 		2F6D7FB7191FFC3800CDCEA6 /* Quartz.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quartz.framework; path = System/Library/Frameworks/Quartz.framework; sourceTree = SDKROOT; };
 		2F6D7FB9191FFDF900CDCEA6 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		2F710239192E503000271CB1 /* menubar.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = menubar.png; sourceTree = "<group>"; };
+		2F71023A192E503000271CB1 /* menubar@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "menubar@2x.png"; sourceTree = "<group>"; };
+		2F71023D192E509D00271CB1 /* AGSetupFTUE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AGSetupFTUE.h; sourceTree = "<group>"; };
+		2F71023E192E509D00271CB1 /* AGSetupFTUE.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AGSetupFTUE.m; sourceTree = "<group>"; };
+		2F710240192E50AE00271CB1 /* AGSetupFTUE.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AGSetupFTUE.xib; sourceTree = "<group>"; };
 		2F9D6445191896C0004B1F38 /* OBMenuBarWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OBMenuBarWindow.h; sourceTree = "<group>"; };
 		2F9D6446191896C0004B1F38 /* OBMenuBarWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OBMenuBarWindow.m; sourceTree = "<group>"; };
 		2F9D644F19191F40004B1F38 /* ITSidebar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ITSidebar.h; sourceTree = "<group>"; };
@@ -325,6 +334,9 @@
 				2F016F5C192126ED00DDC252 /* AGSetupDirectory.h */,
 				2F016F5D192126ED00DDC252 /* AGSetupDirectory.m */,
 				2F016F5E192126ED00DDC252 /* AGSetupDirectory.xib */,
+				2F71023D192E509D00271CB1 /* AGSetupFTUE.h */,
+				2F71023E192E509D00271CB1 /* AGSetupFTUE.m */,
+				2F710240192E50AE00271CB1 /* AGSetupFTUE.xib */,
 			);
 			name = Setup;
 			sourceTree = "<group>";
@@ -519,6 +531,8 @@
 				2F68855819193D9D00C36852 /* Status@2x.png */,
 				2F68855919193D9D00C36852 /* StatusHighlighted.png */,
 				2F68855A19193D9D00C36852 /* StatusHighlighted@2x.png */,
+				2F710239192E503000271CB1 /* menubar.png */,
+				2F71023A192E503000271CB1 /* menubar@2x.png */,
 			);
 			path = images;
 			sourceTree = "<group>";
@@ -766,6 +780,7 @@
 				2F016F4C1921250800DDC252 /* DisabledGrayDot.png in Resources */,
 				2F68856B19193D9D00C36852 /* 912-gears-selected@2x.png in Resources */,
 				2F68856A19193D9D00C36852 /* 912-gears-selected.png in Resources */,
+				2F710241192E50AE00271CB1 /* AGSetupFTUE.xib in Resources */,
 				2FE20AF21926718B0019FBD0 /* 909-tags-grey@2x.png in Resources */,
 				2FFFD8CF1927E25200F4453C /* cloud-import@2x.png in Resources */,
 				2F68856319193D9D00C36852 /* 708-search-selected@2x.png in Resources */,
@@ -791,6 +806,7 @@
 				2F016F501921250800DDC252 /* SetupAssistantMini.xib in Resources */,
 				2F016D59191C2EA000DDC252 /* MainMenu.xib in Resources */,
 				2F016F671921327800DDC252 /* AGGifWindowController.xib in Resources */,
+				2F71023B192E503000271CB1 /* menubar.png in Resources */,
 				2FE20AF01926718B0019FBD0 /* 906-chat-3-grey@2x.png in Resources */,
 				2F016F4D1921250800DDC252 /* GrayDot.png in Resources */,
 				2F016F60192126ED00DDC252 /* AGSetupDirectory.xib in Resources */,
@@ -799,6 +815,7 @@
 				2F68856819193D9D00C36852 /* 909-tags.png in Resources */,
 				2F4F490718B51C0E00BCA590 /* Images.xcassets in Resources */,
 				2F68856D19193D9D00C36852 /* 912-gears@2x.png in Resources */,
+				2F71023C192E503000271CB1 /* menubar@2x.png in Resources */,
 				2F68857E19193EC600C36852 /* AGSearchViewController.xib in Resources */,
 				2FE20AF31926718B0019FBD0 /* 924-inbox-download-grey.png in Resources */,
 				2F68857419193D9D00C36852 /* StatusHighlighted.png in Resources */,
@@ -842,6 +859,7 @@
 				2FFFD8A61927BBA300F4453C /* AGDataStore.m in Sources */,
 				2F6D7FB6191FFC1300CDCEA6 /* ORImageView.m in Sources */,
 				2F45C9ED1923D11E00FC35AE /* MASShortcut.m in Sources */,
+				2F71023F192E509D00271CB1 /* AGSetupFTUE.m in Sources */,
 				2FFFD8A41927BBA300F4453C /* AirGifs.xcdatamodeld in Sources */,
 				2FFFD8B21927BE7600F4453C /* AGAnalytics.m in Sources */,
 				2F016F57192125AA00DDC252 /* AGSetupAssistant.m in Sources */,

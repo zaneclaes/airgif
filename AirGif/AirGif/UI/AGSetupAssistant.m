@@ -10,6 +10,7 @@
 #import "AGDirectoryScanner.h"
 #import "TESetupAssistant.h"
 #import "AGSetupDirectory.h"
+#import "AGSetupFTUE.h"
 
 @implementation AGSetupAssistant {
   TESetupAssistant *_setup;
@@ -19,6 +20,7 @@
   _setup = [[TESetupAssistant alloc] initMini];
   [_setup setModal:YES];
   [_setup addAssistant:[AGSetupDirectory assistant]];
+  [_setup addAssistant:[AGSetupFTUE assistant]];
   [_setup run];
 }
 

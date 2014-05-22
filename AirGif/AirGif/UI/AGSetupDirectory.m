@@ -9,6 +9,7 @@
 #import "AGSetupDirectory.h"
 #import "AGSetupAssistant.h"
 #import "AGDirectoryScanner.h"
+#import "AGSetupFTUE.h"
 
 @interface AGSetupDirectory ()
 @property (nonatomic, strong) NSURL *directoryURL;
@@ -47,7 +48,7 @@
   return @[NSLocalizedString(@"setup.directory", @"")];
 }
 - (void)start {
-  [[controller nextButton] setTitle:NSLocalizedString(@"setup.done", @"")];
+  [[controller nextButton] setTitle:NSLocalizedString(@"setup.next", @"")];
   self.pathLabel.stringValue = @"";
   self.titleLabel.stringValue = NSLocalizedString(@"setup.directory.subtext", @"");
   [AGAnalytics view:@"setup"];
@@ -71,7 +72,10 @@
   [[NSUserDefaults standardUserDefaults] setObject:path forKey:kKeyGifDirectory];
   [[NSUserDefaults standardUserDefaults] setObject:self.directoryBookmark forKey:kKeyGifBookmark];
   [[NSUserDefaults standardUserDefaults] synchronize];
-  [AGAnalytics trackSetupAction:@"stop" label:nil value:nil];
+  [AGAnalytics trackSetupAction:@"next" label:nil value:nil];
+
+ // AGSetupFTUE *ftue = [[AGSetupFTUE alloc] initWith]
+
   [super nextPressed:sender];
 }
 
