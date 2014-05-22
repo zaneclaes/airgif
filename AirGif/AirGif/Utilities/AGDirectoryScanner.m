@@ -153,6 +153,22 @@ static NSString * const kLastScanKey = @"last_scan";
   return self;
 }
 
+- (id)initWithFileURL:(NSURL*)fileURL {
+  if((self = [super init])) {
+    NSMutableArray *parts = [[fileURL.path componentsSeparatedByString:@"/"] mutableCopy];
+    [parts removeLastObject];
+    _directory = [NSURL fileURLWithPath:[parts componentsJoinedByString:@"/"]];
+
+    _animatedGifPaths = [NSMutableDictionary new];
+    NSImage *img = [[NSImage alloc] initWithContentsOfFile:[fileURL path]];
+    if(img && img.isAnimatedGif) {
+      NSString *hash = [NSImage hashImagePath:[fileURL path]];
+      _animatedGifPaths[hash] = fileURL;
+    }
+  }
+  return self;
+}
+
 + (NSTimeInterval)timeSinceLastScan {
   NSTimeInterval lastScan = [[NSUserDefaults standardUserDefaults] doubleForKey:kLastScanKey];
   return [[NSDate date] timeIntervalSince1970] - lastScan;

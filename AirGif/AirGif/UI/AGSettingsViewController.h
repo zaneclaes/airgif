@@ -18,6 +18,7 @@
 @property (nonatomic, strong) IBOutlet NSButton *homepageButton;
 @property (nonatomic, strong) IBOutlet NSButton *shareButton;
 @property (nonatomic, strong) IBOutlet NSTextField *pointsLabel;
+@property (nonatomic, strong) IBOutlet NSTextField *uploadingLabel;
 @property (nonatomic, getter = isShortcutEnabled) BOOL shortcutEnabled;
 @property (nonatomic, readwrite) BOOL launchAtLogin;
 
@@ -26,5 +27,6 @@
 - (IBAction)onPressedHomepage:(id)sender;
 - (IBAction)onPressedShare:(NSButton*)sender;
 - (IBAction)onPressedHelp:(NSButton*)sender;
+- (IBAction)onPressedImport:(NSButton*)sender;
 
 @end

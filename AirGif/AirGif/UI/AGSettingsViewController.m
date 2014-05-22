@@ -21,13 +21,14 @@
 #import "AGAnalytics.h"
 #import "AGTagViewController.h"
 #import "AGWindowUtilities.h"
+#import "AGDirectoryScanner.h"
 #import <ServiceManagement/ServiceManagement.h>
 
 NSString *const MASPreferenceKeyShortcut = @"AGShortcut";
 NSString *const MASPreferenceKeyShortcutEnabled = @"AGShortcutEnabled";
 NSString *const AGLaunchAtStartupEnabled = @"AGLaunchAtStartupEnabled";
 
-@interface AGSettingsViewController ()
+@interface AGSettingsViewController () <NSOpenSavePanelDelegate, AGDirectoryScannerDelegate>
 @end
 
 @implementation AGSettingsViewController
@@ -77,6 +78,43 @@ NSString *const AGLaunchAtStartupEnabled = @"AGLaunchAtStartupEnabled";
 - (IBAction)onPressedHelp:(NSButton*)sender {
   OPEN_HELP(@"");
   [AGAnalytics trackSetupAction:@"game" label:@"help" value:@(0)];
+}
+
+-(BOOL)panel:(id)sender shouldShowFilename:(NSString *)filename
+{
+  NSString* ext = [[filename pathExtension] lowercaseString];
+  if (!ext.length || [ext isEqualTo:@"/"]) {
+    return TRUE;
+  }
+  return [ext isEqualTo:@"gif"];
+}
+
+- (void)directoryScannerDidProgress:(AGDirectoryScanner *)scanner {
+  self.uploadingLabel.stringValue = NSLocalizedString(@"uploading.uploading", @"");
+}
+
+- (void)directoryScannerDidFinishUploadingFiles:(AGDirectoryScanner *)scanner withError:(NSError *)error {
+  self.uploadingLabel.stringValue = @"";
+}
+
+- (IBAction)onPressedImport:(NSButton*)sender {
+
+  NSOpenPanel* openDlg = [NSOpenPanel openPanel];
+  [openDlg setCanChooseFiles:YES];
+  [openDlg setCanChooseDirectories:NO];
+  [openDlg setAllowsMultipleSelection:NO];
+  openDlg.delegate = self;
+  if ( [openDlg runModal] == NSOKButton ) {
+    NSArray* files = [openDlg URLs];
+    for( int i = 0; i < [files count]; i++ )
+    {
+      self.uploadingLabel.stringValue = NSLocalizedString(@"uploading.examining", @"");
+      AGDirectoryScanner *scanner = [[AGDirectoryScanner alloc] initWithFileURL: [files objectAtIndex:i]];
+      scanner.delegate = self;
+      [scanner upload];
+      break;
+    }
+  }
 }
 
 - (IBAction)onPressedPoints:(id)sender {

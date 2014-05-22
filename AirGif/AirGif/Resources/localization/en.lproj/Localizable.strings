@@ -21,3 +21,6 @@
 
 "NSFWConfirm" = "Are you sure you want to flag this image? It will be removed from all searches.";
 "Thanks" = "Thanks!";
+
+"uploading.examining" = "Examining gifs...";
+"uploading.uploading" = "Uploading...";
