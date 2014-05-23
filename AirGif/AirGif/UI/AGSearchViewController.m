@@ -49,6 +49,11 @@ static CGFloat const kSearchDelay = 0.3;
     NSMutableDictionary *params = [AGAnalytics trackedParams];
     params[@"query"] = q?:@"";
     [[HTTPRequest alloc] post:URL_API(@"search") params:params completion:^(HTTPRequest *req) {
+      NSString *q = self.searchField.stringValue ?: @"";
+      if(![req.params[@"query"] isEqualToString:q]) {
+        return;
+      }
+
       NSArray *items = [req.response[@"items"] isKindOfClass:[NSArray class]] ? req.response[@"items"] : @[];
       for(NSDictionary *data in items) {
         AGGif *gif = [AGGif gifWithServerDictionary:data];
@@ -82,6 +87,10 @@ static CGFloat const kSearchDelay = 0.3;
   }
 }
 
+- (void)onGifCached:(NSNotification*)n {
+  [self.resultsGrid setContent:self.resultsGrid.content];
+}
+
 - (void)controlTextDidChange:(NSNotification *)obj {
   [self.progressIndicator startAnimation:nil];
   [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(search:) object:nil];
@@ -95,7 +104,7 @@ static CGFloat const kSearchDelay = 0.3;
 
 - (void)awakeFromNib {
   [super awakeFromNib];
-  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(search:)
+  [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onGifCached:)
                                                name:kNotificationGifThumbnailCached object:nil];
   [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(search:)
                                                name:kPurchaseCompleteNotification object:nil];
