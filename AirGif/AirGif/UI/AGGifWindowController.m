@@ -131,14 +131,16 @@ static NSInteger const kPadding = 2;
       return;
     }
     NSImage *image = [[NSImage alloc] initWithContentsOfURL:self.gif.cachedGifUrl];
-    CGSize size = CGSizeMake(MAX(image.size.width, [self repositionButtons]), image.size.height);
+    CGSize screenSize = [NSScreen mainScreen].frame.size;
+    CGSize size = CGSizeMake(MIN(screenSize.width-100,MAX(image.size.width, [self repositionButtons])),
+                             MIN(screenSize.height-100,image.size.height));
     NSRect frame = self.window.frame;
     NSInteger bottomHeight = 32 + kPadding;
     frame.size = CGSizeMake(size.width, size.height + bottomHeight + 20);
     [self reposition:frame];
     self.imageView.gif = self.gif;
     self.imageView.image = image;
-    self.imageView.frame = NSMakeRect(0, bottomHeight, image.size.width, image.size.height);
+    self.imageView.frame = NSMakeRect(0, bottomHeight, size.width, size.height);
     [self repositionButtons];
   }];
   [self reloadIcon];
