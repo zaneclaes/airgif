@@ -8,7 +8,6 @@
         <customObject id="-2" userLabel="File's Owner" customClass="AGSettingsViewController">
             <connections>
                 <outlet property="folderButton" destination="L9G-i4-XJc" id="bb6-i0-SM9"/>
-                <outlet property="homepageButton" destination="h6o-ZO-ZRQ" id="1c0-hk-aEg"/>
                 <outlet property="pointsButton" destination="LgE-zT-Kwh" id="UiM-x0-zHt"/>
                 <outlet property="pointsLabel" destination="W4Y-Lz-drE" id="rAX-fS-yGm"/>
                 <outlet property="shareButton" destination="8Pp-Lz-d4S" id="Nql-QQ-ZC4"/>
@@ -53,7 +52,7 @@
                     </connections>
                 </button>
                 <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W4Y-Lz-drE">
-                    <rect key="frame" x="18" y="370" width="154" height="17"/>
+                    <rect key="frame" x="18" y="355" width="173" height="17"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="You have 0 points." id="qWY-ZI-I3E">
                         <font key="font" metaFont="system"/>
@@ -62,7 +61,7 @@
                     </textFieldCell>
                 </textField>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LgE-zT-Kwh">
-                    <rect key="frame" x="191" y="361" width="110" height="32"/>
+                    <rect key="frame" x="191" y="346" width="110" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Get More" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="kX8-iA-BnE">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -72,19 +71,8 @@
                         <action selector="onPressedPoints:" target="-2" id="ZQK-GU-3P8"/>
                     </connections>
                 </button>
-                <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="h6o-ZO-ZRQ">
-                    <rect key="frame" x="14" y="328" width="287" height="32"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                    <buttonCell key="cell" type="push" title="Visit AirGif.com" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="K5T-ec-OtJ">
-                        <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
-                        <font key="font" metaFont="system"/>
-                    </buttonCell>
-                    <connections>
-                        <action selector="onPressedHomepage:" target="-2" id="tp0-pu-Ubn"/>
-                    </connections>
-                </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Pp-Lz-d4S">
-                    <rect key="frame" x="251" y="295" width="50" height="32"/>
+                    <rect key="frame" x="251" y="283" width="50" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" bezelStyle="rounded" image="NSShareTemplate" imagePosition="overlaps" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="AIv-Ty-q3q">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -95,7 +83,7 @@
                     </connections>
                 </button>
                 <button horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XpH-v8-L0U">
-                    <rect key="frame" x="18" y="299" width="25" height="25"/>
+                    <rect key="frame" x="272" y="318" width="25" height="25"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="help" bezelStyle="helpButton" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="92Y-Ih-BNx">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -106,7 +94,7 @@
                     </connections>
                 </button>
                 <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="oRF-aI-LoJ">
-                    <rect key="frame" x="234" y="13" width="67" height="32"/>
+                    <rect key="frame" x="124" y="13" width="67" height="32"/>
                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                     <buttonCell key="cell" type="push" title="Quit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="wQ7-gu-nLh">
                         <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
@@ -116,6 +104,24 @@
                         <action selector="terminate:" target="-3" id="ZZn-HY-Ylp"/>
                     </connections>
                 </button>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="fwa-oF-eZu">
+                    <rect key="frame" x="18" y="323" width="226" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Points make gifs better. Learn how:" id="jqc-j1-vfk">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7x5-lB-KU8">
+                    <rect key="frame" x="18" y="292" width="114" height="17"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="Share AirGif.com:" id="b67-Ah-vs1">
+                        <font key="font" metaFont="system"/>
+                        <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
             </subviews>
         </customView>
         <userDefaultsController representsSharedInstance="YES" id="E5v-It-PPs"/>
